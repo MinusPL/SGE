@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\GLAD">
+      <UniqueIdentifier>{bfada8db-7c43-472d-bd65-5e98fede0ea9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_Game">
+      <UniqueIdentifier>{806bd212-e47a-45b4-ae8f-65d169e95d1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_Game\SGE_Texture">
+      <UniqueIdentifier>{881ea5e2-e645-4ea2-8719-564d58848f3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_Game\SGE_Shader">
+      <UniqueIdentifier>{bb8b2ded-f397-4051-9a16-a6f5804214e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_Game\SGE_ResourceManager">
+      <UniqueIdentifier>{3cef21b6-f027-41f6-a4b1-13a806e28c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_Game\SGE_SpriteRenderer">
+      <UniqueIdentifier>{19acb63c-117c-44e3-bdb2-bd55c303c69b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SGE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files\GLAD</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Game.cpp">
+      <Filter>Source Files\SGE_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Shader.cpp">
+      <Filter>Source Files\SGE_Game\SGE_Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Texture.cpp">
+      <Filter>Source Files\SGE_Game\SGE_Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_ResourceManager.cpp">
+      <Filter>Source Files\SGE_Game\SGE_ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_SpriteRenderer.cpp">
+      <Filter>Source Files\SGE_Game\SGE_SpriteRenderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SGE_Game.h">
+      <Filter>Source Files\SGE_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_Shader.h">
+      <Filter>Source Files\SGE_Game\SGE_Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_Texture.h">
+      <Filter>Source Files\SGE_Game\SGE_Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_ResourceManager.h">
+      <Filter>Source Files\SGE_Game\SGE_ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_SpriteRenderer.h">
+      <Filter>Source Files\SGE_Game\SGE_SpriteRenderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
