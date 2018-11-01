@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\Libraries\C++\glfw\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Libraries\C++\glfw\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\Libs\glfw\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Libs\glfw\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>E:\Libraries\C++\glfw\include;$(IncludePath)</IncludePath>

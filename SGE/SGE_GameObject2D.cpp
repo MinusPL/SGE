@@ -8,7 +8,9 @@ void SGE_GameObject2D::Draw()
 
 	glm::mat4 model = transform.ApplyTransform();
 	glm::mat4 MVP = SGE_Game::instance->camera["main"]->GetProjectionMatrix() * SGE_Game::instance->camera["main"]->GetViewMat() * model;
-	glm::mat3 normalModel = (glm::mat3) glm::transpose(glm::inverse(model));
+	
+	
+	//glm::mat3 normalModel = (glm::mat3) glm::transpose(glm::inverse(model));
 
 
 	this->shader.SetMatrix4("MVP", MVP);

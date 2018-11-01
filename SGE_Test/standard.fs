@@ -28,6 +28,7 @@ struct PointLight {
     vec3 specular;
 };
 
+in vec3 outColor;
 in vec3 fragPos;
 in vec3 norm;
 in vec4 lightSpacePos;
@@ -79,7 +80,7 @@ void main()
 
 	//color = vec4(result, 1);
 	//color = lightSpacePos;
-	color = vec4(1.0,1.0,1.0,1);
+	color = vec4(1,1,0,1);
 }
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){
