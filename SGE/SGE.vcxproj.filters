@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\GLAD">
+      <UniqueIdentifier>{3bdd2602-00cc-4ef4-9ba6-ebc796c4d36f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_Camera">
+      <UniqueIdentifier>{f6b60fd1-c140-4956-82a8-fc31c3eab4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility">
+      <UniqueIdentifier>{04e319ea-5ff5-42d1-a881-875606836c41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SGE_Camera">
+      <UniqueIdentifier>{4afbe301-50b1-4bec-bdf3-df61c82cb610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility">
+      <UniqueIdentifier>{6e50d29f-ad81-48b6-a743-e1bd24387442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_objects">
+      <UniqueIdentifier>{51d24533-3115-4f50-86ce-ceba88ba01ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SGE_Objects">
+      <UniqueIdentifier>{571f0160-6da0-4614-82f8-b4c13ccfb21d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SGE_Shader">
+      <UniqueIdentifier>{bdc9ed67-57a0-4d80-916a-0c0ece82cf82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SGE_Shader">
+      <UniqueIdentifier>{909af60d-bda1-4d5a-80b2-41dc24cd8a33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader Source Files">
+      <UniqueIdentifier>{2f3eb186-37b4-41f9-bb2a-041ab2fee19b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SGE_Mesh">
+      <UniqueIdentifier>{9d52d0dd-82e3-4eef-b54a-b85273a4843d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="standard.fs">
+      <Filter>Shader Source Files</Filter>
+    </None>
+    <None Include="standard.vs">
+      <Filter>Shader Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files\GLAD</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Camera.cpp">
+      <Filter>Source Files\SGE_Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Transform.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_GameObject.cpp">
+      <Filter>Source Files\SGE_objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Shader.cpp">
+      <Filter>Source Files\SGE_Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_ResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_GameObject2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SGE_Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_Camera.h">
+      <Filter>Header Files\SGE_Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_Transform.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_GameObject.h">
+      <Filter>Header Files\SGE_Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_Shader.h">
+      <Filter>Header Files\SGE_Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_ResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_GameObject2D.h">
+      <Filter>Header Files\SGE_Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SGE_Mesh.h">
+      <Filter>Header Files\SGE_Mesh</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
