@@ -1,6 +1,8 @@
 #include "SGE_Game.h"
 #include "SGE_ResourceManager.h"
 
+#include <IL/ilut.h>
+
 SGE_Game* SGE_Game::instance = nullptr;
 
 SGE_Game::SGE_Game()
@@ -19,6 +21,13 @@ void SGE_Game::Init(GLuint screen_width, GLuint screen_height)
 	}
 	instance = this;
 	
+	if (ilGetInteger(IL_VERSION_NUM) < IL_VERSION)
+	{
+		printf("DevIL version is different...exiting!\n");
+	}
+
+	ilInit();
+
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -31,7 +40,7 @@ void SGE_Game::Init(GLuint screen_width, GLuint screen_height)
 
 	//glfwSetKeyCallback(window, key_callback);
 	glViewport(0, 0, screen_width, screen_height);
-	glEnable(GL_CULL_FACE);
+	//glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);

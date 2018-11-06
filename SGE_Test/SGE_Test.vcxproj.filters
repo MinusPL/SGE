@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Game">
       <UniqueIdentifier>{04ca8547-e1d2-48af-bd0d-1f2d61dd4834}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{feb57681-9e0a-452f-b787-a5e409bc79d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SGE_Test.cpp">
@@ -27,6 +30,9 @@
     <ClCompile Include="TestSprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestGame.h">
@@ -34,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="TestSprite.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

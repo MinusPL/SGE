@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 #include "SGE_Transform.h"
 
 enum ShaderType {STANDARD, STANDARD_2D};

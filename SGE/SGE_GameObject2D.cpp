@@ -20,10 +20,6 @@ void SGE_GameObject2D::Draw()
 	mesh.Draw();
 }
 
-void SGE_GameObject2D::Update()
-{
-}
-
 SGE_GameObject2D::SGE_GameObject2D(ShaderType shaderType)
 {
 	switch (shaderType)
@@ -43,8 +39,8 @@ SGE_GameObject2D::SGE_GameObject2D(ShaderType shaderType)
 	mesh.indices.push_back(1);
 	mesh.indices.push_back(2);
 	mesh.indices.push_back(0);
-	mesh.indices.push_back(3);
 	mesh.indices.push_back(2);
+	mesh.indices.push_back(3);
 
 	mesh.uvs.push_back(glm::vec2(1, 1));
 	mesh.uvs.push_back(glm::vec2(1, 0));

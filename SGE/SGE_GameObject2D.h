@@ -11,7 +11,6 @@ public:
 	SGE_Mesh mesh;
 	
 	virtual void Draw() override;
-	virtual void Update() override;
 
 	SGE_GameObject2D(ShaderType shaderType = STANDARD);
 	~SGE_GameObject2D();

@@ -121,10 +121,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Player.h" />
     <ClInclude Include="TestGame.h" />
     <ClInclude Include="TestSprite.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SGE_Test.cpp" />
     <ClCompile Include="TestGame.cpp" />
     <ClCompile Include="TestSprite.cpp" />
