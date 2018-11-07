@@ -20,9 +20,17 @@
 x64/
 x86/
 bld/
-#[Bb]in/
+[Bb]in/
 [Oo]bj/
 [Ll]og/
+
+!Libs/glfw/lib
+!Libs/glfw/lib/*
+!Libs/glfw/lib/*/*
+
+!Libs/glfw/bin
+!Libs/glfw/bin/*
+!Libs/glfw/bin/*/*
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -328,6 +336,3 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-
-
-!Libs*
