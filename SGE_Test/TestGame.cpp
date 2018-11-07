@@ -1,6 +1,6 @@
 #include "TestGame.h"
 
-#include <SGE_GameObject2D.h>
+#include <VisualObject.h>
 
 #include <iostream>
 
@@ -8,7 +8,7 @@
 
 TestGame::TestGame()
 {
-	camera["main"] = new SGE_Camera(MODE_2D);
+	camera["main"] = new Camera(MODE_2D);
 	color = 0.0f;
 }
 
@@ -18,7 +18,7 @@ TestGame::~TestGame()
 
 void TestGame::Init(GLuint screen_width, GLuint screen_height)
 {
-	SGE_Game::Init(screen_width, screen_height);
+	Game::Init(screen_width, screen_height);
 	camera["main"]->Orthographic(0.0f, screen_width, 0.0f, screen_height, -1.0f, 1.0f);
 	//camera["main"]->Perspective(45.f, 16.f / 9.f, .01, 1000.f);
 	camera["main"]->transform.Position(glm::vec3(0.0f, 0.0f, 0.0f));
@@ -31,7 +31,7 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 
 void TestGame::Update(GLfloat dt)
 {
-
+	objects[0]->Update(dt);
 }
 
 void TestGame::ProcessInput(GLfloat dt)

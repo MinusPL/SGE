@@ -1,6 +1,6 @@
-#include "SGE_Mesh.h"
+#include "Mesh.h"
 
-glm::vec3 SGE_Mesh::NormalFromIndices(GLuint a, GLuint b, GLuint c)
+glm::vec3 Mesh::NormalFromIndices(GLuint a, GLuint b, GLuint c)
 {
 	glm::vec3 vertA = vertices[a];
 	glm::vec3 vertB = vertices[b];
@@ -9,7 +9,7 @@ glm::vec3 SGE_Mesh::NormalFromIndices(GLuint a, GLuint b, GLuint c)
 	return glm::cross(vertB - vertA, vertC - vertA);
 }
 
-glm::vec3 SGE_Mesh::TangentFromIndices(GLuint a, GLuint b, GLuint c)
+glm::vec3 Mesh::TangentFromIndices(GLuint a, GLuint b, GLuint c)
 {
 	glm::vec3 vertA = vertices[a];
 	glm::vec3 vertB = vertices[b];
@@ -36,7 +36,7 @@ glm::vec3 SGE_Mesh::TangentFromIndices(GLuint a, GLuint b, GLuint c)
 	return tangent;
 }
 
-void SGE_Mesh::CreateInstanceAttribPointer()
+void Mesh::CreateInstanceAttribPointer()
 {
 	//glBindVertexArray(VAO);
 
@@ -57,14 +57,14 @@ void SGE_Mesh::CreateInstanceAttribPointer()
 	//glBindVertexArray(0);
 }
 
-void SGE_Mesh::Draw()
+void Mesh::Draw()
 {
 	glBindVertexArray(VAO);
 	glDrawElements(vertexFlag, indices.size(), GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }
 
-void SGE_Mesh::CreateMesh()
+void Mesh::CreateMesh()
 {
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
@@ -131,7 +131,7 @@ void SGE_Mesh::CreateMesh()
 	glBindVertexArray(0);
 }
 
-void SGE_Mesh::RecalculateNormals()
+void Mesh::RecalculateNormals()
 {
 	if (vertexFlag != GL_TRIANGLES) {
 		throw "Cannot calculate normals with given flag!";
@@ -186,7 +186,7 @@ void SGE_Mesh::RecalculateNormals()
 	}
 }
 
-SGE_Mesh::~SGE_Mesh()
+Mesh::~Mesh()
 {
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);

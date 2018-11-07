@@ -1,19 +1,17 @@
-#include "SGE_Game.h"
-#include "SGE_ResourceManager.h"
+#include "Game.h"
+#include "ResourceManager.h"
 
-#include <IL/ilut.h>
+Game* Game::instance = nullptr;
 
-SGE_Game* SGE_Game::instance = nullptr;
-
-SGE_Game::SGE_Game()
+Game::Game()
 {
 }
 
-SGE_Game::~SGE_Game()
+Game::~Game()
 {
 }
 
-void SGE_Game::Init(GLuint screen_width, GLuint screen_height)
+void Game::Init(GLuint screen_width, GLuint screen_height)
 {
 	if (instance != nullptr)
 	{
@@ -40,16 +38,16 @@ void SGE_Game::Init(GLuint screen_width, GLuint screen_height)
 
 	//glfwSetKeyCallback(window, key_callback);
 	glViewport(0, 0, screen_width, screen_height);
-	//glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
 
-	SGE_ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
+	ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
 }
 
-void SGE_Game::Exit()
+void Game::Exit()
 {
 	glfwTerminate();
 }

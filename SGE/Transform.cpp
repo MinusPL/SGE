@@ -1,6 +1,6 @@
-#include "SGE_Transform.h"
+#include "Transform.h"
 
-void SGE_Transform::UpdateVectors()
+void Transform::UpdateVectors()
 {
 	glm::vec3 front;
 	front.x = cos(glm::radians(rotation.y)) * cos(glm::radians(rotation.x));
@@ -12,7 +12,7 @@ void SGE_Transform::UpdateVectors()
 	up = glm::normalize(glm::cross(right, forward));
 }
 
-glm::mat4 SGE_Transform::ApplyTransform()
+glm::mat4 Transform::ApplyTransform()
 {
 	glm::mat4 transMat(1.0f);
 	transMat = glm::translate(transMat, position);
@@ -28,12 +28,12 @@ glm::mat4 SGE_Transform::ApplyTransform()
 	return transMat;
 }
 
-glm::vec3 SGE_Transform::WorldPosition()
+glm::vec3 Transform::WorldPosition()
 {
 	return (glm::vec3) (ApplyTransform() * glm::vec4(0, 0, 0, 1));
 }
 
-SGE_Transform::SGE_Transform()
+Transform::Transform()
 {
 	position = glm::vec3(0, 0, 0);
 	rotation = glm::vec3(0, 0, 0);
@@ -42,6 +42,6 @@ SGE_Transform::SGE_Transform()
 	UpdateVectors();
 }
 
-SGE_Transform::~SGE_Transform()
+Transform::~Transform()
 {
 }

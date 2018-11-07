@@ -125,29 +125,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="standard.fs" />
-    <None Include="standard.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
-    <ClCompile Include="SGE_Camera.cpp" />
-    <ClCompile Include="SGE_Game.cpp" />
-    <ClCompile Include="SGE_GameObject.cpp" />
-    <ClCompile Include="SGE_GameObject2D.cpp" />
-    <ClCompile Include="SGE_Mesh.cpp" />
-    <ClCompile Include="SGE_ResourceManager.cpp" />
-    <ClCompile Include="SGE_Shader.cpp" />
-    <ClCompile Include="SGE_Transform.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="VisualObject.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SGE_Camera.h" />
-    <ClInclude Include="SGE_Game.h" />
-    <ClInclude Include="SGE_GameObject.h" />
-    <ClInclude Include="SGE_GameObject2D.h" />
-    <ClInclude Include="SGE_Mesh.h" />
-    <ClInclude Include="SGE_ResourceManager.h" />
-    <ClInclude Include="SGE_Shader.h" />
-    <ClInclude Include="SGE_Transform.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="VisualObject.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

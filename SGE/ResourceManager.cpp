@@ -1,23 +1,23 @@
-#include "SGE_ResourceManager.h"
+#include "ResourceManager.h"
 
 #include <fstream>
 #include <sstream>
 #include <iostream>
 
-std::map<std::string, SGE_Shader> SGE_ResourceManager::Shaders;
+std::map<std::string, Shader> ResourceManager::Shaders;
 
-void SGE_ResourceManager::LoadShader(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource, std::string name)
+void ResourceManager::LoadShader(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource, std::string name)
 {
 	Shaders[name] = LoadShaderFromFile(vertexSource, fragmentSource, geometrySource);
 }
 
-SGE_Shader & SGE_ResourceManager::GetShader(std::string name)
+Shader & ResourceManager::GetShader(std::string name)
 {
 	if(Shaders.count(name) <= 0) throw "Shader doesn't exists!";
 	return Shaders.at(name);
 }
 
-SGE_Shader SGE_ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource)
+Shader ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource)
 {
 	std::string vertexCode;
 	std::string fragmentCode;
@@ -55,7 +55,7 @@ SGE_Shader SGE_ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, 
 	const GLchar *fragmentShaderCode = fragmentCode.c_str();
 	const GLchar *geometryShaderCode = geometryCode.c_str();
 	// 2. Now create shader object from source code
-	SGE_Shader shader;
+	Shader shader;
 	shader.Compile(vertexShaderCode, fragmentShaderCode, geometrySource != nullptr ? geometryShaderCode : nullptr);
 	return shader;
 }

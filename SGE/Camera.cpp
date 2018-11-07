@@ -1,6 +1,6 @@
-#include "SGE_Camera.h"
+#include "Camera.h"
 
-SGE_Camera::SGE_Camera(int mode)
+Camera::Camera(int mode)
 {
 	switch (mode)
 	{
@@ -15,37 +15,37 @@ SGE_Camera::SGE_Camera(int mode)
 	}
 }
 
-SGE_Camera::SGE_Camera()
+Camera::Camera()
 {
 
 }
 
-SGE_Camera::~SGE_Camera()
+Camera::~Camera()
 {
 }
 
-void SGE_Camera::Update()
+void Camera::Update()
 {
 
 }
 
-void SGE_Camera::LookAt(glm::vec3 target)
+void Camera::LookAt(glm::vec3 target)
 {
 	view = glm::lookAt(transform.Position(), target, transform.Up());
 }
 
-void SGE_Camera::Perspective(GLfloat fov, GLfloat aspectRatio, GLfloat nearPlane, GLfloat farPlane)
+void Camera::Perspective(GLfloat fov, GLfloat aspectRatio, GLfloat nearPlane, GLfloat farPlane)
 {
 	this->projection = glm::perspective(fov, aspectRatio, nearPlane, farPlane);
 	
 }
 
-void SGE_Camera::Orthographic(GLfloat left, GLfloat right, GLfloat top, GLfloat bottom, GLfloat zNear, GLfloat zFar)
+void Camera::Orthographic(GLfloat left, GLfloat right, GLfloat top, GLfloat bottom, GLfloat zNear, GLfloat zFar)
 {
 	this->projection = glm::ortho(left, right, bottom, top, zNear, zFar);
 }
 
-glm::mat4 SGE_Camera::GetViewMat()
+glm::mat4 Camera::GetViewMat()
 {
 	return glm::lookAt(transform.Position(), transform.Position() + transform.Forward(), transform.Up());
 }

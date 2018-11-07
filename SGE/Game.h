@@ -1,23 +1,24 @@
 #pragma once
 #define GLEW_STATIC
 #include <GL/glew.h>
+#include <IL/ilut.h>
 #include <GLFW/glfw3.h>
 
 #include <map>
 #include <string>
 #include <vector>
 
-#include "SGE_Camera.h"
-#include "SGE_GameObject.h"
+#include "Camera.h"
+#include "GameObject.h"
 
-class SGE_Game
+class Game
 {
 public:
 	
-	static SGE_Game* instance;
+	static Game* instance;
 
-	SGE_Game();
-	~SGE_Game();
+	Game();
+	~Game();
 
 	void Init(GLuint screen_width, GLuint screen_height);
 
@@ -36,8 +37,8 @@ public:
 	//Cleanup and exit code
 	void Exit();
 
-	std::map<std::string,SGE_Camera*> camera;
-	std::vector<SGE_GameObject*> objects;
+	std::map<std::string,Camera*> camera;
+	std::vector<GameObject*> objects;
 protected:
 	GLFWwindow* window;
 };

@@ -1,10 +1,10 @@
 #pragma once
 
-#include <SGE_Game.h>
+#include <Game.h>
 #include <gl/glew.h>
 
 
-class TestGame : public SGE_Game
+class TestGame : public Game
 {
 public:
 	TestGame();

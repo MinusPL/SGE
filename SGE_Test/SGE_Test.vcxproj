@@ -83,6 +83,9 @@
     <Link>
       <AdditionalDependencies>SGE.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)Libs\glfw\bin\x86\DevIL.dll" "$(SolutionDir)Debug\DevIL.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -123,16 +126,16 @@
   <ItemGroup>
     <ClInclude Include="Player.h" />
     <ClInclude Include="TestGame.h" />
-    <ClInclude Include="TestSprite.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SGE_Test.cpp" />
     <ClCompile Include="TestGame.cpp" />
-    <ClCompile Include="TestSprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="standard.fs" />
+    <None Include="standard.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

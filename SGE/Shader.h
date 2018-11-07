@@ -5,15 +5,15 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <string>
 
-class SGE_Shader
+class Shader
 {
 public:
 	// State
 	GLuint ID;
 	// Constructor
-	SGE_Shader() { }
+	Shader() { }
 	// Sets the current shader as active
-	SGE_Shader  &Use();
+	Shader  &Use();
 	// Compiles the shader from given source code
 	void    Compile(const GLchar *vertexSource, const GLchar *fragmentSource, const GLchar *geometrySource = nullptr); // Note: geometry source code is optional 
 	// Utility functions

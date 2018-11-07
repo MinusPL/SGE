@@ -5,7 +5,7 @@
 #include <glm/glm.hpp>
 #include <vector>
 
-class SGE_Mesh
+class Mesh
 {
 private:
 	GLuint VBO, EBO, VAO;
@@ -37,5 +37,5 @@ public:
 	void CreateMesh();
 	void RecalculateNormals();
 
-	~SGE_Mesh();
+	~Mesh();
 };

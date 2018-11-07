@@ -62,7 +62,7 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 viewDir);
 
 void main()
 {
-	/*vec3 normal;
+	vec3 normal;
 	if(hasNormalMap){
 		normal = texture(normalMap, uv).rgb;
 		normal = normalize(normal * 2.0 - 1.0);
@@ -76,11 +76,11 @@ void main()
 	vec3 result = CalcDirLight(dirLight, normal, viewDir);
 	for(int i = 0; i < pointLightsCount; i++){
 		result += CalcPointLight(pointLights[i], normal, viewDir);
-	}*/
+	}
 
-	//color = vec4(result, 1);
+	color = vec4(result, 1);
 	//color = lightSpacePos;
-	color = vec4(1,1,0,1);
+	//color = vec4(1,1,0,1);
 }
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){

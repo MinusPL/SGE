@@ -4,7 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-class SGE_Transform
+class Transform
 {
 	glm::vec3 forward;
 	glm::vec3 right;
@@ -18,7 +18,7 @@ class SGE_Transform
 
 public:
 
-	SGE_Transform* parent = nullptr;
+	Transform* parent = nullptr;
 
 	//void LookAt(glm::vec3 target);
 
@@ -55,6 +55,6 @@ public:
 	glm::mat4 ApplyTransform();
 	glm::vec3 WorldPosition();
 
-	SGE_Transform();
-	~SGE_Transform();
+	Transform();
+	~Transform();
 };

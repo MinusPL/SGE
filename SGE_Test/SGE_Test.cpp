@@ -1,4 +1,4 @@
-#include <SGE_ResourceManager.h>
+#include <ResourceManager.h>
 #include "TestGame.h"
 
 TestGame game;

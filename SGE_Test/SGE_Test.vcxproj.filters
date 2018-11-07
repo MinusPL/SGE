@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Objects">
       <UniqueIdentifier>{feb57681-9e0a-452f-b787-a5e409bc79d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{e7ef2142-5fd3-47e6-90bf-44d897d58a2f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SGE_Test.cpp">
@@ -26,9 +29,6 @@
     </ClCompile>
     <ClCompile Include="TestGame.cpp">
       <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="TestSprite.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
@@ -38,14 +38,17 @@
     <ClInclude Include="TestGame.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="TestSprite.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Source Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="standard.fs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="standard.vs">
+      <Filter>Shader Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

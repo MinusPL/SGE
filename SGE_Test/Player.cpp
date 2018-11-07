@@ -4,7 +4,7 @@
 
 
 
-Player::Player() : SGE_GameObject2D(STANDARD)
+Player::Player() : VisualObject(STANDARD)
 {
 	glm::vec3 size(128.0f, 192.0f, 0.0f);
 	for (auto &vertex : this->mesh.vertices)
@@ -12,11 +12,12 @@ Player::Player() : SGE_GameObject2D(STANDARD)
 		vertex = vertex * size;
 	}
 	this->mesh.CreateMesh();
-	//this->transform.Scale(glm::vec3(2.0f, 2.0f, 1.0f));
+	this->material = Material::gold;
 }
 
 Player::~Player()
 {
+	
 }
 
 void Player::LoadTexture(std::string filename)
@@ -24,7 +25,7 @@ void Player::LoadTexture(std::string filename)
 
 }
 
-void Player::Update()
+void Player::Update(GLfloat dt)
 {
-
+	//this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, 0.5f, 0.0f));
 }
