@@ -20,7 +20,7 @@
 x64/
 x86/
 bld/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 [Ll]og/
 
@@ -330,8 +330,4 @@ ASALocalRun/
 .mfractor/
 
 
-!Libs/glfw/lib/x86*
-!Libs/glfw/lib/x64*
-
-!Libs/glfw/bin/x86/*.dll
-!Libs/glfw/bin/x64/*.dll
+!Libs*
