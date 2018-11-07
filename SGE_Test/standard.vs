@@ -17,16 +17,16 @@ uniform mat4 lightSpaceMatrix;
 
 void main()
 {
-	//vec3 T = normalize(vec3(model * vec4(tangent, 0.0)));
-	//vec3 N = normalize(vec3(model * vec4(normal, 0.0)));
+	vec3 T = normalize(vec3(model * vec4(tangent, 0.0)));
+	vec3 N = normalize(vec3(model * vec4(normal, 0.0)));
 
-	//vec3 bitangent = cross(T, N);
-	//vec3 B = normalize(vec3(model * vec4(bitangent, 0.0)));
-	//TBN = mat3(T,B,N);
+	vec3 bitangent = cross(T, N);
+	vec3 B = normalize(vec3(model * vec4(bitangent, 0.0)));
+	TBN = mat3(T,B,N);
 
-	//uv = uvs;
-	//fragPos = vec3( model * vec4(position, 1.0f));
+	uv = uvs;
+	fragPos = vec3( model * vec4(position, 1.0f));
     gl_Position = MVP * vec4(position, 1.0f);
-	//norm = normalModel * normal;
-	//lightSpacePos = lightSpaceMatrix * vec4(fragPos, 1);
+	norm = normalModel * normal;
+	lightSpacePos = lightSpaceMatrix * vec4(fragPos, 1);
 }

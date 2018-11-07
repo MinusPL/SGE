@@ -43,6 +43,15 @@
     <Filter Include="Source Files\Shader">
       <UniqueIdentifier>{bdc9ed67-57a0-4d80-916a-0c0ece82cf82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\NewFilter1">
+      <UniqueIdentifier>{97a3d891-30fb-4130-9e5b-e182d0d7cf33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Primitive">
+      <UniqueIdentifier>{947f6db4-f432-412c-aa74-d0b7aaa605e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Primitive">
+      <UniqueIdentifier>{df41e5bb-537d-45ca-bef7-505582c583bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -69,14 +78,17 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VisualObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Source Files\Objects\Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualObject.cpp">
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\Objects\Primitive</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

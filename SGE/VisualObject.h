@@ -17,4 +17,5 @@ public:
 
 	VisualObject(ShaderType shaderType = STANDARD);
 	~VisualObject();
+	float rot = 0.0f;
 };

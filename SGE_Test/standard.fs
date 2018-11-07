@@ -75,19 +75,17 @@ void main()
 
 	vec3 result = CalcDirLight(dirLight, normal, viewDir);
 	for(int i = 0; i < pointLightsCount; i++){
-		result += CalcPointLight(pointLights[i], normal, viewDir);
+		//result += CalcPointLight(pointLights[i], normal, viewDir);
 	}
 
 	color = vec4(result, 1);
-	//color = lightSpacePos;
-	//color = vec4(1,1,0,1);
 }
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){
 	
 	vec3 lightDir = normalize(-light.direction);
 
-	float diff = max(dot(normal, lightDir), 0.0);
+	float diff = max(dot(normal, lightDir), 0.0f);
 	
 	//Phong model
 	//vec3 reflectDir = reflect(-lightDir, normal);
@@ -129,7 +127,6 @@ vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){
 		if(projCoords.z > 1.0)
 			shadow = 0;
 	}
-
 	return (ambient + (1.0 - shadow) * (diffuse + specular));
 }
 

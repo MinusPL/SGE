@@ -127,6 +127,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cube.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cube.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Game.h" />

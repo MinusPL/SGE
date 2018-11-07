@@ -1,16 +1,15 @@
 #pragma once
 #include <IL/il.h>
 
-#include <VisualObject.h>
+#include <Cube.h>
 
-class Player : public VisualObject
+class Player : public Cube
 {
 public:
 	Player();
 	~Player();
-	void LoadTexture(std::string filename);
 	// Inherited via SGE_GameObject2D
 	virtual void Update(GLfloat dt) override;
 private:
-	ILuint texture;
+
 };
