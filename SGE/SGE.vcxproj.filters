@@ -87,6 +87,9 @@
     <ClCompile Include="VisualObject.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Material.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="Cube.h">
       <Filter>Header Files\Objects\Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

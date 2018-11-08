@@ -94,7 +94,7 @@ void main()
 
 	vec3 result = CalcDirLight(dirLight, normal, viewDir);
 	for(int i = 0; i < pointLightsCount; i++){
-		//result += CalcPointLight(pointLights[i], normal, viewDir);
+		result += CalcPointLight(pointLights[i], normal, viewDir);
 	}
 
 	color = vec4(result, 1);

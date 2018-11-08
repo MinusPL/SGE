@@ -1,13 +1,14 @@
 #pragma once
 
 #include <glm/glm.hpp>
+#include "Texture.h"
 
 struct Material
 {
 	//Change to own Texture format after creating Texture Class
-	/*sf::Texture* diffuseTexture = nullptr;
-	sf::Texture* specularTexture = nullptr;
-	sf::Texture* normalMap = nullptr;*/
+	Texture* diffuseTexture = nullptr;
+	Texture* specularTexture = nullptr;
+	Texture* normalMap = nullptr;
 
 	glm::vec3 ambient;
 	glm::vec3 diffuse;

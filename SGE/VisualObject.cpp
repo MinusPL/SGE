@@ -13,7 +13,20 @@ void VisualObject::Draw()
 
 
 	/*TODO Update to use textures next!!!*/
-	this->shader.SetInteger("hasDiffuseMap", false);
+
+	///Check and bind diffuse map from material
+	if (this->material.diffuseTexture != nullptr)
+	{
+		glActiveTexture(GL_TEXTURE1);
+		this->material.diffuseTexture->BindTexture();
+		this->shader.SetInteger("hasDiffuseMap", true);
+		this->shader.SetInteger("diffuseTex", 1);
+	}
+	else
+	{
+		this->shader.SetInteger("hasDiffuseMap", false);
+	}
+	
 	this->shader.SetInteger("hasSpecularMap", false);
 	this->shader.SetInteger("hasNormalMap", false);
 	

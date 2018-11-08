@@ -19,12 +19,15 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	}
 	instance = this;
 	
-	if (ilGetInteger(IL_VERSION_NUM) < IL_VERSION)
+	if ((ilGetInteger(IL_VERSION_NUM) < IL_VERSION) ||
+		ilGetInteger(ILUT_VERSION_NUM) < ILUT_VERSION)
 	{
 		printf("DevIL version is different...exiting!\n");
 	}
 
 	ilInit();
+	iluInit();
+	ilutInit();
 
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -36,6 +39,8 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glewExperimental = GL_TRUE;
 	glewInit();
 
+	ilutRenderer(ILUT_OPENGL);
+
 	//glfwSetKeyCallback(window, key_callback);
 	glViewport(0, 0, screen_width, screen_height);
 	glEnable(GL_CULL_FACE);
@@ -43,6 +48,8 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
+
+
 
 	ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
 }

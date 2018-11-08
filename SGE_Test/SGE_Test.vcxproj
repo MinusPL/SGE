@@ -84,7 +84,9 @@
       <AdditionalDependencies>SGE.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)Libs\glfw\bin\x86\DevIL.dll" "$(SolutionDir)Debug\DevIL.dll"</Command>
+      <Command>copy "$(SolutionDir)Libs\glfw\bin\x86\DevIL.dll" "$(SolutionDir)Debug\DevIL.dll"
+copy "$(SolutionDir)Libs\glfw\bin\x86\ILUT.dll" "$(SolutionDir)Debug\ILUT.dll"
+copy "$(SolutionDir)Libs\glfw\bin\x86\ILU.dll" "$(SolutionDir)Debug\ILU.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

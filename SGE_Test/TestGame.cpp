@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "Player.h"
+#include <ResourceManager.h>
 
 TestGame::TestGame()
 {
@@ -19,12 +20,17 @@ TestGame::~TestGame()
 void TestGame::Init(GLuint screen_width, GLuint screen_height)
 {
 	Game::Init(screen_width, screen_height);
+
+	ResourceManager::LoadTexture("assets/textures/umi.png", "umi");
+
 	//camera["main"]->Orthographic(0.0f, screen_width, 0.0f, screen_height, -1.0f, 1.0f);
-	camera["main"]->Perspective(45.f, 16.f / 9.f, .01, 1000.f);
+	camera["main"]->Perspective(45.f, 16.f / 9.f, .01f, 1000.f);
 	camera["main"]->transform.Position(glm::vec3(0.0f, 0.0f, 3.0f));
 	camera["main"]->transform.Rotation(0, 0, 0);
 	//std::cout << "Look, I'm extending base class! :)" << std::endl;
-	objects.push_back(new Player());
+	Player* tPlayer = new Player();
+	tPlayer->material.diffuseTexture = &ResourceManager::GetTexture("umi");
+	objects.push_back(tPlayer);
 	objects[0]->transform.Position(glm::vec3(10, 0, 0));
 	objects[0]->transform.Rotation(glm::vec3(0, 0, 0));
 }

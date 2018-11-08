@@ -5,16 +5,28 @@
 #include <iostream>
 
 std::map<std::string, Shader> ResourceManager::Shaders;
+std::map<std::string, Texture> ResourceManager::Textures;
 
 void ResourceManager::LoadShader(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource, std::string name)
 {
 	Shaders[name] = LoadShaderFromFile(vertexSource, fragmentSource, geometrySource);
 }
 
+void ResourceManager::LoadTexture(const GLchar * texture, std::string name)
+{
+	Textures[name] = LoadTextureFromFile(texture);
+}
+
 Shader & ResourceManager::GetShader(std::string name)
 {
 	if(Shaders.count(name) <= 0) throw "Shader doesn't exists!";
 	return Shaders.at(name);
+}
+
+Texture & ResourceManager::GetTexture(std::string name)
+{
+	if (Textures.count(name) <= 0) throw "Texture doesn't exists!";
+	return Textures.at(name);
 }
 
 Shader ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource)
@@ -58,4 +70,11 @@ Shader ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, const GL
 	Shader shader;
 	shader.Compile(vertexShaderCode, fragmentShaderCode, geometrySource != nullptr ? geometryShaderCode : nullptr);
 	return shader;
+}
+
+Texture ResourceManager::LoadTextureFromFile(const GLchar * texture)
+{
+	Texture tempTexture;
+	tempTexture.LoadFromFile((GLchar*)texture);
+	return tempTexture;
 }

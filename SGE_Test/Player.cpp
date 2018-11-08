@@ -6,7 +6,7 @@
 
 Player::Player() : Cube()
 {
-	this->material = Material::emerald;
+	this->material = Material::chrome;
 }
 
 Player::~Player()
