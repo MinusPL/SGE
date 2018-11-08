@@ -62,6 +62,25 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 viewDir);
 
 void main()
 {
+    /*// ambient
+    vec3 ambient = dirLight.ambient * material.ambient;
+  	
+    // diffuse 
+    vec3 normals = normalize(norm);
+    // vec3 lightDir = normalize(dirLight.position - FragPos);
+    vec3 lightDir = normalize(-dirLight.direction);  
+    float diff = max(dot(normals, lightDir), 0.0);
+    vec3 diffuse = dirLight.diffuse * diff * material.diffuse;
+    
+    // specular
+    vec3 viewDir = normalize(viewPos - fragPos);
+    vec3 reflectDir = reflect(-lightDir, norm);  
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shiness);
+    vec3 specular = dirLight.specular * spec * material.specular;
+        
+    vec3 result = ambient + diffuse + specular;
+    color = vec4(result, 1.0);*/
+
 	vec3 normal;
 	if(hasNormalMap){
 		normal = texture(normalMap, uv).rgb;

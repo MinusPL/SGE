@@ -43,9 +43,6 @@
     <Filter Include="Source Files\Shader">
       <UniqueIdentifier>{bdc9ed67-57a0-4d80-916a-0c0ece82cf82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\NewFilter1">
-      <UniqueIdentifier>{97a3d891-30fb-4130-9e5b-e182d0d7cf33}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Objects\Primitive">
       <UniqueIdentifier>{947f6db4-f432-412c-aa74-d0b7aaa605e9}</UniqueIdentifier>
     </Filter>

@@ -29,14 +29,14 @@ void VisualObject::Draw()
 	this->shader.SetVector3f("material.specular", this->material.specular);
 	this->shader.SetFloat("material.shiness", this->material.shiness);
 
-	this->shader.SetVector3f("dirLight.direction", -0.2f, -1.0f, -0.3f);
+	this->shader.SetVector3f("dirLight.direction", 0.7f, -0.4f, 0.2f);
 	
-	float ambientval = 0.4f;
+	float ambientval = 0.7f;
 	this->shader.SetVector3f("dirLight.ambient", ambientval, ambientval, ambientval);
 	this->shader.SetVector3f("dirLight.diffuse", 0.5f, 0.5f, 0.5f);
 	this->shader.SetVector3f("dirLight.specular", 1.0f,1.0f,1.0f);
 
-	this->shader.SetMatrix4("normalModel", normalModel);
+	this->shader.SetMatrix3("normalModel", normalModel);
 
 	mesh.Draw();
 }

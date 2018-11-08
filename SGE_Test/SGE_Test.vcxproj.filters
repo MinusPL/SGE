@@ -44,11 +44,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="standard.fs">
-      <Filter>Shader Files</Filter>
-    </None>
-    <None Include="standard.vs">
-      <Filter>Shader Files</Filter>
-    </None>
   </ItemGroup>
 </Project>
