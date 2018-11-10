@@ -84,7 +84,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;libglew32d.lib;devil.lib;ilu.lib;ilut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;libglew32d.lib;devil.lib;ilu.lib;ilut.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -133,6 +133,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VisualObject.cpp" />
     <ClCompile Include="Mesh.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VisualObject.h" />
     <ClInclude Include="Mesh.h" />

@@ -86,7 +86,8 @@
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)Libs\glfw\bin\x86\DevIL.dll" "$(SolutionDir)Debug\DevIL.dll"
 copy "$(SolutionDir)Libs\glfw\bin\x86\ILUT.dll" "$(SolutionDir)Debug\ILUT.dll"
-copy "$(SolutionDir)Libs\glfw\bin\x86\ILU.dll" "$(SolutionDir)Debug\ILU.dll"</Command>
+copy "$(SolutionDir)Libs\glfw\bin\x86\ILU.dll" "$(SolutionDir)Debug\ILU.dll"
+copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\assimp-vc140-mt.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

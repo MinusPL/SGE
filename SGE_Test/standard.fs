@@ -97,7 +97,8 @@ void main()
 		result += CalcPointLight(pointLights[i], normal, viewDir);
 	}
 
-	color = vec4(result, 1);
+	//color = vec4(result, 1);
+	color = vec4(1,1,0,1);
 }
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){

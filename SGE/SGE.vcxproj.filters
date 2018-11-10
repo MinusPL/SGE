@@ -49,6 +49,9 @@
     <Filter Include="Source Files\Objects\Primitive">
       <UniqueIdentifier>{df41e5bb-537d-45ca-bef7-505582c583bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{694adb46-1b3e-4b58-ba24-be4ab754389b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -90,6 +93,9 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Material.h">
@@ -124,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

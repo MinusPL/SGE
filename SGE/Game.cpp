@@ -36,14 +36,15 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 	window = glfwCreateWindow(screen_width, screen_height, "SGE Engine v0.0.1", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
+	ilutRenderer(ILUT_OPENGL);
 	glewExperimental = GL_TRUE;
 	glewInit();
 
-	ilutRenderer(ILUT_OPENGL);
+
 
 	//glfwSetKeyCallback(window, key_callback);
 	glViewport(0, 0, screen_width, screen_height);
-	glEnable(GL_CULL_FACE);
+	//glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);

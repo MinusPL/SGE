@@ -4,9 +4,9 @@
 
 
 
-Player::Player() : Cube()
+Player::Player() : VisualObject((GLchar*)"assets/models/box.obj", STANDARD)
 {
-	this->material = Material::chrome;
+	this->material = Material::white;
 }
 
 Player::~Player()

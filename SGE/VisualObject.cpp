@@ -9,10 +9,6 @@ void VisualObject::Draw()
 	glm::mat4 model = transform.ApplyTransform();
 	glm::mat4 MVP = Game::instance->camera["main"]->GetProjectionMatrix() * Game::instance->camera["main"]->GetViewMat() * model;
 	glm::mat3 normalModel = (glm::mat3) glm::transpose(glm::inverse(model));
-	
-
-
-	/*TODO Update to use textures next!!!*/
 
 	///Check and bind diffuse map from material
 	if (this->material.diffuseTexture != nullptr)
@@ -27,10 +23,31 @@ void VisualObject::Draw()
 		this->shader.SetInteger("hasDiffuseMap", false);
 	}
 	
-	this->shader.SetInteger("hasSpecularMap", false);
-	this->shader.SetInteger("hasNormalMap", false);
-	
+	///Check and bind specular map from material
+	if (this->material.specularTexture != nullptr)
+	{
+		glActiveTexture(GL_TEXTURE2);
+		this->material.specularTexture->BindTexture();
+		this->shader.SetInteger("hasSpecularMap", true);
+		this->shader.SetInteger("specularTex", 2);
+	}
+	else
+	{
+		this->shader.SetInteger("hasSpecularMap", false);
+	}
 
+	///Check and bind specular map from material
+	if (this->material.normalMap != nullptr)
+	{
+		glActiveTexture(GL_TEXTURE3);
+		this->material.normalMap->BindTexture();
+		this->shader.SetInteger("hasNormalMap", true);
+		this->shader.SetInteger("normalMap", 3);
+	}
+	else
+	{
+		this->shader.SetInteger("hasNormalMap", false);
+	}
 
 	this->shader.SetMatrix4("MVP", MVP);
 	this->shader.SetMatrix4("model", model);
@@ -51,10 +68,10 @@ void VisualObject::Draw()
 
 	this->shader.SetMatrix3("normalModel", normalModel);
 
-	mesh.Draw();
+	this->model.Draw();
 }
 
-VisualObject::VisualObject(ShaderType shaderType)
+VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : model(model_file)
 {
 	switch (shaderType)
 	{
