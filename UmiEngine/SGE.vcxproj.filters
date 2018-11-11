@@ -96,6 +96,9 @@
     <ClCompile Include="Model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrimitiveVisual.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Material.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="Model.h">
       <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveVisual.h">
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

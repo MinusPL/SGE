@@ -9,7 +9,6 @@ class VisualObject : public GameObject
 {
 public:
 	Shader shader;
-	std::vector<Mesh>meshes;
 	Model model;
 	Material material;
 

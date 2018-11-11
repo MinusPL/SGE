@@ -4,7 +4,7 @@
 
 
 
-Player::Player() : VisualObject((GLchar*)"assets/models/box.obj", STANDARD)
+Player::Player() : VisualObject((GLchar*)"assets/models/kotori.fbx", STANDARD)
 {
 	this->material = Material::white;
 }
@@ -17,5 +17,5 @@ Player::~Player()
 
 void Player::Update(GLfloat dt)
 {
-	this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, 0.0f, 0.05f));
+	//this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, 0.0f, 0.05f));
 }

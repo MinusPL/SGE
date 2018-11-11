@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,19 +20,20 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{061525D2-F2B6-4BB9-A5E2-B44CD1B3A5C6}</ProjectGuid>
-    <RootNamespace>SGETest</RootNamespace>
+    <ProjectGuid>{573665CD-12DA-4A64-BA14-23E2D50FBE15}</ProjectGuid>
+    <RootNamespace>SGE</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <ProjectName>UmiEngine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -70,8 +71,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\Libs\glfw\include;..\SGE;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\Libs\glfw\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Libs\glfw\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>E:\Libraries\C++\glfw\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,15 +84,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>SGE.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-    <PostBuildEvent>
-      <Command>copy "$(SolutionDir)Libs\glfw\bin\x86\DevIL.dll" "$(SolutionDir)Debug\DevIL.dll"
-copy "$(SolutionDir)Libs\glfw\bin\x86\ILUT.dll" "$(SolutionDir)Debug\ILUT.dll"
-copy "$(SolutionDir)Libs\glfw\bin\x86\ILU.dll" "$(SolutionDir)Debug\ILU.dll"
-copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\assimp-vc140-mt.dll"</Command>
-    </PostBuildEvent>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;libglew32d.lib;devil.lib;ilu.lib;ilut.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -127,16 +125,38 @@ copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="TestGame.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="SGE_Test.cpp" />
-    <ClCompile Include="TestGame.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PrimitiveVisual.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="VisualObject.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Transform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cube.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="PrimitiveVisual.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="VisualObject.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

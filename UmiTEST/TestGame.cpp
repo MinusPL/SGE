@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "Player.h"
+#include <Cube.h>
 #include <ResourceManager.h>
 
 TestGame::TestGame()
@@ -36,17 +37,28 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	tPlayer->material.normalMap = &ResourceManager::GetTexture("normal_umi");
 	objects.push_back(tPlayer);
 	objects[0]->transform.Position(glm::vec3(10, 0, 0));
-	objects[0]->transform.Rotation(glm::vec3(0, 0, 0));
+	objects[0]->transform.Rotation(glm::vec3(0, -90, 0));
+
+	/*Cube* kostka = new Cube();
+	kostka->material.diffuseTexture = &ResourceManager::GetTexture("umi");
+	kostka->material.specularTexture = &ResourceManager::GetTexture("spec_umi");
+	kostka->material.normalMap = &ResourceManager::GetTexture("normal_umi");
+	objects.push_back(kostka);
+	objects[1]->transform.Position(glm::vec3(10, 0, 0));
+	objects[1]->transform.Rotation(glm::vec3(0, 0, 0));*/
 }
 
 void TestGame::Update(GLfloat dt)
 {
-	objects[0]->Update(dt);
+	for (auto &object : objects)
+	{
+		object->Update(dt);
+	}
 }
 
 void TestGame::ProcessInput(GLfloat dt)
 {
-	float speed = 10.0f;
+	float speed = 2.0f;
 	if (glfwGetKey(this->window, GLFW_KEY_W) == GLFW_PRESS)
 	{
 		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(speed * dt, 0.0f, 0.0f));
@@ -62,6 +74,15 @@ void TestGame::ProcessInput(GLfloat dt)
 	if (glfwGetKey(this->window, GLFW_KEY_D) == GLFW_PRESS)
 	{
 		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, 0.0f, speed * dt));
+	}
+
+	if (glfwGetKey(this->window, GLFW_KEY_E) == GLFW_PRESS)
+	{
+		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, -speed * dt, 0.0f));
+	}
+	if (glfwGetKey(this->window, GLFW_KEY_Q) == GLFW_PRESS)
+	{
+		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, speed * dt, 0.0f));
 	}
 
 	if (glfwGetKey(this->window, GLFW_KEY_F10) == GLFW_PRESS)
@@ -83,7 +104,7 @@ void TestGame::Render()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	//Insert render functions here later
 
-	for (int i = 0; i < objects.size(); i++)
+	for (unsigned int i = 0; i < objects.size(); i++)
 	{
 		objects[i]->Draw();
 	}
@@ -98,7 +119,7 @@ void TestGame::MainLoop()
 	while (!glfwWindowShouldClose(this->window))
 	{
 		// Calculate delta time
-		GLfloat currentFrame = glfwGetTime();
+		GLfloat currentFrame = (GLfloat)glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
 		

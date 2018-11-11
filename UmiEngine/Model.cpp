@@ -12,7 +12,7 @@ Model::Model(GLchar * filename)
 void Model::Draw()
 {
 	for (unsigned int i = 0; i < meshes.size(); i++)
-		meshes[i].Draw();
+		meshes[i]->Draw();
 }
 
 void Model::loadModel(std::string path)
@@ -47,21 +47,21 @@ void Model::processNode(aiNode * node, const aiScene * scene)
 	}
 }
 
-Mesh Model::processMesh(aiMesh * mesh, const aiScene * scene)
+Mesh* Model::processMesh(aiMesh * mesh, const aiScene * scene)
 {
-	Mesh model_mesh;
+	Mesh* model_mesh = new Mesh();
 	// Walk through each of the mesh's vertices
 	for (unsigned int i = 0; i < mesh->mNumVertices; i++)
 	{
-		model_mesh.vertices.push_back(glm::vec3(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z));
-		model_mesh.normals.push_back(glm::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z));
+		model_mesh->vertices.push_back(glm::vec3(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z));
+		model_mesh->normals.push_back(glm::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z));
 		if(mesh->mTextureCoords[0])
 		{
-			model_mesh.uvs.push_back(glm::vec2(mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y));
+			model_mesh->uvs.push_back(glm::vec2(mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y));
 		}
 		else
 		{
-			model_mesh.uvs.push_back(glm::vec2(0.0f, 0.0f));
+			model_mesh->uvs.push_back(glm::vec2(0.0f, 0.0f));
 		}
 		//model_mesh->tangents.push_back(glm::vec3(mesh->mTangents[i].x, mesh->mTangents[i].y, mesh->mTangents[i].z));
 	}
@@ -71,10 +71,17 @@ Mesh Model::processMesh(aiMesh * mesh, const aiScene * scene)
 		aiFace face = mesh->mFaces[i];
 		// retrieve all indices of the face and store them in the indices vector
 		for (unsigned int j = 0; j < face.mNumIndices; j++)
-			model_mesh.indices.push_back(face.mIndices[j]);
+			model_mesh->indices.push_back(face.mIndices[j]);
 	}
 
-	model_mesh.RecalculateNormals();
-	model_mesh.CreateMesh();
+	//Process materials from loaded model
+	if (mesh->mMaterialIndex >= 0)
+	{
+		aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
+		std::cout << "LOL" << std::endl;
+	}
+
+	model_mesh->RecalculateNormals();
+	model_mesh->CreateMesh();
 	return model_mesh;
 }
