@@ -72,6 +72,13 @@ void PrimitiveVisual::Draw()
 	{
 		mesh->Draw();
 	}
+
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, NULL);
+	glActiveTexture(GL_TEXTURE2);
+	glBindTexture(GL_TEXTURE_2D, NULL);
+	glActiveTexture(GL_TEXTURE3);
+	glBindTexture(GL_TEXTURE_2D, NULL);
 }
 
 PrimitiveVisual::PrimitiveVisual(ShaderType shaderType)

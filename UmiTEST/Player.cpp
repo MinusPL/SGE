@@ -6,7 +6,6 @@
 
 Player::Player() : VisualObject((GLchar*)"assets/models/kotori.fbx", STANDARD)
 {
-	this->material = Material::white;
 }
 
 Player::~Player()

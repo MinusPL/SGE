@@ -7,14 +7,17 @@
 #include <assimp/postprocess.h>
 
 #include "Mesh.h"
+#include "Material.h"
+#include "Shader.h"
 
 class Model
 {
 public:
 	Model(GLchar* filename);
-	void Draw();
+	void Draw(Shader* shader);
 private:
 	std::vector<Mesh*> meshes;
+	std::vector<Material*> materials;
 	std::string directory;
 	void loadModel(std::string path);
 	void processNode(aiNode *node, const aiScene *scene);

@@ -10,8 +10,6 @@ class VisualObject : public GameObject
 public:
 	Shader shader;
 	Model model;
-	Material material;
-
 	
 	virtual void Draw() override;
 
