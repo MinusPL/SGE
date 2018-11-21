@@ -2,6 +2,7 @@
 
 std::map<Key, bool> Input::keyState;
 std::map<Key, bool> Input::previousState;
+Input* Input::instance = nullptr;
 
 Input * Input::GetInstance()
 {
@@ -14,12 +15,12 @@ Input * Input::GetInstance()
 
 bool Input::GetKeyDown(Key key)
 {
-	return false;
+	return !previousState.at(key) && keyState.at(key) ? true : false;
 }
 
 bool Input::GetKeyUp(Key key)
 {
-	return false;
+	return previousState.at(key) && !keyState.at(key) ? true : false;
 }
 
 bool Input::GetKey(Key key)
@@ -147,4 +148,6 @@ Input::Input()
 	keyState.insert(std::make_pair(Key::KEY_RIGHT_CONTROL, false));
 	keyState.insert(std::make_pair(Key::KEY_RIGHT_ALT, false));
 	keyState.insert(std::make_pair(Key::KEY_MENU, false));
+
+	previousState = keyState;
 }

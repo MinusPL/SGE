@@ -26,7 +26,7 @@ public:
 	virtual void Update(GLfloat dt) = 0;
 
 	//Handle input
-	virtual void ProcessInput(GLfloat dt) = 0;
+	void ProcessInput(GLfloat dt);
 	
 	//Render
 	virtual void Render() = 0;

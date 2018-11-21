@@ -54,74 +54,74 @@ void TestGame::Update(GLfloat dt)
 	}
 }
 
-void TestGame::ProcessInput(GLfloat dt)
-{
-	float speed = 2.0f;
-	float rot_speed = 20.0f;
-	if (glfwGetKey(this->window, GLFW_KEY_W) == GLFW_PRESS)
-	{
-		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(speed * dt, 0.0f, 0.0f));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_S) == GLFW_PRESS)
-	{
-		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(-speed * dt, 0.0f, 0.0f));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_A) == GLFW_PRESS)
-	{
-		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, 0.0f, -speed * dt));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_D) == GLFW_PRESS)
-	{
-		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, 0.0f, speed * dt));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_E) == GLFW_PRESS)
-	{
-		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, -speed * dt, 0.0f));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_Q) == GLFW_PRESS)
-	{
-		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, speed * dt, 0.0f));
-	}
-
-	if (glfwGetKey(this->window, GLFW_KEY_R) == GLFW_PRESS)
-	{
-		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, 0.0f, rot_speed * dt));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_F) == GLFW_PRESS)
-	{
-		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, 0.0f, -rot_speed * dt));
-	}
-
-	if (glfwGetKey(this->window, GLFW_KEY_T) == GLFW_PRESS)
-	{
-		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, rot_speed * dt, 0.0f));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_G) == GLFW_PRESS)
-	{
-		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, -rot_speed * dt, 0.0f));
-	}
-
-	if (glfwGetKey(this->window, GLFW_KEY_Y) == GLFW_PRESS)
-	{
-		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(rot_speed * dt, 0.0f, 0.0f));
-	}
-	if (glfwGetKey(this->window, GLFW_KEY_H) == GLFW_PRESS)
-	{
-		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(-rot_speed * dt, 0.0f, 0.0f));
-	}
-
-	if (glfwGetKey(this->window, GLFW_KEY_F10) == GLFW_PRESS)
-	{
-		ILuint imagename;
-		ilGenImages(1, &imagename);
-		ilBindImage(imagename);
-		ilutGLScreen();
-		ilSaveImage("screen.png");
-		ilDeleteImages(1, &imagename);
-	}
-
-
-}
+//void TestGame::ProcessInput(GLfloat dt)
+//{
+//	float speed = 2.0f;
+//	float rot_speed = 20.0f;
+//	if (glfwGetKey(this->window, GLFW_KEY_W) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(speed * dt, 0.0f, 0.0f));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_S) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(-speed * dt, 0.0f, 0.0f));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_A) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, 0.0f, -speed * dt));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_D) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, 0.0f, speed * dt));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_E) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, -speed * dt, 0.0f));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_Q) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Position(objects[0]->transform.Position() + glm::vec3(0.0f, speed * dt, 0.0f));
+//	}
+//
+//	if (glfwGetKey(this->window, GLFW_KEY_R) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, 0.0f, rot_speed * dt));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_F) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, 0.0f, -rot_speed * dt));
+//	}
+//
+//	if (glfwGetKey(this->window, GLFW_KEY_T) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, rot_speed * dt, 0.0f));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_G) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(0.0f, -rot_speed * dt, 0.0f));
+//	}
+//
+//	if (glfwGetKey(this->window, GLFW_KEY_Y) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(rot_speed * dt, 0.0f, 0.0f));
+//	}
+//	if (glfwGetKey(this->window, GLFW_KEY_H) == GLFW_PRESS)
+//	{
+//		objects[0]->transform.Rotation(objects[0]->transform.Rotation() + glm::vec3(-rot_speed * dt, 0.0f, 0.0f));
+//	}
+//
+//	if (glfwGetKey(this->window, GLFW_KEY_F10) == GLFW_PRESS)
+//	{
+//		ILuint imagename;
+//		ilGenImages(1, &imagename);
+//		ilBindImage(imagename);
+//		ilutGLScreen();
+//		ilSaveImage("screen.png");
+//		ilDeleteImages(1, &imagename);
+//	}
+//
+//
+//}
 
 void TestGame::Render()
 {

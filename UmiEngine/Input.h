@@ -132,6 +132,7 @@ enum class Key {
 
 class Input
 {
+	friend class Game;
 public:
 	//Get instance of input manager
 	static Input* GetInstance();

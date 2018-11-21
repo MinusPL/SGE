@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "ResourceManager.h"
+#include "Input.h"
 
 Game* Game::instance = nullptr;
 
@@ -41,18 +42,25 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glewInit();
 
 
-
-	//glfwSetKeyCallback(window, key_callback);
 	glViewport(0, 0, screen_width, screen_height);
-	//glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
 
 
-
+	Input::GetInstance();
 	ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
+}
+
+void Game::ProcessInput(GLfloat dt)
+{
+	Input::previousState = Input::keyState;
+	for (auto &key : Input::keyState)
+	{
+		key.second = glfwGetKey(this->window, (int)key.first) == GLFW_PRESS ? true : false;
+	}
 }
 
 void Game::Exit()
