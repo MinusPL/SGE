@@ -10,7 +10,7 @@
 
 TestGame::TestGame()
 {
-	camera["main"] = new Camera(MODE_2D);
+	camera["main"] = new Camera();
 	color = 0.0f;
 }
 
@@ -42,7 +42,7 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	kostka->material.specularTexture = &ResourceManager::GetTexture("spec_umi");
 	kostka->material.normalMap = &ResourceManager::GetTexture("normal_umi");
 	objects.push_back(kostka);
-	objects[1]->transform.Position(glm::vec3(10, 0, 10));
+	objects[1]->transform.Position(glm::vec3(3, 0, 5));
 	objects[1]->transform.Rotation(glm::vec3(0, 0, 0));
 }
 

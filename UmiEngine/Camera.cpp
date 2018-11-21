@@ -2,17 +2,7 @@
 
 Camera::Camera(int mode)
 {
-	switch (mode)
-	{
-		case MODE_2D:
-		{
-			break;
-		}
-		case MODE_3D:
-		{
-			break;
-		}
-	}
+
 }
 
 Camera::Camera()

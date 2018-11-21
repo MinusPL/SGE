@@ -6,12 +6,6 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-enum
-{
-	MODE_2D,
-	MODE_3D
-};
-
 class Camera
 {
 	friend class Game;

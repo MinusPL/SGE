@@ -91,5 +91,5 @@ Cube::~Cube()
 
 void Cube::Update(GLfloat dt)
 {
-
+	this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, 0.0f, 0.05f));
 }
