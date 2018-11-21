@@ -14,7 +14,7 @@ public:
 	Camera();
 	~Camera();
 
-	void Update();
+	void Update(GLfloat dt);
 	void LookAt(glm::vec3 target);
 
 	void Perspective(GLfloat fov, GLfloat aspectRatio, GLfloat nearPlane, GLfloat farPlane);

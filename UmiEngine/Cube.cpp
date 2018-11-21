@@ -86,7 +86,7 @@ Cube::Cube() : PrimitiveVisual(STANDARD)
 
 Cube::~Cube()
 {
-	this->material = Material::white;
+
 }
 
 void Cube::Update(GLfloat dt)
