@@ -6,6 +6,12 @@
 #include <IL/ilut.h>
 #include <string>
 
+enum class TextureType
+{
+	STANDARD,
+	CUBEMAP
+};
+
 class Texture
 {
 public:

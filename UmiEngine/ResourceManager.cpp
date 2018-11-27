@@ -12,9 +12,9 @@ void ResourceManager::LoadShader(const GLchar * vertexSource, const GLchar * fra
 	Shaders[name] = LoadShaderFromFile(vertexSource, fragmentSource, geometrySource);
 }
 
-void ResourceManager::LoadTexture(const GLchar * texture, std::string name)
+void ResourceManager::LoadTexture(const GLchar * texture, std::string name, TextureType type)
 {
-	Textures[name] = LoadTextureFromFile(texture);
+	Textures[name] = LoadTextureFromFile(texture, type);
 }
 
 Shader & ResourceManager::GetShader(std::string name)
@@ -72,7 +72,7 @@ Shader ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, const GL
 	return shader;
 }
 
-Texture ResourceManager::LoadTextureFromFile(const GLchar * texture)
+Texture ResourceManager::LoadTextureFromFile(const GLchar * texture, TextureType type)
 {
 	Texture tempTexture;
 	tempTexture.LoadFromFile((GLchar*)texture);

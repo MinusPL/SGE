@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Transform.h"
+#include "Input.h"
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
@@ -28,4 +29,7 @@ public:
 protected:
 	glm::mat4 projection;
 	glm::mat4 view;
+	MousePosition lastMousePos;
+	double yaw;
+	double pitch;
 };

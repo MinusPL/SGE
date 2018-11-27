@@ -1,9 +1,13 @@
 #include "Camera.h"
-#include "Input.h"
+
 
 Camera::Camera(int mode)
 {
+	this->lastMousePos.x = Input::GetMousePos().x;
+	this->lastMousePos.y = Input::GetMousePos().y;
 
+	yaw = 0.0;
+	pitch = 0.0;
 }
 
 Camera::Camera()
@@ -17,31 +21,43 @@ Camera::~Camera()
 
 void Camera::Update(GLfloat dt)
 {
-	float speed = 2.0f;
+	float speed = 5.0f * dt;
 	if (Input::GetKey(Key::KEY_W))
 	{
-		this->transform.Position(this->transform.Position() + glm::vec3(speed * dt, 0.0f, 0.0f));
+		this->transform.Position(this->transform.Position() + (this->transform.Forward() * speed));
 	}
 	if (Input::GetKey(Key::KEY_S))
 	{
-		this->transform.Position(this->transform.Position() + glm::vec3(-speed * dt, 0.0f, 0.0f));
+		this->transform.Position(this->transform.Position() - (this->transform.Forward() * speed));
 	}
 	if (Input::GetKey(Key::KEY_A))
 	{
-		this->transform.Position(this->transform.Position() + glm::vec3(0.0f, 0.0f, -speed * dt));
+		this->transform.Position(this->transform.Position() - (glm::cross(this->transform.Forward(), this->transform.Up())*speed));
 	}
 	if (Input::GetKey(Key::KEY_D))
 	{
-		this->transform.Position(this->transform.Position() + glm::vec3(0.0f, 0.0f, speed * dt));
+		this->transform.Position(this->transform.Position() + (glm::cross(this->transform.Forward(), this->transform.Up())*speed));
 	}
-	if (Input::GetKey(Key::KEY_E))
-	{
-		this->transform.Position(this->transform.Position() + glm::vec3(0.0f, -speed * dt, 0.0f));
-	}
-	if (Input::GetKey(Key::KEY_Q))
-	{
-		this->transform.Position(this->transform.Position() + glm::vec3(0.0f, speed * dt, 0.0f));
-	}
+
+	MousePosition currentMousePos = Input::GetMousePos();
+
+	double offsetX = lastMousePos.x - currentMousePos.x;
+	double offsetY = lastMousePos.y - currentMousePos.y;
+	lastMousePos = currentMousePos;
+
+	double sensitivity = 0.05;
+	offsetX *= sensitivity;
+	offsetY *= sensitivity;
+
+	yaw += offsetX;
+	pitch += offsetY;
+
+	if (pitch > 89.0)
+		pitch = 89.0;
+	if (pitch < -89.0)
+		pitch = -89.0;
+	
+	this->transform.Rotation(glm::vec3(pitch, -yaw, 0.0));
 }
 
 void Camera::LookAt(glm::vec3 target)

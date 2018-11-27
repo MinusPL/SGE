@@ -37,14 +37,19 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	objects[0]->transform.Position(glm::vec3(10, 0, 0));
 	objects[0]->transform.Rotation(glm::vec3(0, -90, 0));
 
+	tPlayer = new Player();
+	objects.push_back(tPlayer);
+	objects[1]->transform.Position(glm::vec3(-10, 0, 0));
+	objects[1]->transform.Rotation(glm::vec3(0, -90, 0));
+
 	Cube* kostka = new Cube();
 	kostka->material = Material::white;
 	kostka->material.diffuseTexture = &ResourceManager::GetTexture("umi");
 	kostka->material.specularTexture = &ResourceManager::GetTexture("spec_umi");
 	kostka->material.normalMap = &ResourceManager::GetTexture("normal_umi");
 	objects.push_back(kostka);
-	objects[1]->transform.Position(glm::vec3(3, 0, 5));
-	objects[1]->transform.Rotation(glm::vec3(0, 0, 0));
+	objects[2]->transform.Position(glm::vec3(3, 0, 5));
+	objects[2]->transform.Rotation(glm::vec3(0, 0, 0));
 
 	Plane* ground = new Plane();
 	ground->material = Material::chrome;
@@ -101,7 +106,7 @@ void TestGame::MainLoop()
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
 		
-		//std::cout << "Delta Time: " << deltaTime << std::endl;
+		std::cout << "Delta Time: " << deltaTime << std::endl;
 
 		this->ProcessInput(deltaTime);
 		this->Update(deltaTime);

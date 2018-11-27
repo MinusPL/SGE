@@ -3,6 +3,7 @@
 std::map<Key, bool> Input::keyState;
 std::map<Key, bool> Input::previousState;
 Input* Input::instance = nullptr;
+MousePosition Input::mousePos;
 
 Input * Input::GetInstance()
 {
@@ -26,6 +27,11 @@ bool Input::GetKeyUp(Key key)
 bool Input::GetKey(Key key)
 {
 	return keyState.at(key);
+}
+
+MousePosition Input::GetMousePos()
+{
+	return mousePos;
 }
 
 Input::Input()
@@ -150,4 +156,7 @@ Input::Input()
 	keyState.insert(std::make_pair(Key::KEY_MENU, false));
 
 	previousState = keyState;
+
+	mousePos.x = 0.0;
+	mousePos.y = 0.0;
 }

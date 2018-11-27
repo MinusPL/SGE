@@ -16,11 +16,11 @@ Plane::Plane() : PrimitiveVisual(STANDARD)
 	tMesh->uvs.push_back(glm::vec2(1, 0));
 
 	tMesh->indices.push_back(0);
+	tMesh->indices.push_back(2);
 	tMesh->indices.push_back(1);
-	tMesh->indices.push_back(2);
 	tMesh->indices.push_back(0);
-	tMesh->indices.push_back(2);
 	tMesh->indices.push_back(3);
+	tMesh->indices.push_back(2);
 
 	tMesh->RecalculateNormals();
 	tMesh->CreateMesh();

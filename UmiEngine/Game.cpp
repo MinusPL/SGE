@@ -35,7 +35,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-	window = glfwCreateWindow(screen_width, screen_height, "SGE Engine v0.0.1", nullptr, nullptr);
+	window = glfwCreateWindow(screen_width, screen_height, "UMI Engine v0.0.1", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
 	ilutRenderer(ILUT_OPENGL);
 	glewExperimental = GL_TRUE;
@@ -43,15 +43,17 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 
 
 	glViewport(0, 0, screen_width, screen_height);
-	//glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_STENCIL_TEST);
 	glEnable(GL_TEXTURE_2D);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 
 	Input::GetInstance();
+	glfwGetCursorPos(window, &Input::mousePos.x, &Input::mousePos.y);
 	ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
 }
 
@@ -62,6 +64,7 @@ void Game::ProcessInput(GLfloat dt)
 	{
 		key.second = glfwGetKey(this->window, (int)key.first) == GLFW_PRESS ? true : false;
 	}
+	glfwGetCursorPos(window, &Input::mousePos.x, &Input::mousePos.y);
 }
 
 void Game::Exit()

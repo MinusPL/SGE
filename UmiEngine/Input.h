@@ -130,6 +130,13 @@ enum class Key {
 	KEY_MENU = 348
 };
 
+struct MousePosition
+{
+	double x;
+	double y;
+};
+
+
 class Input
 {
 	friend class Game;
@@ -139,9 +146,11 @@ public:
 	static bool GetKeyDown(Key key);
 	static bool GetKeyUp(Key key);
 	static bool GetKey(Key key);
+	static MousePosition GetMousePos();
 private:
 	static std::map<Key, bool> keyState;
 	static std::map<Key, bool> previousState;
 	static Input* instance;
+	static MousePosition mousePos;
 	Input();
 };
