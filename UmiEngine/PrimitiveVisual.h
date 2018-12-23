@@ -10,7 +10,7 @@
 class PrimitiveVisual : public GameObject
 {
 public:
-	Shader shader;
+	Shader* shader;
 	std::vector<Mesh*> meshes;
 	Material material;
 

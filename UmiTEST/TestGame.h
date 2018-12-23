@@ -2,7 +2,7 @@
 
 #include <Game.h>
 #include <gl/glew.h>
-
+#include <Skybox.h>
 
 class TestGame : public Game
 {
@@ -14,6 +14,9 @@ public:
 	virtual void Update(GLfloat dt) override;
 	virtual void Render() override;
 	virtual void MainLoop() override;
+
+	bool testCompare(glm::vec3 lhs, glm::vec3 rhs);
 private:
 	GLfloat color;
+	Skybox* sky;
 };

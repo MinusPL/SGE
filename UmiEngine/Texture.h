@@ -5,6 +5,7 @@
 #include <IL/ilu.h>
 #include <IL/ilut.h>
 #include <string>
+#include <vector>
 
 enum class TextureType
 {
@@ -30,6 +31,7 @@ public:
 	//void SetImageFormat(GLuint format);
 
 	void LoadFromFile(GLchar* filename);
+	void LoadCubemapFromFile(std::vector<GLchar*> filenames);
 
 private:
 	GLuint id;

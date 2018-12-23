@@ -2,6 +2,9 @@
 #include "ResourceManager.h"
 #include "Input.h"
 
+#include <cstdlib>
+#include <ctime>
+
 Game* Game::instance = nullptr;
 
 Game::Game()
@@ -19,6 +22,8 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 		throw "Multiple instances of game";
 	}
 	instance = this;
+
+	srand(time(NULL));
 	
 	if ((ilGetInteger(IL_VERSION_NUM) < IL_VERSION) ||
 		ilGetInteger(ILUT_VERSION_NUM) < ILUT_VERSION)
@@ -55,6 +60,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	Input::GetInstance();
 	glfwGetCursorPos(window, &Input::mousePos.x, &Input::mousePos.y);
 	ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
+	ResourceManager::LoadShader("skybox.vs", "skybox.fs", nullptr, "skybox");
 }
 
 void Game::ProcessInput(GLfloat dt)

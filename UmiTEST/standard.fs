@@ -97,7 +97,7 @@ void main()
 		result += CalcPointLight(pointLights[i], normal, viewDir);
 	}
 
-	color = vec4(result, 1);
+	color = vec4(result, texture(diffuseTex, uv).a);
 }
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){

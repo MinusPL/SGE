@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\Libs\glfw\include;..\UmiEngine;$(IncludePath)</IncludePath>
+    <IncludePath>..\Libs\boost;..\Libs\glfw\include;..\UmiEngine;$(IncludePath)</IncludePath>
     <LibraryPath>..\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -128,10 +128,12 @@ copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Grass.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="TestGame.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Grass.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Umi.cpp" />
     <ClCompile Include="TestGame.cpp" />

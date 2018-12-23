@@ -13,6 +13,7 @@ struct Material
 	glm::vec3 ambient;
 	glm::vec3 diffuse;
 	glm::vec3 specular;
+	float alfa = 1.0f;
 
 	float shiness = 32;
 

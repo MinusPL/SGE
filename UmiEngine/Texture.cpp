@@ -60,3 +60,30 @@ void Texture::LoadFromFile(GLchar* filename)
 	glBindTexture(GL_TEXTURE_2D, 0);
 	ilDeleteImages(1, &imageName);
 }
+
+void Texture::LoadCubemapFromFile(std::vector<GLchar*> filenames)
+{
+	if (filenames.size() != 6) throw "Not enough files for cubemap creation";
+	
+	glBindTexture(GL_TEXTURE_CUBE_MAP, this->id);
+
+	for (int i = 0; i < 6; i++)
+	{
+		ILuint imageName;
+		ilGenImages(1, &imageName);
+		ilBindImage(imageName);
+		ilLoadImage(filenames[i]);
+
+		ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
+		glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGBA, ilGetInteger(IL_IMAGE_WIDTH), ilGetInteger(IL_IMAGE_HEIGHT), 0, GL_RGBA, GL_UNSIGNED_BYTE, ilGetData());
+
+		ilDeleteImages(1, &imageName);
+
+	}
+
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+}

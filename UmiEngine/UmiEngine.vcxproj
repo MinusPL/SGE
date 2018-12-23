@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\Libs\glfw\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\Libs\boost;..\Libs\glfw\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\Libs\glfw\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,6 +138,7 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PrimitiveVisual.cpp" />
+    <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VisualObject.cpp" />
     <ClCompile Include="Mesh.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PrimitiveVisual.h" />
+    <ClInclude Include="Skybox.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VisualObject.h" />
     <ClInclude Include="Mesh.h" />

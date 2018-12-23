@@ -39,6 +39,8 @@ public:
 
 	std::map<std::string,Camera*> camera;
 	std::vector<GameObject*> objects;
+	std::vector<GameObject*> transparent_objs;
+	std::vector<GameObject*> opaque_objs;
 protected:
 	GLFWwindow* window;
 };

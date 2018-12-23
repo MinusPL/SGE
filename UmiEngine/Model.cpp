@@ -146,7 +146,7 @@ Mesh* Model::processMesh(aiMesh * mesh, const aiScene * scene)
 		material->Get(AI_MATKEY_COLOR_AMBIENT, ambColor);
 		material->Get(AI_MATKEY_COLOR_SPECULAR, specColor);
 		material->Get(AI_MATKEY_SHININESS, shininess);
-		mat->ambient = glm::vec3(ambColor.r, ambColor.g, ambColor.b);
+		//mat->ambient = glm::vec3(ambColor.r, ambColor.g, ambColor.b);
 		//mat->diffuse = glm::vec3(difColor.r, difColor.g, difColor.b);
 		mat->diffuse = glm::vec3(1.0f,1.0f,1.0f);
 
@@ -157,13 +157,15 @@ Mesh* Model::processMesh(aiMesh * mesh, const aiScene * scene)
 		{
 			aiString texString;
 			material->GetTexture(aiTextureType_DIFFUSE, 0, &texString);
-			std::string texture_path = this->directory + "/" + texString.C_Str();
-			ResourceManager::LoadTexture(texture_path.c_str(), texString.C_Str());
-			mat->diffuseTexture = &ResourceManager::GetTexture(texString.C_Str());
+			if (ResourceManager::GetTexture(texString.C_Str()) == nullptr)
+			{
+				std::string texture_path = this->directory + "/" + texString.C_Str();
+				ResourceManager::LoadTexture(texture_path.c_str(), texString.C_Str());
+			}
+			mat->diffuseTexture = ResourceManager::GetTexture(texString.C_Str());
 		}
 
 		materials.push_back(mat);
-		//materials.push_back(&Material::chrome);
 	}
 
 	model_mesh->RecalculateNormals();
