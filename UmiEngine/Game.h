@@ -10,11 +10,12 @@
 
 #include "Camera.h"
 #include "GameObject.h"
+#include "Skybox.h"
 
 class Game
 {
 public:
-	
+
 	static Game* instance;
 
 	Game();
@@ -27,9 +28,9 @@ public:
 
 	//Handle input
 	void ProcessInput(GLfloat dt);
-	
+
 	//Render
-	virtual void Render() = 0;
+	void Render();
 
 	//Main game loop
 	virtual void MainLoop() = 0;
@@ -37,10 +38,13 @@ public:
 	//Cleanup and exit code
 	void Exit();
 
-	std::map<std::string,Camera*> camera;
+	std::map<std::string, Camera*> camera;
 	std::vector<GameObject*> objects;
 	std::vector<GameObject*> transparent_objs;
 	std::vector<GameObject*> opaque_objs;
 protected:
 	GLFWwindow* window;
+	Skybox* sky;
+	unsigned int screenVAO, screenVBO;
+	unsigned int fbo, tbo, rbo;
 };

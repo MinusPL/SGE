@@ -5,7 +5,7 @@
 #include "Transform.h"
 #include <gl/glew.h>
 
-enum ShaderType {STANDARD, STANDARD_2D};
+enum ShaderType {STANDARD, STANDARD_ALPHA};
 
 class GameObject
 {

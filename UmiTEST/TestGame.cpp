@@ -114,57 +114,6 @@ void TestGame::Update(GLfloat dt)
 	}
 }
 
-//void TestGame::ProcessInput(GLfloat dt)
-//{
-//
-//	if (glfwGetKey(this->window, GLFW_KEY_F10) == GLFW_PRESS)
-//	{
-//		ILuint imagename;
-//		ilGenImages(1, &imagename);
-//		ilBindImage(imagename);
-//		ilutGLScreen();
-//		ilSaveImage("screen.png");
-//		ilDeleteImages(1, &imagename);
-//	}
-//
-//
-//}
-
-void TestGame::Render()
-{
-	glClearColor(0.14f, 0.2f, 0.3f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-
-	sky->Draw();
-
-	for (auto &object : opaque_objs)
-	{
-		object->Draw();
-	}
-
-	glDisable(GL_CULL_FACE);
-
-	glDepthMask(GL_FALSE);
-
-	std::map<float, GameObject*> sorted;
-	for (auto &object : transparent_objs)
-	{
-		float distance = glm::length(this->camera["main"]->transform.Position() - object->transform.Position());
-		sorted[distance] = object;
-	}
-
-	for (std::map<float, GameObject*>::reverse_iterator it = sorted.rbegin(); it != sorted.rend(); ++it)
-	{
-		it->second->Draw();
-	}
-
-	glDepthMask(GL_TRUE);
-
-	glEnable(GL_CULL_FACE);
-
-	glfwSwapBuffers(this->window);
-}
-
 void TestGame::MainLoop()
 {	
 	GLfloat deltaTime = 0.0f;

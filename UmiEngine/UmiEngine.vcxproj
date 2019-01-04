@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\Libs\boost;..\Libs\glfw\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\Libs\glfw\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\Libs\glfw\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

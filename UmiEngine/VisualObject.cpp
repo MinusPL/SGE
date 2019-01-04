@@ -35,6 +35,11 @@ VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : model(mo
 			this->shader = ResourceManager::GetShader("standard");
 			break;
 		}
+		case STANDARD_ALPHA:
+		{
+			this->shader = ResourceManager::GetShader("standard_alpha");
+			break;
+		}
 	}
 }
 
