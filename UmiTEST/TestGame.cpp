@@ -59,6 +59,21 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	
 	sky = new Skybox();
 	sky->texture = ResourceManager::GetTexture("skybox_ocean");
+
+	Plane* ground = new Plane();
+	ground->material = Material::white;
+	ground->material.specular = glm::vec3(0.0f, 0.0f, 0.0f);
+	ground->material.diffuseTexture = ResourceManager::GetTexture("grass_terrain");
+	ground->transform.Scale(100.0f, 1.0f, 100.0f);
+	for (auto &uv : ground->meshes[0]->uvs)
+	{
+		uv *= 50;
+	}
+	ground->meshes[0]->RecalculateNormals();
+	ground->meshes[0]->CreateMesh();
+	ground->receiveShadows = true;
+	objects.push_back(ground);
+	opaque_objs.push_back(ground);
 	
 	Player* tPlayer = new Player();
 	tPlayer->transform.Position(glm::vec3(10, 0, 0));
@@ -75,28 +90,14 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 
 	Cube* kostka = new Cube();
 	kostka->material = Material::white;
+	kostka->material.specular = glm::vec3(0.0f, 0.0f, 1.0f);
 	kostka->material.diffuseTexture = ResourceManager::GetTexture("umi");
 	kostka->material.specularTexture = ResourceManager::GetTexture("spec_umi");
 	kostka->material.normalMap = ResourceManager::GetTexture("normal_umi");
-	kostka->transform.Position(glm::vec3(3, 0, 5));
+	kostka->transform.Position(glm::vec3(3, 3, 5));
 	kostka->transform.Rotation(glm::vec3(0, 0, 0));
 	objects.push_back(kostka);
 	opaque_objs.push_back(kostka);
-
-
-	Plane* ground = new Plane();
-	ground->material = Material::white;
-	ground->material.diffuseTexture = ResourceManager::GetTexture("grass_terrain");
-	ground->transform.Scale(100.0f, 0.0f, 100.0f);
-	for (auto &uv : ground->meshes[0]->uvs)
-	{
-		uv *= 50;
-	}
-	ground->meshes[0]->RecalculateNormals();
-	ground->meshes[0]->CreateMesh();
-	ground->receiveShadows = false;
-	objects.push_back(ground);
-	opaque_objs.push_back(ground);
 
 
 	Grass* tGrass = nullptr;
@@ -110,12 +111,14 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	}
 
 	DirectionalLight* tLight = new DirectionalLight();
-	tLight->direction = glm::vec3(-2.0f, -4.0f, -1.0f);
-	tLight->diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
-	tLight->ambient = glm::vec3(0.5f,0.5f,0.5f);
+	tLight->direction = glm::vec3(-6.0f, -4.0f, 1.0f);
+	tLight->diffuse = glm::vec3(0.85f, 0.85f, 0.85f);
+	tLight->ambient = glm::vec3(0.7f,0.7f,0.7f);
 	tLight->specular = glm::vec3(1.0f, 1.0f, 1.0f);
 
 	LightManager::AddDirectionalLight(tLight);
+
+	
 }
 
 bool TestGame::testCompare(glm::vec3 lhs, glm::vec3 rhs)
@@ -146,6 +149,7 @@ void TestGame::MainLoop()
 		std::cout << "Delta Time: " << deltaTime << std::endl;
 
 		this->ProcessInput(deltaTime);
+		camera["main"]->LookAt(glm::vec3(0.0f, -40.0f, 0.0f));
 		this->Update(deltaTime);
 		this->Render();
 

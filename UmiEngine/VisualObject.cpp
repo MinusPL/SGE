@@ -27,7 +27,7 @@ void VisualObject::Draw()
 void VisualObject::DrawShadow()
 {
 	glm::mat4 model = transform.ApplyTransform();
-	this->shader->SetMatrix4("model", model);
+	ResourceManager::GetShader("shadow")->SetMatrix4("model", model);
 	this->model.DrawShadow();
 }
 

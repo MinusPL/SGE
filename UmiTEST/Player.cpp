@@ -4,7 +4,7 @@
 #include <Input.h>
 
 
-Player::Player() : VisualObject((GLchar*)"assets/models/kotori.fbx", STANDARD_SHADELESS)
+Player::Player() : VisualObject((GLchar*)"assets/models/kotori.fbx", STANDARD)
 {
 }
 

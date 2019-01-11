@@ -1,4 +1,6 @@
 #version 330 core
+layout (location = 0) out vec4 color;
+layout (location = 1) out vec4 BrightColor;
 
 struct Material {
 	vec3 ambient;
@@ -35,8 +37,6 @@ in vec4 lightSpacePos;
 in vec2 uv;
 in mat3 TBN;
 
-out vec4 color;
-
 uniform sampler2D shadowMap;
 uniform sampler2D diffuseTex;
 uniform sampler2D specularTex;
@@ -44,7 +44,7 @@ uniform sampler2D normalMap;
 
 uniform Material material;
 
-uniform bool reciveShadows;
+uniform bool receiveShadows;
 uniform bool hasDiffuseMap;
 uniform bool hasSpecularMap;
 uniform bool hasNormalMap;
@@ -97,7 +97,12 @@ void main()
 		result += CalcPointLight(pointLights[i], normal, viewDir);
 	}
 
-	color = vec4(result, texture(diffuseTex, uv).a);
+    float brightness = dot(result, vec3(0.2126, 0.7152, 0.0722));
+    if(brightness > 1.0)
+        BrightColor = vec4(result, 1.0);
+    else
+        BrightColor = vec4(0.0, 0.0, 0.0, 1.0);
+    color = vec4(result, 1.0);
 }
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){
@@ -131,8 +136,9 @@ vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){
 	float closestDepth = texture(shadowMap, projCoords.xy).r;
 	float currentDepth = projCoords.z;
 
-	float shadow = 0;
-	if(reciveShadows){
+	float shadow = 0.0;
+	if(receiveShadows)
+	{
 		float bias = max(0.03 * (1.0 - dot(normal, lightDir)), 0.003);  
 		vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
 		for(int x = -1; x <= 1; x++){

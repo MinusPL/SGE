@@ -34,4 +34,5 @@ Plane::~Plane()
 
 void Plane::Update(GLfloat dt)
 {
+	//this->transform.Rotation(this->transform.Rotation() + glm::vec3(1.0f, 0.0f, 0.0f));
 }

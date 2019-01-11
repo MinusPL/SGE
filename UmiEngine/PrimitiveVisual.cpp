@@ -61,8 +61,9 @@ void PrimitiveVisual::Draw()
 
 	this->shader->SetMatrix3("normalModel", normalModel);
 	LightManager::ApplyToShader(this->shader);
-	this->shader->SetMatrix3("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
+	this->shader->SetMatrix4("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
 	this->shader->SetInteger("receiveShadows", receiveShadows);
+	this->shader->SetInteger("shadowMap", 0);
 
 	this->shader->SetMatrix3("normalModel", normalModel);
 
@@ -82,7 +83,7 @@ void PrimitiveVisual::Draw()
 void PrimitiveVisual::DrawShadow()
 {
 	glm::mat4 model = transform.ApplyTransform();
-	this->shader->SetMatrix4("model", model);
+	ResourceManager::GetShader("shadow")->SetMatrix4("model", model);
 	for (auto &mesh : this->meshes)
 	{
 		mesh->Draw();

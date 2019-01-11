@@ -108,13 +108,64 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, this->SHADOW_WIDTH, this->SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+	float borderColor[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+	glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
 	glDrawBuffer(GL_NONE);
 	glReadBuffer(GL_NONE);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	//Create HDR FBO
+	glGenFramebuffers(1, &this->hdrFBO);
+	glBindFramebuffer(GL_FRAMEBUFFER, this->hdrFBO);
+	glGenTextures(2, this->colorBuffers);
+	for (unsigned int i = 0; i < 2; i++)
+	{
+		glBindTexture(GL_TEXTURE_2D, colorBuffers[i]);
+		glTexImage2D(
+			GL_TEXTURE_2D, 0, GL_RGB16F, this->screen_width, this->screen_height, 0, GL_RGB, GL_FLOAT, NULL
+		);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		// attach texture to framebuffer
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D, colorBuffers[i], 0);
+	}
+	unsigned int rboDepth;
+	glGenRenderbuffers(1, &rboDepth);
+	glBindRenderbuffer(GL_RENDERBUFFER, rboDepth);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, this->screen_width, this->screen_height);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, rboDepth);
+
+	unsigned int attachments[2] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1 };
+	glDrawBuffers(2, attachments);
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+		std::cout << "Framebuffer not complete!" << std::endl;
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	// ping-pong-framebuffer for blurring
+	glGenFramebuffers(2, this->pingpongFBO);
+	glGenTextures(2, this->pingpongColorbuffers);
+	for (unsigned int i = 0; i < 2; i++)
+	{
+		glBindFramebuffer(GL_FRAMEBUFFER, this->pingpongFBO[i]);
+		glBindTexture(GL_TEXTURE_2D, this->pingpongColorbuffers[i]);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, this->screen_width, this->screen_height, 0, GL_RGB, GL_FLOAT, NULL);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE); // we clamp to the edge as the blur filter would otherwise sample repeated texture values!
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, this->pingpongColorbuffers[i], 0);
+		// also check if framebuffers are complete (no need for depth buffer)
+		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+			std::cout << "Framebuffer not complete!" << std::endl;
+	}
+
+
 
 	Input::GetInstance();
 	glfwGetCursorPos(window, &Input::mousePos.x, &Input::mousePos.y);
@@ -124,6 +175,16 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadShader("skybox.vs", "skybox.fs", nullptr, "skybox");
 
 	ResourceManager::LoadShader("shadows.vs", "shadows.fs", nullptr, "shadow");
+
+	ResourceManager::LoadShader("blur.vs", "blur.fs", nullptr, "blur");
+	ResourceManager::LoadShader("bloom.vs", "bloom.fs", nullptr, "bloom");
+	ResourceManager::GetShader("blur")->Use();
+	ResourceManager::GetShader("blur")->SetInteger("image", 0);
+
+	ResourceManager::GetShader("bloom")->Use();
+	ResourceManager::GetShader("bloom")->SetInteger("scene", 0);
+	ResourceManager::GetShader("bloom")->SetInteger("bloomBlur", 1);
+
 
 	ResourceManager::LoadShader("post_process.vs", "post_process.fs", nullptr, "post_process");
 	ResourceManager::GetShader("post_process")->Use();
@@ -143,23 +204,23 @@ void Game::ProcessInput(GLfloat dt)
 void Game::Render()
 {
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	ResourceManager::GetShader("shadow")->Use();
 	ResourceManager::GetShader("shadow")->SetMatrix4("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
 	glViewport(0, 0, this->SHADOW_WIDTH, this->SHADOW_HEIGHT);
 	glBindFramebuffer(GL_FRAMEBUFFER, this->depthMapFBO);
 	glClear(GL_DEPTH_BUFFER_BIT);
-	
-	for (auto &object : opaque_objs)
+
+	for (auto &object : objects)
 	{
 		object->DrawShadow();
 	}
 	
-	
-	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
+	glBindFramebuffer(GL_FRAMEBUFFER, this->hdrFBO);
 	glViewport(0, 0, this->screen_width, this->screen_height);
 	
-	glClearColor(0.14f, 0.2f, 0.3f, 1.0f);
+	glClearColor(0.0f,0.0f,0.0f,1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	glActiveTexture(GL_TEXTURE0);
@@ -188,13 +249,45 @@ void Game::Render()
 
 	glEnable(GL_CULL_FACE);
 
+	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
+
+	//BLUR
+	bool horizontal = true, first_iteration = true;
+	unsigned int amount = 10;
+	ResourceManager::GetShader("blur")->Use();
+	for (unsigned int i = 0; i < amount; i++)
+	{
+		glBindFramebuffer(GL_FRAMEBUFFER, this->pingpongFBO[horizontal]);
+		ResourceManager::GetShader("blur")->SetInteger("horizontal", horizontal);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, first_iteration ? this->colorBuffers[1] : this->pingpongColorbuffers[!horizontal]);  // bind texture of other framebuffer (or scene if first iteration)
+		glBindVertexArray(this->screenVAO);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
+		horizontal = !horizontal;
+		if (first_iteration)
+			first_iteration = false;
+	}
+	//END_BLUR
+
+	//Finalize bloom
+	ResourceManager::GetShader("bloom")->Use();
+	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, this->colorBuffers[0]);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, this->pingpongColorbuffers[!horizontal]);
+	ResourceManager::GetShader("bloom")->SetInteger("bloom", true);
+	ResourceManager::GetShader("bloom")->SetFloat("exposure", 1.0f);
+	glBindVertexArray(this->screenVAO);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+
+
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	glDisable(GL_DEPTH_TEST);
-
-
 	ResourceManager::GetShader("post_process")->Use();
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindVertexArray(this->screenVAO);
