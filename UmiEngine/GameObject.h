@@ -5,7 +5,7 @@
 #include "Transform.h"
 #include <gl/glew.h>
 
-enum ShaderType {STANDARD, STANDARD_ALPHA};
+enum ShaderType {STANDARD, STANDARD_ALPHA, STANDARD_SHADELESS};
 
 class GameObject
 {
@@ -17,4 +17,5 @@ public:
 
 	virtual void Update(GLfloat dt) = 0;
 	virtual void Draw() = 0;
+	virtual void DrawShadow() = 0;
 };

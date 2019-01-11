@@ -72,6 +72,14 @@ void Model::Draw(Shader* shader)
 	}
 }
 
+void Model::DrawShadow()
+{
+	for (unsigned int i = 0; i < meshes.size(); i++)
+	{
+		meshes[i]->Draw();
+	}
+}
+
 void Model::loadModel(std::string path)
 {
 	Assimp::Importer import;

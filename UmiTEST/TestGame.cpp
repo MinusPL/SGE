@@ -9,6 +9,8 @@
 #include <Cube.h>
 #include <Plane.h>
 #include <ResourceManager.h>
+#include <DirectionalLight.h>
+#include <LightManager.h>
 
 #include <vector>
 #include <algorithm>
@@ -30,6 +32,7 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadTexture("assets/textures/umi.png", "umi");
 	ResourceManager::LoadTexture("assets/textures/spec_umi.png", "spec_umi");
 	ResourceManager::LoadTexture("assets/textures/normal_umi.png", "normal_umi");
+	ResourceManager::LoadTexture("assets/textures/grass/grass_terrain.jpg", "grass_terrain");
 
 	std::vector<GLchar*> filenames;
 	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
@@ -82,8 +85,16 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 
 
 	Plane* ground = new Plane();
-	ground->material = Material::chrome;
+	ground->material = Material::white;
+	ground->material.diffuseTexture = ResourceManager::GetTexture("grass_terrain");
 	ground->transform.Scale(100.0f, 0.0f, 100.0f);
+	for (auto &uv : ground->meshes[0]->uvs)
+	{
+		uv *= 50;
+	}
+	ground->meshes[0]->RecalculateNormals();
+	ground->meshes[0]->CreateMesh();
+	ground->receiveShadows = false;
 	objects.push_back(ground);
 	opaque_objs.push_back(ground);
 
@@ -98,6 +109,13 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 		transparent_objs.push_back(tGrass);
 	}
 
+	DirectionalLight* tLight = new DirectionalLight();
+	tLight->direction = glm::vec3(-2.0f, -4.0f, -1.0f);
+	tLight->diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
+	tLight->ambient = glm::vec3(0.5f,0.5f,0.5f);
+	tLight->specular = glm::vec3(1.0f, 1.0f, 1.0f);
+
+	LightManager::AddDirectionalLight(tLight);
 }
 
 bool TestGame::testCompare(glm::vec3 lhs, glm::vec3 rhs)

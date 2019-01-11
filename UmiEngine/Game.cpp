@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "ResourceManager.h"
+#include "LightManager.h"
 #include "Input.h"
 
 #include <cstdlib>
@@ -23,6 +24,9 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 		throw "Multiple instances of game";
 	}
 	instance = this;
+
+	this->screen_width = screen_width;
+	this->screen_height = screen_height;
 
 	srand(time(NULL));
 	
@@ -90,18 +94,36 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	// create a renderbuffer object for depth and stencil attachment (we won't be sampling these)
 	glGenRenderbuffers(1, &this->rbo);
 	glBindRenderbuffer(GL_RENDERBUFFER, this->rbo);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, screen_width, screen_height); // use a single renderbuffer object for both a depth AND stencil buffer.
-	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, this->rbo); // now actually attach it
-	// now that we actually created the framebuffer and added all attachments we want to check if it is actually complete now
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, screen_width, screen_height);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, this->rbo);
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 		std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	glGenFramebuffers(1, &this->depthMapFBO);
+
+	//Create shadowmap texture and bind it to depthMap FBO
+	glGenTextures(1, &this->depthMap);
+	glBindTexture(GL_TEXTURE_2D, this->depthMap);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, this->SHADOW_WIDTH, this->SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
+	glDrawBuffer(GL_NONE);
+	glReadBuffer(GL_NONE);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	Input::GetInstance();
 	glfwGetCursorPos(window, &Input::mousePos.x, &Input::mousePos.y);
 	ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
 	ResourceManager::LoadShader("standard.vs", "standard_alpha.fs", nullptr, "standard_alpha");
+	ResourceManager::LoadShader("standard.vs", "standard_shadeless.fs", nullptr, "standard_shadeless");
 	ResourceManager::LoadShader("skybox.vs", "skybox.fs", nullptr, "skybox");
+
+	ResourceManager::LoadShader("shadows.vs", "shadows.fs", nullptr, "shadow");
 
 	ResourceManager::LoadShader("post_process.vs", "post_process.fs", nullptr, "post_process");
 	ResourceManager::GetShader("post_process")->Use();
@@ -120,11 +142,28 @@ void Game::ProcessInput(GLfloat dt)
 
 void Game::Render()
 {
-	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
 	glEnable(GL_DEPTH_TEST);
+	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+	ResourceManager::GetShader("shadow")->Use();
+	ResourceManager::GetShader("shadow")->SetMatrix4("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
+	glViewport(0, 0, this->SHADOW_WIDTH, this->SHADOW_HEIGHT);
+	glBindFramebuffer(GL_FRAMEBUFFER, this->depthMapFBO);
+	glClear(GL_DEPTH_BUFFER_BIT);
+	
+	for (auto &object : opaque_objs)
+	{
+		object->DrawShadow();
+	}
+	
+	
+	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
+	glViewport(0, 0, this->screen_width, this->screen_height);
 	
 	glClearColor(0.14f, 0.2f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, depthMap);
 
 	sky->Draw();
 
@@ -152,10 +191,12 @@ void Game::Render()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	glDisable(GL_DEPTH_TEST);
 
+
+	ResourceManager::GetShader("post_process")->Use();
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	ResourceManager::GetShader("post_process")->Use();
+	glActiveTexture(GL_TEXTURE0);
 	glBindVertexArray(this->screenVAO);
 	glBindTexture(GL_TEXTURE_2D, this->tbo);	// use the color attachment texture as the texture of the quad plane
 	glDrawArrays(GL_TRIANGLES, 0, 6);

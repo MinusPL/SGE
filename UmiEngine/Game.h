@@ -47,4 +47,7 @@ protected:
 	Skybox* sky;
 	unsigned int screenVAO, screenVBO;
 	unsigned int fbo, tbo, rbo;
+	unsigned int depthMapFBO, depthMap;
+	const int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
+	int screen_width = 1280, screen_height = 720;
 };

@@ -15,6 +15,7 @@ class Model
 public:
 	Model(GLchar* filename);
 	void Draw(Shader* shader);
+	void DrawShadow();
 private:
 	std::vector<Mesh*> meshes;
 	std::vector<Material*> materials;

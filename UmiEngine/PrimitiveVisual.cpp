@@ -59,12 +59,10 @@ void PrimitiveVisual::Draw()
 	this->shader->SetVector3f("material.specular", this->material.specular);
 	this->shader->SetFloat("material.shiness", this->material.shiness);
 
-	this->shader->SetVector3f("dirLight.direction", 0.7f, -0.4f, 0.2f);
-
-	float ambientval = 0.7f;
-	this->shader->SetVector3f("dirLight.ambient", ambientval, ambientval, ambientval);
-	this->shader->SetVector3f("dirLight.diffuse", 0.5f, 0.5f, 0.5f);
-	this->shader->SetVector3f("dirLight.specular", 1.0f, 1.0f, 1.0f);
+	this->shader->SetMatrix3("normalModel", normalModel);
+	LightManager::ApplyToShader(this->shader);
+	this->shader->SetMatrix3("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
+	this->shader->SetInteger("receiveShadows", receiveShadows);
 
 	this->shader->SetMatrix3("normalModel", normalModel);
 
@@ -79,6 +77,16 @@ void PrimitiveVisual::Draw()
 	glBindTexture(GL_TEXTURE_2D, NULL);
 	glActiveTexture(GL_TEXTURE3);
 	glBindTexture(GL_TEXTURE_2D, NULL);
+}
+
+void PrimitiveVisual::DrawShadow()
+{
+	glm::mat4 model = transform.ApplyTransform();
+	this->shader->SetMatrix4("model", model);
+	for (auto &mesh : this->meshes)
+	{
+		mesh->Draw();
+	}
 }
 
 PrimitiveVisual::PrimitiveVisual(ShaderType shaderType)
@@ -96,3 +104,5 @@ PrimitiveVisual::PrimitiveVisual(ShaderType shaderType)
 PrimitiveVisual::~PrimitiveVisual()
 {
 }
+
+

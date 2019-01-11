@@ -2,6 +2,8 @@
 #include "ResourceManager.h"
 #include "Game.h"
 
+#include <glm\gtc\type_ptr.hpp>
+
 void VisualObject::Draw()
 {
 	this->shader->Use();
@@ -13,17 +15,20 @@ void VisualObject::Draw()
 	this->shader->SetMatrix4("MVP", MVP);
 	this->shader->SetMatrix4("model", model);
 	this->shader->SetVector3f("viewPos", Game::instance->camera["main"]->transform.Position());
-
-	this->shader->SetVector3f("dirLight.direction", 0.7f, -0.4f, 0.2f);
-	
-	float ambientval = 0.15f;
-	this->shader->SetVector3f("dirLight.ambient", ambientval, ambientval, ambientval);
-	this->shader->SetVector3f("dirLight.diffuse", 0.8f,0.8f,0.8f);
-	this->shader->SetVector3f("dirLight.specular", 1.0f,1.0f,1.0f);
-
 	this->shader->SetMatrix3("normalModel", normalModel);
+	LightManager::ApplyToShader(this->shader);
+	this->shader->SetMatrix3("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
+	this->shader->SetInteger("receiveShadows", receiveShadows);
+
 
 	this->model.Draw(this->shader);
+}
+
+void VisualObject::DrawShadow()
+{
+	glm::mat4 model = transform.ApplyTransform();
+	this->shader->SetMatrix4("model", model);
+	this->model.DrawShadow();
 }
 
 VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : model(model_file)
@@ -38,6 +43,11 @@ VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : model(mo
 		case STANDARD_ALPHA:
 		{
 			this->shader = ResourceManager::GetShader("standard_alpha");
+			break;
+		}
+		case STANDARD_SHADELESS:
+		{
+			this->shader = ResourceManager::GetShader("standard_shadeless");
 			break;
 		}
 	}
