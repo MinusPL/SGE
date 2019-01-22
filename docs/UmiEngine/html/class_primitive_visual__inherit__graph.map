@@ -1,0 +1,6 @@
+<map id="PrimitiveVisual" name="PrimitiveVisual">
+<area shape="rect" id="node1" title=" " alt="" coords="17,80,123,107"/>
+<area shape="rect" id="node3" href="$class_cube.html" title=" " alt="" coords="5,155,57,181"/>
+<area shape="rect" id="node4" href="$class_plane.html" title=" " alt="" coords="81,155,136,181"/>
+<area shape="rect" id="node2" href="$class_game_object.html" title=" " alt="" coords="23,5,117,32"/>
+</map>

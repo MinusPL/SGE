@@ -1,14 +1,15 @@
 #include "Texture.h"
+#include <iostream>
 
 Texture::Texture() :
-	width(0), height(0), internal_format(GL_RGBA), image_format(GL_RGBA), wrap_s(GL_REPEAT), wrap_t(GL_REPEAT), filter_min(GL_LINEAR), filter_max(GL_LINEAR)
+	width(0), height(0), internal_format(GL_RGBA), image_format(GL_RGBA), wrap_s(GL_REPEAT), wrap_t(GL_REPEAT), filter_min(GL_LINEAR), filter_max(GL_LINEAR), type(TextureType::STANDARD)
 {
 	glGenTextures(1, &this->id);
 }
 
 Texture::~Texture()
 {
-
+	glDeleteTextures(1, &this->id);
 }
 
 void Texture::BindTexture()
@@ -43,6 +44,10 @@ void Texture::LoadFromFile(GLchar* filename)
 	ilGenImages(1, &imageName);
 	ilBindImage(imageName);
 	ilLoadImage(filename);
+	if (ilGetError() == IL_COULD_NOT_OPEN_FILE)
+	{
+		std::cout << "ERROR::TEXTURE: Failed to read texture image file" << filename << std::endl;
+	}
 
 	this->width = ilGetInteger(IL_IMAGE_WIDTH);
 	this->height = ilGetInteger(IL_IMAGE_HEIGHT);
@@ -86,4 +91,6 @@ void Texture::LoadCubemapFromFile(std::vector<GLchar*> filenames)
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+	type = TextureType::CUBEMAP;
 }

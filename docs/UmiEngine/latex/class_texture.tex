@@ -1,0 +1,139 @@
+\hypertarget{class_texture}{}\section{Texture Class Reference}
+\label{class_texture}\index{Texture@{Texture}}
+
+
+\mbox{\hyperlink{class_texture}{Texture}} class.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a6c275e3f186675ff6ed73ccf970e552f}{Texture}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_texture}{Texture}} class without parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{$\sim$\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{class_texture}{Texture}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a23465d14b76deef9cf22c14a97040f52}{Bind\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Bind\+Texture method. \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{class_texture_af1186a3204c49bf2a8cd09550299b0c9}{Get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Get width of the texture. \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{class_texture_a9313d6712c3af10b467db3b7c3d5a230}{Get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Get height of the texture. \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{class_texture_a8a45061cc3ef1c5de2ac8a0977658de1}{Get\+Internal\+Format}} ()
+\begin{DoxyCompactList}\small\item\em G\+Luint \mbox{\hyperlink{class_texture_a8a45061cc3ef1c5de2ac8a0977658de1}{Get\+Internal\+Format()}} \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{class_texture_afac89e6e43962939aa13a289e2386fd9}{Get\+Image\+Format}} ()
+\begin{DoxyCompactList}\small\item\em G\+Luint \mbox{\hyperlink{class_texture_afac89e6e43962939aa13a289e2386fd9}{Get\+Image\+Format()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a26134f37b4a22ff895686533937ba218}{Load\+From\+File}} (G\+Lchar $\ast$filename)
+\begin{DoxyCompactList}\small\item\em void \mbox{\hyperlink{class_texture_a26134f37b4a22ff895686533937ba218}{Load\+From\+File(\+G\+Lchar$\ast$ filename)}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a056053b6bb3b6ed3bb44a624f0fb62c7}{Load\+Cubemap\+From\+File}} (std\+::vector$<$ G\+Lchar $\ast$ $>$ filenames)
+\begin{DoxyCompactList}\small\item\em void \mbox{\hyperlink{class_texture_a056053b6bb3b6ed3bb44a624f0fb62c7}{Load\+Cubemap\+From\+File(std\+::vector$<$\+G\+Lchar$\ast$$>$ filenames)}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_texture}{Texture}} class. 
+
+\mbox{\hyperlink{class_texture}{Texture}} class used internally within game engine. It has all required methods to load texture from file and get it\textquotesingle{}s properties. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_texture_a6c275e3f186675ff6ed73ccf970e552f}\label{class_texture_a6c275e3f186675ff6ed73ccf970e552f}} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{Texture()}{Texture()}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_texture}{Texture}} class without parameters. 
+
+Generates texture for use with methods void \mbox{\hyperlink{class_texture_a26134f37b4a22ff895686533937ba218}{Load\+From\+File(\+G\+Lchar$\ast$ filename)}} or void \mbox{\hyperlink{class_texture_a056053b6bb3b6ed3bb44a624f0fb62c7}{Load\+Cubemap\+From\+File(std\+::vector$<$\+G\+Lchar$\ast$$>$ filenames)}} As of current version of engine it is not possible to generate empty texture for eg. rendering to it. \mbox{\Hypertarget{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}\label{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}} 
+\index{Texture@{Texture}!````~Texture@{$\sim$Texture}}
+\index{````~Texture@{$\sim$Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{$\sim$Texture()}{~Texture()}}
+{\footnotesize\ttfamily Texture\+::$\sim$\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{class_texture}{Texture}} class. 
+
+Deletes generated texture and frees it\textquotesingle{}s memory. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_texture_a23465d14b76deef9cf22c14a97040f52}\label{class_texture_a23465d14b76deef9cf22c14a97040f52}} 
+\index{Texture@{Texture}!BindTexture@{BindTexture}}
+\index{BindTexture@{BindTexture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}}
+{\footnotesize\ttfamily void Texture\+::\+Bind\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Bind\+Texture method. 
+
+This method allows to bind created texture for use with Open\+GL renderer. \mbox{\Hypertarget{class_texture_a9313d6712c3af10b467db3b7c3d5a230}\label{class_texture_a9313d6712c3af10b467db3b7c3d5a230}} 
+\index{Texture@{Texture}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily G\+Luint Texture\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get height of the texture. 
+
+Returns actual height of the texture. \mbox{\Hypertarget{class_texture_afac89e6e43962939aa13a289e2386fd9}\label{class_texture_afac89e6e43962939aa13a289e2386fd9}} 
+\index{Texture@{Texture}!GetImageFormat@{GetImageFormat}}
+\index{GetImageFormat@{GetImageFormat}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{GetImageFormat()}{GetImageFormat()}}
+{\footnotesize\ttfamily G\+Luint Texture\+::\+Get\+Image\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+G\+Luint \mbox{\hyperlink{class_texture_afac89e6e43962939aa13a289e2386fd9}{Get\+Image\+Format()}} 
+
+Returns current format of the image used to create texture \mbox{\Hypertarget{class_texture_a8a45061cc3ef1c5de2ac8a0977658de1}\label{class_texture_a8a45061cc3ef1c5de2ac8a0977658de1}} 
+\index{Texture@{Texture}!GetInternalFormat@{GetInternalFormat}}
+\index{GetInternalFormat@{GetInternalFormat}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{GetInternalFormat()}{GetInternalFormat()}}
+{\footnotesize\ttfamily G\+Luint Texture\+::\+Get\+Internal\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+G\+Luint \mbox{\hyperlink{class_texture_a8a45061cc3ef1c5de2ac8a0977658de1}{Get\+Internal\+Format()}} 
+
+Returns current format of the texture used internally within game engine. Default format is G\+L\+\_\+\+R\+G\+BA \mbox{\Hypertarget{class_texture_af1186a3204c49bf2a8cd09550299b0c9}\label{class_texture_af1186a3204c49bf2a8cd09550299b0c9}} 
+\index{Texture@{Texture}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily G\+Luint Texture\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get width of the texture. 
+
+Returns actual width of the texture. \mbox{\Hypertarget{class_texture_a056053b6bb3b6ed3bb44a624f0fb62c7}\label{class_texture_a056053b6bb3b6ed3bb44a624f0fb62c7}} 
+\index{Texture@{Texture}!LoadCubemapFromFile@{LoadCubemapFromFile}}
+\index{LoadCubemapFromFile@{LoadCubemapFromFile}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{LoadCubemapFromFile()}{LoadCubemapFromFile()}}
+{\footnotesize\ttfamily void Texture\+::\+Load\+Cubemap\+From\+File (\begin{DoxyParamCaption}\item[{std\+::vector$<$ G\+Lchar $\ast$ $>$}]{filenames }\end{DoxyParamCaption})}
+
+
+
+void \mbox{\hyperlink{class_texture_a056053b6bb3b6ed3bb44a624f0fb62c7}{Load\+Cubemap\+From\+File(std\+::vector$<$\+G\+Lchar$\ast$$>$ filenames)}} 
+
+Loads cubemap from files specified in std\+::vector. Opens all files from paths specified by filenames and converts them to proper internal format. After loading image it creates Open\+GL texture and binds it with this object. Returned texture is built from 6 different textures to create cubemap. \mbox{\Hypertarget{class_texture_a26134f37b4a22ff895686533937ba218}\label{class_texture_a26134f37b4a22ff895686533937ba218}} 
+\index{Texture@{Texture}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily void Texture\+::\+Load\+From\+File (\begin{DoxyParamCaption}\item[{G\+Lchar $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+void \mbox{\hyperlink{class_texture_a26134f37b4a22ff895686533937ba218}{Load\+From\+File(\+G\+Lchar$\ast$ filename)}} 
+
+Loads texture from file. Opens file from path specified by filename and converts it to proper internal format. After loading image it creates Open\+GL texture and binds it with this object. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+Engine/\mbox{\hyperlink{_texture_8h}{Texture.\+h}}\item 
+Umi\+Engine/\mbox{\hyperlink{_texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

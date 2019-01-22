@@ -1,0 +1,311 @@
+\hypertarget{struct_material}{}\section{Material Struct Reference}
+\label{struct_material}\index{Material@{Material}}
+
+
+{\ttfamily \#include $<$Material.\+h$>$}
+
+
+
+Collaboration diagram for Material\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_material_a0be7dba7f259e659502c4b543cdd7d8c}{Material}} (glm\+::vec3 \mbox{\hyperlink{struct_material_af99c823542e497c98a35d1aac5fc9012}{ambient}}, glm\+::vec3 \mbox{\hyperlink{struct_material_a099904e2f5a7bbec3cba6bf8ec546b11}{diffuse}}, glm\+::vec3 \mbox{\hyperlink{struct_material_aac1c499923ff99564cdd97a4b5e504a9}{specular}}, float \mbox{\hyperlink{struct_material_ac40b4d892e9bff09f793d86ca1f3257e}{shiness}})
+\item 
+\mbox{\hyperlink{struct_material_a137e987401b63eb7c6c27c3e38bc74b5}{Material}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{struct_material_a187af0c557b8521fa0a88507ae618c42}{diffuse\+Texture}} = nullptr
+\item 
+\mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{struct_material_a1ca33d2644100f269b8289ddd08dd6e4}{specular\+Texture}} = nullptr
+\item 
+\mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{struct_material_a915ba1f28243cdd67be5ccc70d4073d8}{normal\+Map}} = nullptr
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_material_af99c823542e497c98a35d1aac5fc9012}{ambient}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_material_a099904e2f5a7bbec3cba6bf8ec546b11}{diffuse}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_material_aac1c499923ff99564cdd97a4b5e504a9}{specular}}
+\item 
+float \mbox{\hyperlink{struct_material_ab331a289b85cc07810ded7f4ebb66175}{alfa}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{struct_material_ac40b4d892e9bff09f793d86ca1f3257e}{shiness}} = 32
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_ad6a424d01ca060a25ce520c4dc5b00c2}{emerald}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0215f, 0.\+1745f, 0.\+0215f), glm\+::vec3(0.\+07568f, 0.\+61424f, 0.\+07568f), glm\+::vec3(0.\+633f, 0.\+727811f, 0.\+633f), 0.\+6f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_ab321b1fd760849c28860768bc08c3719}{jade}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+135f, 0.\+2225f, 0.\+1575f), glm\+::vec3(0.\+54f, 0.\+89f, 0.\+63f), glm\+::vec3(0.\+316228f, 0.\+316228f, 0.\+316228f), 0.\+1f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_aa189bbbd916aaf6a451296e2ffc6a47c}{obsidian}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05375f, 0.\+05f, 0.\+06625f), glm\+::vec3(0.\+18275f, 0.\+17f, 0.\+22525f), glm\+::vec3(0.\+332741f, 0.\+328634f, 0.\+346435f), 0.\+3f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_af1eb6afe67d69a7992ac7bfd31c76173}{pearl}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+25f, 0.\+20725f, 0.\+20725f), glm\+::vec3(1.\+0f, 0.\+829f, 0.\+829f), glm\+::vec3(0.\+296648f, 0.\+296648f, 0.\+296648f), 0.\+088f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_ae269e4b2375a840f121a2560a9d2b05b}{ruby}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+1745f, 0.\+01175f, 0.\+01175f), glm\+::vec3(0.\+61424f, 0.\+04136f, 0.\+04136f), glm\+::vec3(0.\+727811f, 0.\+626959f, 0.\+626959f), 0.\+6f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_aa0d30b652e32ae61aa50cedf8ed38656}{turquoise}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+1f, 0.\+18725f, 0.\+1745f), glm\+::vec3(0.\+396f, 0.\+74151f, 0.\+69102f), glm\+::vec3(0.\+297254f, 0.\+30829f, 0.\+306678f), 0.\+1f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a9db90c13365c8487d52c24bb2ab1882b}{brass}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+329412f, 0.\+223529f, 0.\+027451f), glm\+::vec3(0.\+780392f, 0.\+568627f, 0.\+113725f), glm\+::vec3(0.\+992157f, 0.\+941176f, 0.\+807843f), 0.\+21794872f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_ac43b7a8224541fce0de9de18ff4add8c}{bronze}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+2125f, 0.\+1275f, 0.\+054f), glm\+::vec3(0.\+714f, 0.\+4284f, 0.\+18144f), glm\+::vec3(0.\+393548f, 0.\+271906f, 0.\+166721f), 0.\+2f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a49a439730bf4934813e885d6458e496d}{chrome}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+25f, 0.\+25f, 0.\+25f), glm\+::vec3(0.\+6f, 0.\+6f, 0.\+6f), glm\+::vec3(0.\+774597f, 0.\+774597f, 0.\+774597f), 0.\+8f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_aad09f525699803a4ed3e7cd6afd3f8a5}{copper}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+19125f, 0.\+0735f, 0.\+0225f), glm\+::vec3(0.\+7038f, 0.\+27048f, 0.\+0828f), glm\+::vec3(0.\+256777f, 0.\+137622f, 0.\+086014f), 0.\+1f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_ae23eaaf9a27a2b9d9a218d1ea3f803e0}{gold}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+24725f, 0.\+1995f, 0.\+0745f), glm\+::vec3(0.\+75164f, 0.\+60648f, 0.\+22648f), glm\+::vec3(0.\+628281f, 0.\+555802f, 0.\+366065f), 0.\+4f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_aef9dfcd5c4f7aaa53ee68831a19f68ca}{silver}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+19225f, 0.\+19225f, 0.\+19225f), glm\+::vec3(0.\+50754f, 0.\+50754f, 0.\+50754f), glm\+::vec3(0.\+508273f, 0.\+508273f, 0.\+508273f), 0.\+4f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a7d31f06894812f15ccca287f46703b99}{black\+Plastic}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+01f, 0.\+01f, 0.\+01f), glm\+::vec3(0.\+50f, 0.\+50f, 0.\+50f), 0.\+25f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a24c31c15d55457a83429418bb8745e03}{cyan\+Plastic}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+1f, 0.\+06f), glm\+::vec3(0.\+0f, 0.\+50980392f, 0.\+50980392f), glm\+::vec3(0.\+50196078f, 0.\+50196078f, 0.\+50196078f), 0.\+25f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_abaddc1454d8d34f501be471246853856}{green\+Plastic}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+1f, 0.\+35f, 0.\+1f), glm\+::vec3(0.\+45f, 0.\+55f, 0.\+45f), 0.\+25f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a343f9c5d998f1db5ba50ef40376b09fe}{red\+Plastic}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+7f, 0.\+6f, 0.\+6f), 0.\+25f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_ac7c32558480485c95f64558f7732f325}{white\+Plastic}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+55f, 0.\+55f, 0.\+55f), glm\+::vec3(0.\+70f, 0.\+70f, 0.\+70f), 0.\+25f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a9312d192d0bee2cbcf1e2d1d6f2d9a9e}{yellow\+Plastic}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+5f, 0.\+0f), glm\+::vec3(0.\+60f, 0.\+60f, 0.\+50f), 0.\+25f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a0772c33ab6f82b876232153661a64c76}{black\+Rubber}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+02f, 0.\+02f, 0.\+02f), glm\+::vec3(0.\+01f, 0.\+01f, 0.\+01f), glm\+::vec3(0.\+4f, 0.\+4f, 0.\+4f), 0.\+078125f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a75c93c67433d5aafd1ed76aef97950a2}{cyan\+Rubber}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+05f, 0.\+05f), glm\+::vec3(0.\+4f, 0.\+5f, 0.\+5f), glm\+::vec3(0.\+04f, 0.\+7f, 0.\+7f), 0.\+078125f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_aab6e7659ecff08471027e084046cafe4}{green\+Rubber}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+05f, 0.\+0f), glm\+::vec3(0.\+4f, 0.\+5f, 0.\+4f), glm\+::vec3(0.\+04f, 0.\+7f, 0.\+04f), 0.\+078125f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a5e1b659445c024a24237731f7d35aa52}{red\+Rubber}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+4f, 0.\+4f), glm\+::vec3(0.\+7f, 0.\+04f, 0.\+04f), 0.\+078125f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_ab84b745e205896377d3f1fc0e3d1246f}{white\+Rubber}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05f, 0.\+05f, 0.\+05f), glm\+::vec3(0.\+5f, 0.\+5f, 0.\+5f), glm\+::vec3(0.\+7f, 0.\+7f, 0.\+7f), 0.\+078125f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_acc88ba21b8ed41d61c93d7128b7476fc}{yellow\+Rubber}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05f, 0.\+05f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+5f, 0.\+4f), glm\+::vec3(0.\+7f, 0.\+7f, 0.\+04f), 0.\+078125f $\ast$ 256.\+0f)
+\item 
+static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_material_a0bce3d9c7e1e38fbf55e85a0104c2564}{white}} = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f), glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f), glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f), 1.\+0f $\ast$ 256.\+0f)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_material_a0be7dba7f259e659502c4b543cdd7d8c}\label{struct_material_a0be7dba7f259e659502c4b543cdd7d8c}} 
+\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Material\+::\+Material (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{ambient,  }\item[{glm\+::vec3}]{diffuse,  }\item[{glm\+::vec3}]{specular,  }\item[{float}]{shiness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_material_a137e987401b63eb7c6c27c3e38bc74b5}\label{struct_material_a137e987401b63eb7c6c27c3e38bc74b5}} 
+\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Material\+::\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_material_ab331a289b85cc07810ded7f4ebb66175}\label{struct_material_ab331a289b85cc07810ded7f4ebb66175}} 
+\index{Material@{Material}!alfa@{alfa}}
+\index{alfa@{alfa}!Material@{Material}}
+\subsubsection{\texorpdfstring{alfa}{alfa}}
+{\footnotesize\ttfamily float Material\+::alfa = 1.\+0f}
+
+\mbox{\Hypertarget{struct_material_af99c823542e497c98a35d1aac5fc9012}\label{struct_material_af99c823542e497c98a35d1aac5fc9012}} 
+\index{Material@{Material}!ambient@{ambient}}
+\index{ambient@{ambient}!Material@{Material}}
+\subsubsection{\texorpdfstring{ambient}{ambient}}
+{\footnotesize\ttfamily glm\+::vec3 Material\+::ambient}
+
+\mbox{\Hypertarget{struct_material_a7d31f06894812f15ccca287f46703b99}\label{struct_material_a7d31f06894812f15ccca287f46703b99}} 
+\index{Material@{Material}!blackPlastic@{blackPlastic}}
+\index{blackPlastic@{blackPlastic}!Material@{Material}}
+\subsubsection{\texorpdfstring{blackPlastic}{blackPlastic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::black\+Plastic = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+01f, 0.\+01f, 0.\+01f), glm\+::vec3(0.\+50f, 0.\+50f, 0.\+50f), 0.\+25f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a0772c33ab6f82b876232153661a64c76}\label{struct_material_a0772c33ab6f82b876232153661a64c76}} 
+\index{Material@{Material}!blackRubber@{blackRubber}}
+\index{blackRubber@{blackRubber}!Material@{Material}}
+\subsubsection{\texorpdfstring{blackRubber}{blackRubber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::black\+Rubber = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+02f, 0.\+02f, 0.\+02f), glm\+::vec3(0.\+01f, 0.\+01f, 0.\+01f), glm\+::vec3(0.\+4f, 0.\+4f, 0.\+4f), 0.\+078125f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a9db90c13365c8487d52c24bb2ab1882b}\label{struct_material_a9db90c13365c8487d52c24bb2ab1882b}} 
+\index{Material@{Material}!brass@{brass}}
+\index{brass@{brass}!Material@{Material}}
+\subsubsection{\texorpdfstring{brass}{brass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::brass = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+329412f, 0.\+223529f, 0.\+027451f), glm\+::vec3(0.\+780392f, 0.\+568627f, 0.\+113725f), glm\+::vec3(0.\+992157f, 0.\+941176f, 0.\+807843f), 0.\+21794872f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_ac43b7a8224541fce0de9de18ff4add8c}\label{struct_material_ac43b7a8224541fce0de9de18ff4add8c}} 
+\index{Material@{Material}!bronze@{bronze}}
+\index{bronze@{bronze}!Material@{Material}}
+\subsubsection{\texorpdfstring{bronze}{bronze}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::bronze = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+2125f, 0.\+1275f, 0.\+054f), glm\+::vec3(0.\+714f, 0.\+4284f, 0.\+18144f), glm\+::vec3(0.\+393548f, 0.\+271906f, 0.\+166721f), 0.\+2f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a49a439730bf4934813e885d6458e496d}\label{struct_material_a49a439730bf4934813e885d6458e496d}} 
+\index{Material@{Material}!chrome@{chrome}}
+\index{chrome@{chrome}!Material@{Material}}
+\subsubsection{\texorpdfstring{chrome}{chrome}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::chrome = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+25f, 0.\+25f, 0.\+25f), glm\+::vec3(0.\+6f, 0.\+6f, 0.\+6f), glm\+::vec3(0.\+774597f, 0.\+774597f, 0.\+774597f), 0.\+8f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_aad09f525699803a4ed3e7cd6afd3f8a5}\label{struct_material_aad09f525699803a4ed3e7cd6afd3f8a5}} 
+\index{Material@{Material}!copper@{copper}}
+\index{copper@{copper}!Material@{Material}}
+\subsubsection{\texorpdfstring{copper}{copper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::copper = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+19125f, 0.\+0735f, 0.\+0225f), glm\+::vec3(0.\+7038f, 0.\+27048f, 0.\+0828f), glm\+::vec3(0.\+256777f, 0.\+137622f, 0.\+086014f), 0.\+1f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a24c31c15d55457a83429418bb8745e03}\label{struct_material_a24c31c15d55457a83429418bb8745e03}} 
+\index{Material@{Material}!cyanPlastic@{cyanPlastic}}
+\index{cyanPlastic@{cyanPlastic}!Material@{Material}}
+\subsubsection{\texorpdfstring{cyanPlastic}{cyanPlastic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::cyan\+Plastic = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+1f, 0.\+06f), glm\+::vec3(0.\+0f, 0.\+50980392f, 0.\+50980392f), glm\+::vec3(0.\+50196078f, 0.\+50196078f, 0.\+50196078f), 0.\+25f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a75c93c67433d5aafd1ed76aef97950a2}\label{struct_material_a75c93c67433d5aafd1ed76aef97950a2}} 
+\index{Material@{Material}!cyanRubber@{cyanRubber}}
+\index{cyanRubber@{cyanRubber}!Material@{Material}}
+\subsubsection{\texorpdfstring{cyanRubber}{cyanRubber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::cyan\+Rubber = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+05f, 0.\+05f), glm\+::vec3(0.\+4f, 0.\+5f, 0.\+5f), glm\+::vec3(0.\+04f, 0.\+7f, 0.\+7f), 0.\+078125f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a099904e2f5a7bbec3cba6bf8ec546b11}\label{struct_material_a099904e2f5a7bbec3cba6bf8ec546b11}} 
+\index{Material@{Material}!diffuse@{diffuse}}
+\index{diffuse@{diffuse}!Material@{Material}}
+\subsubsection{\texorpdfstring{diffuse}{diffuse}}
+{\footnotesize\ttfamily glm\+::vec3 Material\+::diffuse}
+
+\mbox{\Hypertarget{struct_material_a187af0c557b8521fa0a88507ae618c42}\label{struct_material_a187af0c557b8521fa0a88507ae618c42}} 
+\index{Material@{Material}!diffuseTexture@{diffuseTexture}}
+\index{diffuseTexture@{diffuseTexture}!Material@{Material}}
+\subsubsection{\texorpdfstring{diffuseTexture}{diffuseTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}}$\ast$ Material\+::diffuse\+Texture = nullptr}
+
+\mbox{\Hypertarget{struct_material_ad6a424d01ca060a25ce520c4dc5b00c2}\label{struct_material_ad6a424d01ca060a25ce520c4dc5b00c2}} 
+\index{Material@{Material}!emerald@{emerald}}
+\index{emerald@{emerald}!Material@{Material}}
+\subsubsection{\texorpdfstring{emerald}{emerald}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::emerald = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0215f, 0.\+1745f, 0.\+0215f), glm\+::vec3(0.\+07568f, 0.\+61424f, 0.\+07568f), glm\+::vec3(0.\+633f, 0.\+727811f, 0.\+633f), 0.\+6f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_ae23eaaf9a27a2b9d9a218d1ea3f803e0}\label{struct_material_ae23eaaf9a27a2b9d9a218d1ea3f803e0}} 
+\index{Material@{Material}!gold@{gold}}
+\index{gold@{gold}!Material@{Material}}
+\subsubsection{\texorpdfstring{gold}{gold}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::gold = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+24725f, 0.\+1995f, 0.\+0745f), glm\+::vec3(0.\+75164f, 0.\+60648f, 0.\+22648f), glm\+::vec3(0.\+628281f, 0.\+555802f, 0.\+366065f), 0.\+4f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_abaddc1454d8d34f501be471246853856}\label{struct_material_abaddc1454d8d34f501be471246853856}} 
+\index{Material@{Material}!greenPlastic@{greenPlastic}}
+\index{greenPlastic@{greenPlastic}!Material@{Material}}
+\subsubsection{\texorpdfstring{greenPlastic}{greenPlastic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::green\+Plastic = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+1f, 0.\+35f, 0.\+1f), glm\+::vec3(0.\+45f, 0.\+55f, 0.\+45f), 0.\+25f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_aab6e7659ecff08471027e084046cafe4}\label{struct_material_aab6e7659ecff08471027e084046cafe4}} 
+\index{Material@{Material}!greenRubber@{greenRubber}}
+\index{greenRubber@{greenRubber}!Material@{Material}}
+\subsubsection{\texorpdfstring{greenRubber}{greenRubber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::green\+Rubber = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+05f, 0.\+0f), glm\+::vec3(0.\+4f, 0.\+5f, 0.\+4f), glm\+::vec3(0.\+04f, 0.\+7f, 0.\+04f), 0.\+078125f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_ab321b1fd760849c28860768bc08c3719}\label{struct_material_ab321b1fd760849c28860768bc08c3719}} 
+\index{Material@{Material}!jade@{jade}}
+\index{jade@{jade}!Material@{Material}}
+\subsubsection{\texorpdfstring{jade}{jade}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::jade = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+135f, 0.\+2225f, 0.\+1575f), glm\+::vec3(0.\+54f, 0.\+89f, 0.\+63f), glm\+::vec3(0.\+316228f, 0.\+316228f, 0.\+316228f), 0.\+1f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a915ba1f28243cdd67be5ccc70d4073d8}\label{struct_material_a915ba1f28243cdd67be5ccc70d4073d8}} 
+\index{Material@{Material}!normalMap@{normalMap}}
+\index{normalMap@{normalMap}!Material@{Material}}
+\subsubsection{\texorpdfstring{normalMap}{normalMap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}}$\ast$ Material\+::normal\+Map = nullptr}
+
+\mbox{\Hypertarget{struct_material_aa189bbbd916aaf6a451296e2ffc6a47c}\label{struct_material_aa189bbbd916aaf6a451296e2ffc6a47c}} 
+\index{Material@{Material}!obsidian@{obsidian}}
+\index{obsidian@{obsidian}!Material@{Material}}
+\subsubsection{\texorpdfstring{obsidian}{obsidian}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::obsidian = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05375f, 0.\+05f, 0.\+06625f), glm\+::vec3(0.\+18275f, 0.\+17f, 0.\+22525f), glm\+::vec3(0.\+332741f, 0.\+328634f, 0.\+346435f), 0.\+3f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_af1eb6afe67d69a7992ac7bfd31c76173}\label{struct_material_af1eb6afe67d69a7992ac7bfd31c76173}} 
+\index{Material@{Material}!pearl@{pearl}}
+\index{pearl@{pearl}!Material@{Material}}
+\subsubsection{\texorpdfstring{pearl}{pearl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::pearl = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+25f, 0.\+20725f, 0.\+20725f), glm\+::vec3(1.\+0f, 0.\+829f, 0.\+829f), glm\+::vec3(0.\+296648f, 0.\+296648f, 0.\+296648f), 0.\+088f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a343f9c5d998f1db5ba50ef40376b09fe}\label{struct_material_a343f9c5d998f1db5ba50ef40376b09fe}} 
+\index{Material@{Material}!redPlastic@{redPlastic}}
+\index{redPlastic@{redPlastic}!Material@{Material}}
+\subsubsection{\texorpdfstring{redPlastic}{redPlastic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::red\+Plastic = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+7f, 0.\+6f, 0.\+6f), 0.\+25f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a5e1b659445c024a24237731f7d35aa52}\label{struct_material_a5e1b659445c024a24237731f7d35aa52}} 
+\index{Material@{Material}!redRubber@{redRubber}}
+\index{redRubber@{redRubber}!Material@{Material}}
+\subsubsection{\texorpdfstring{redRubber}{redRubber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::red\+Rubber = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+4f, 0.\+4f), glm\+::vec3(0.\+7f, 0.\+04f, 0.\+04f), 0.\+078125f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_ae269e4b2375a840f121a2560a9d2b05b}\label{struct_material_ae269e4b2375a840f121a2560a9d2b05b}} 
+\index{Material@{Material}!ruby@{ruby}}
+\index{ruby@{ruby}!Material@{Material}}
+\subsubsection{\texorpdfstring{ruby}{ruby}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::ruby = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+1745f, 0.\+01175f, 0.\+01175f), glm\+::vec3(0.\+61424f, 0.\+04136f, 0.\+04136f), glm\+::vec3(0.\+727811f, 0.\+626959f, 0.\+626959f), 0.\+6f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_ac40b4d892e9bff09f793d86ca1f3257e}\label{struct_material_ac40b4d892e9bff09f793d86ca1f3257e}} 
+\index{Material@{Material}!shiness@{shiness}}
+\index{shiness@{shiness}!Material@{Material}}
+\subsubsection{\texorpdfstring{shiness}{shiness}}
+{\footnotesize\ttfamily float Material\+::shiness = 32}
+
+\mbox{\Hypertarget{struct_material_aef9dfcd5c4f7aaa53ee68831a19f68ca}\label{struct_material_aef9dfcd5c4f7aaa53ee68831a19f68ca}} 
+\index{Material@{Material}!silver@{silver}}
+\index{silver@{silver}!Material@{Material}}
+\subsubsection{\texorpdfstring{silver}{silver}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::silver = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+19225f, 0.\+19225f, 0.\+19225f), glm\+::vec3(0.\+50754f, 0.\+50754f, 0.\+50754f), glm\+::vec3(0.\+508273f, 0.\+508273f, 0.\+508273f), 0.\+4f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_aac1c499923ff99564cdd97a4b5e504a9}\label{struct_material_aac1c499923ff99564cdd97a4b5e504a9}} 
+\index{Material@{Material}!specular@{specular}}
+\index{specular@{specular}!Material@{Material}}
+\subsubsection{\texorpdfstring{specular}{specular}}
+{\footnotesize\ttfamily glm\+::vec3 Material\+::specular}
+
+\mbox{\Hypertarget{struct_material_a1ca33d2644100f269b8289ddd08dd6e4}\label{struct_material_a1ca33d2644100f269b8289ddd08dd6e4}} 
+\index{Material@{Material}!specularTexture@{specularTexture}}
+\index{specularTexture@{specularTexture}!Material@{Material}}
+\subsubsection{\texorpdfstring{specularTexture}{specularTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}}$\ast$ Material\+::specular\+Texture = nullptr}
+
+\mbox{\Hypertarget{struct_material_aa0d30b652e32ae61aa50cedf8ed38656}\label{struct_material_aa0d30b652e32ae61aa50cedf8ed38656}} 
+\index{Material@{Material}!turquoise@{turquoise}}
+\index{turquoise@{turquoise}!Material@{Material}}
+\subsubsection{\texorpdfstring{turquoise}{turquoise}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::turquoise = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+1f, 0.\+18725f, 0.\+1745f), glm\+::vec3(0.\+396f, 0.\+74151f, 0.\+69102f), glm\+::vec3(0.\+297254f, 0.\+30829f, 0.\+306678f), 0.\+1f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a0bce3d9c7e1e38fbf55e85a0104c2564}\label{struct_material_a0bce3d9c7e1e38fbf55e85a0104c2564}} 
+\index{Material@{Material}!white@{white}}
+\index{white@{white}!Material@{Material}}
+\subsubsection{\texorpdfstring{white}{white}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::white = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f), glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f), glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f), 1.\+0f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_ac7c32558480485c95f64558f7732f325}\label{struct_material_ac7c32558480485c95f64558f7732f325}} 
+\index{Material@{Material}!whitePlastic@{whitePlastic}}
+\index{whitePlastic@{whitePlastic}!Material@{Material}}
+\subsubsection{\texorpdfstring{whitePlastic}{whitePlastic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::white\+Plastic = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+55f, 0.\+55f, 0.\+55f), glm\+::vec3(0.\+70f, 0.\+70f, 0.\+70f), 0.\+25f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_ab84b745e205896377d3f1fc0e3d1246f}\label{struct_material_ab84b745e205896377d3f1fc0e3d1246f}} 
+\index{Material@{Material}!whiteRubber@{whiteRubber}}
+\index{whiteRubber@{whiteRubber}!Material@{Material}}
+\subsubsection{\texorpdfstring{whiteRubber}{whiteRubber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::white\+Rubber = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05f, 0.\+05f, 0.\+05f), glm\+::vec3(0.\+5f, 0.\+5f, 0.\+5f), glm\+::vec3(0.\+7f, 0.\+7f, 0.\+7f), 0.\+078125f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_a9312d192d0bee2cbcf1e2d1d6f2d9a9e}\label{struct_material_a9312d192d0bee2cbcf1e2d1d6f2d9a9e}} 
+\index{Material@{Material}!yellowPlastic@{yellowPlastic}}
+\index{yellowPlastic@{yellowPlastic}!Material@{Material}}
+\subsubsection{\texorpdfstring{yellowPlastic}{yellowPlastic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::yellow\+Plastic = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+5f, 0.\+0f), glm\+::vec3(0.\+60f, 0.\+60f, 0.\+50f), 0.\+25f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_material_acc88ba21b8ed41d61c93d7128b7476fc}\label{struct_material_acc88ba21b8ed41d61c93d7128b7476fc}} 
+\index{Material@{Material}!yellowRubber@{yellowRubber}}
+\index{yellowRubber@{yellowRubber}!Material@{Material}}
+\subsubsection{\texorpdfstring{yellowRubber}{yellowRubber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Material\+::yellow\+Rubber = \mbox{\hyperlink{struct_material}{Material}}(glm\+::vec3(0.\+05f, 0.\+05f, 0.\+0f), glm\+::vec3(0.\+5f, 0.\+5f, 0.\+4f), glm\+::vec3(0.\+7f, 0.\+7f, 0.\+04f), 0.\+078125f $\ast$ 256.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+Engine/\mbox{\hyperlink{_material_8h}{Material.\+h}}\item 
+Umi\+Engine/\mbox{\hyperlink{_material_8cpp}{Material.\+cpp}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 #include <iostream>
 
 std::map<std::string, Shader> ResourceManager::Shaders;
-std::map<std::string, Texture> ResourceManager::Textures;
+std::map<std::string, Texture*> ResourceManager::Textures;
 
 void ResourceManager::LoadShader(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource, std::string name)
 {
@@ -29,7 +29,7 @@ Shader* ResourceManager::GetShader(std::string name)
 
 Texture* ResourceManager::GetTexture(std::string name)
 {
-	return Textures.count(name) <= 0 ? nullptr : &Textures.at(name);
+	return Textures.count(name) <= 0 ? nullptr : Textures.at(name);
 }
 
 Shader ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource)
@@ -75,16 +75,16 @@ Shader ResourceManager::LoadShaderFromFile(const GLchar * vertexSource, const GL
 	return shader;
 }
 
-Texture ResourceManager::LoadTextureFromFile(const GLchar * texture, TextureType type)
+Texture* ResourceManager::LoadTextureFromFile(const GLchar * texture, TextureType type)
 {
-	Texture tempTexture;
-	tempTexture.LoadFromFile((GLchar*)texture);
+	Texture* tempTexture = new Texture();
+	tempTexture->LoadFromFile((GLchar*)texture);
 	return tempTexture;
 }
 
-Texture ResourceManager::LoadCubeMapFromFile(std::vector<GLchar*> filenames)
+Texture* ResourceManager::LoadCubeMapFromFile(std::vector<GLchar*> filenames)
 {
-	Texture tempTexture;
-	tempTexture.LoadCubemapFromFile(filenames);
+	Texture* tempTexture = new Texture();
+	tempTexture->LoadCubemapFromFile(filenames);
 	return tempTexture;
 }

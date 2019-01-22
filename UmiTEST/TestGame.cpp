@@ -4,9 +4,8 @@
 
 #include <iostream>
 
-#include "Player.h"
 #include "Grass.h"
-#include <Cube.h>
+#include "StorageCrate.h"
 #include <Plane.h>
 #include <ResourceManager.h>
 #include <DirectionalLight.h>
@@ -15,7 +14,10 @@
 #include <vector>
 #include <algorithm>
 
-TestGame::TestGame()
+#include "BuildingA.h"
+#include "BuildingB.h"
+
+TestGame::TestGame() : Game()
 {
 	camera["main"] = new Camera();
 	color = 0.0f;
@@ -29,33 +31,32 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 {
 	Game::Init(screen_width, screen_height);
 
-	ResourceManager::LoadTexture("assets/textures/umi.png", "umi");
-	ResourceManager::LoadTexture("assets/textures/spec_umi.png", "spec_umi");
-	ResourceManager::LoadTexture("assets/textures/normal_umi.png", "normal_umi");
 	ResourceManager::LoadTexture("assets/textures/grass/grass_terrain.jpg", "grass_terrain");
 
-	std::vector<GLchar*> filenames;
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
+	ResourceManager::LoadTexture("assets/textures/storage_crate.png", "storage_crate");
+	ResourceManager::LoadTexture("assets/textures/storage_crate_spec.png", "storage_crate_spec");
 
-	//filenames.push_back((GLchar*)"assets/textures/tex8.png");
-	//filenames.push_back((GLchar*)"assets/textures/tex8.png");
-	//filenames.push_back((GLchar*)"assets/textures/tex8.png");
-	//filenames.push_back((GLchar*)"assets/textures/tex8.png");
-	//filenames.push_back((GLchar*)"assets/textures/tex8.png");
-	//filenames.push_back((GLchar*)"assets/textures/tex8.png");
+	std::vector<GLchar*> filenames;
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
+
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/right.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/left.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/top.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/bottom.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/front.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/back.png");
 
 	ResourceManager::LoadCubeMap(filenames, "skybox_ocean");
 
 	//camera["main"]->Orthographic(0.0f, screen_width, 0.0f, screen_height, -1.0f, 1.0f);
 	camera["main"]->Perspective(45.f, 16.f / 9.f, .01f, 1000.f);
-	camera["main"]->transform.Position(glm::vec3(0.0f, 1.0f, 3.0f));
-	camera["main"]->transform.Rotation(-20, 0, 0);
-	//std::cout << "Look, I'm extending base class! :)" << std::endl;
+	camera["main"]->transform.Position(glm::vec3(0.0f, 1.0f, 0.0f));
+	camera["main"]->transform.Rotation(0, 0, 0);
 	
 	sky = new Skybox();
 	sky->texture = ResourceManager::GetTexture("skybox_ocean");
@@ -74,28 +75,38 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	ground->receiveShadows = true;
 	objects.push_back(ground);
 	opaque_objs.push_back(ground);
-	
-	Player* tPlayer = new Player();
-	tPlayer->transform.Position(glm::vec3(10, 0, 0));
-	tPlayer->transform.Rotation(glm::vec3(0, -90, 0));
-	objects.push_back(tPlayer);
-	opaque_objs.push_back(tPlayer);
 
+	StorageCrate* kostka = nullptr;
+	int z = 0;
+	kostka = new StorageCrate();
+	z = rand() % 50 + 1;
+	kostka->transform.Position(glm::vec3(5.0f, 1.0f + (z / 10) , 5.0f));
+	kostka->setRotationDirection(glm::vec3(1, 0, -1));
+	kostka->setRotationSpeed(10.0f);
+	objects.push_back(kostka);
+	opaque_objs.push_back(kostka);
 
-	tPlayer = new Player();
-	tPlayer->transform.Position(glm::vec3(-10, 0, 0));
-	tPlayer->transform.Rotation(glm::vec3(0, -90, 0));
-	objects.push_back(tPlayer);
-	opaque_objs.push_back(tPlayer);
+	kostka = new StorageCrate();
+	z = rand() % 50 + 1;
+	kostka->transform.Position(glm::vec3(-5.0f, 1.0f + (z / 10), 5.0f));
+	kostka->setRotationDirection(glm::vec3(1, 0, -1));
+	kostka->setRotationSpeed(10.0f);
+	objects.push_back(kostka);
+	opaque_objs.push_back(kostka);
 
-	Cube* kostka = new Cube();
-	kostka->material = Material::white;
-	kostka->material.specular = glm::vec3(0.0f, 0.0f, 1.0f);
-	kostka->material.diffuseTexture = ResourceManager::GetTexture("umi");
-	kostka->material.specularTexture = ResourceManager::GetTexture("spec_umi");
-	kostka->material.normalMap = ResourceManager::GetTexture("normal_umi");
-	kostka->transform.Position(glm::vec3(3, 3, 5));
-	kostka->transform.Rotation(glm::vec3(0, 0, 0));
+	kostka = new StorageCrate();
+	z = rand() % 50 + 1;
+	kostka->transform.Position(glm::vec3(5.0f, 1.0f + (z / 10), -5.0f));
+	kostka->setRotationDirection(glm::vec3(1, 0, -1));
+	kostka->setRotationSpeed(10.0f);
+	objects.push_back(kostka);
+	opaque_objs.push_back(kostka);
+
+	kostka = new StorageCrate();
+	z = rand() % 50 + 1;
+	kostka->transform.Position(glm::vec3(-5.0f, 1.0f + (z / 10), -5.0f));
+	kostka->setRotationDirection(glm::vec3(1, 0, -1));
+	kostka->setRotationSpeed(10.0f);
 	objects.push_back(kostka);
 	opaque_objs.push_back(kostka);
 
@@ -108,11 +119,24 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 		tGrass = new Grass();
 		tGrass->transform.Position(glm::vec3(x, 0.0f, y));
 		transparent_objs.push_back(tGrass);
+		this->objects.push_back(tGrass);
 	}
 
+	BuildingA* tBuild = new BuildingA();
+	tBuild->transform.Position(glm::vec3(5.0f, 0.0f, 10.0f));
+	objects.push_back(tBuild);
+	opaque_objs.push_back(tBuild);
+
+	BuildingB* tBuild2 = new BuildingB();
+	tBuild2->transform.Position(glm::vec3(25.0f, 0.0f, 2.0f));
+	tBuild2->transform.Rotation(glm::vec3(0.0f, -90.0f, 0.0f));
+	objects.push_back(tBuild2);
+	opaque_objs.push_back(tBuild2);
+
+
 	DirectionalLight* tLight = new DirectionalLight();
-	tLight->direction = glm::vec3(-6.0f, -4.0f, 1.0f);
-	tLight->diffuse = glm::vec3(0.85f, 0.85f, 0.85f);
+	tLight->direction = glm::vec3(-0.5f, -1.0f, 1.5f);
+	tLight->diffuse = glm::vec3(0.85f, 0.85f, 0.8f);
 	tLight->ambient = glm::vec3(0.7f,0.7f,0.7f);
 	tLight->specular = glm::vec3(1.0f, 1.0f, 1.0f);
 
@@ -145,11 +169,10 @@ void TestGame::MainLoop()
 		GLfloat currentFrame = (GLfloat)glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-		
-		std::cout << "Delta Time: " << deltaTime << std::endl;
+
+		std::cout << "FPS: " << 1.0f / deltaTime << std::endl;
 
 		this->ProcessInput(deltaTime);
-		camera["main"]->LookAt(glm::vec3(0.0f, -40.0f, 0.0f));
 		this->Update(deltaTime);
 		this->Render();
 

@@ -1,0 +1,235 @@
+\hypertarget{class_transform}{}\section{Transform Class Reference}
+\label{class_transform}\index{Transform@{Transform}}
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+
+
+Collaboration diagram for Transform\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_a5486927ebcb043b7347644041024f47c}{Forward}} ()
+\begin{DoxyCompactList}\small\item\em Returns object forward vector considering it\textquotesingle{}s rotation. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_ad8a1ed0e1024d93a8722e6d1b8e886c8}{Right}} ()
+\begin{DoxyCompactList}\small\item\em Returns object right vector considering it\textquotesingle{}s rotation. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_a647f01f73a5ad2d729080649bc477b76}{Up}} ()
+\begin{DoxyCompactList}\small\item\em Returns object up vector considering it\textquotesingle{}s rotation. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_ab3aa7217c2b53146ae0ec4a4eddf3ba0}{Position}} ()
+\begin{DoxyCompactList}\small\item\em Returns current position of object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a1f5f28293a7e54f8330f4090ea38b9f7}{Position}} (glm\+::vec3 new\+Pos)
+\begin{DoxyCompactList}\small\item\em Change position of object to given glm\+::vec3 value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a8d24b66e54f0489c03389a6424f0bb21}{Position}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Change position of object to given float values. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_a4d1718230fdc4dd8f3a0cf810cf223f4}{Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Returns current rotation of object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_ae19384ad3a8fc19d997bab8be905eb8a}{Rotation}} (glm\+::vec3 new\+Rot)
+\begin{DoxyCompactList}\small\item\em Rotates object with rotation given in X,Y,Z axes inside glm\+::vec3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a08eb7ce459e2be8c180741f29990583a}{Rotation}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Rotates object with rotation given in X,Y,Z float values. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_a60238a62017be874dea8514a4b172fcc}{Scale}} ()
+\begin{DoxyCompactList}\small\item\em Returns current scale of object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_ab4af0a98c37f0284074e30e3d6d2ca41}{Scale}} (glm\+::vec3 new\+Scale)
+\begin{DoxyCompactList}\small\item\em Scales object with scale given in X,Y,Z axes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a0a30b57dd24261f559604ea64e69e0f9}{Scale}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Scales object with given scale in X,Y,Z axes. \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_transform_a550c9c8417c6d288e6352d6cc424a0e9}{Apply\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Returns transformation matrix for object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_a631ff0990e3297ed142ce6f5259c2c1a}{World\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Returns position in world space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_transform}{Transform}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transform_aa72e286c069850db80927b0e6554cd3e}{$\sim$\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{class_transform}{Transform}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transform}{Transform}} $\ast$ \mbox{\hyperlink{class_transform_aa1e92491c9905869a108ec09a08e5eb4}{parent}} = nullptr
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_transform}{Transform}}\textquotesingle{}s parent object used to calculate transform from parent\textquotesingle{}s values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_transform_aa08ca4266efabc768973cdeea51945ab}\label{class_transform_aa08ca4266efabc768973cdeea51945ab}} 
+\index{Transform@{Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_transform}{Transform}} class. 
+
+Sets position and rotation to 0. Sets scale to 1. \mbox{\Hypertarget{class_transform_aa72e286c069850db80927b0e6554cd3e}\label{class_transform_aa72e286c069850db80927b0e6554cd3e}} 
+\index{Transform@{Transform}!````~Transform@{$\sim$Transform}}
+\index{````~Transform@{$\sim$Transform}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{$\sim$Transform()}{~Transform()}}
+{\footnotesize\ttfamily Transform\+::$\sim$\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{class_transform}{Transform}} class. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transform_a550c9c8417c6d288e6352d6cc424a0e9}\label{class_transform_a550c9c8417c6d288e6352d6cc424a0e9}} 
+\index{Transform@{Transform}!ApplyTransform@{ApplyTransform}}
+\index{ApplyTransform@{ApplyTransform}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{ApplyTransform()}{ApplyTransform()}}
+{\footnotesize\ttfamily glm\+::mat4 Transform\+::\+Apply\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns transformation matrix for object. 
+
+This method returns transformation matrix for object after applying position, scale and rotation to the identity matrix. If transform has parrent it is then multiplied by parrent\textquotesingle{}s transformation matrix. \mbox{\Hypertarget{class_transform_a5486927ebcb043b7347644041024f47c}\label{class_transform_a5486927ebcb043b7347644041024f47c}} 
+\index{Transform@{Transform}!Forward@{Forward}}
+\index{Forward@{Forward}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Forward()}{Forward()}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+::\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns object forward vector considering it\textquotesingle{}s rotation. 
+
+Mostly used to transform object position forward with considering it\textquotesingle{}s rotation. \mbox{\Hypertarget{class_transform_ab3aa7217c2b53146ae0ec4a4eddf3ba0}\label{class_transform_ab3aa7217c2b53146ae0ec4a4eddf3ba0}} 
+\index{Transform@{Transform}!Position@{Position}}
+\index{Position@{Position}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Position()}{Position()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+::\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns current position of object. 
+
+This method returns current position of object using glm\+::vec3 type. Each axis is represented by corresponding value in glm\+::vec3 type. \mbox{\Hypertarget{class_transform_a1f5f28293a7e54f8330f4090ea38b9f7}\label{class_transform_a1f5f28293a7e54f8330f4090ea38b9f7}} 
+\index{Transform@{Transform}!Position@{Position}}
+\index{Position@{Position}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Position()}{Position()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Transform\+::\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{new\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Change position of object to given glm\+::vec3 value. 
+
+Sets object\textquotesingle{}s position to the new position given in new\+Pos parameter. Each value in glm\+::vec3 is corresponding to one of the X,Y,Z axes. \mbox{\Hypertarget{class_transform_a8d24b66e54f0489c03389a6424f0bb21}\label{class_transform_a8d24b66e54f0489c03389a6424f0bb21}} 
+\index{Transform@{Transform}!Position@{Position}}
+\index{Position@{Position}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Position()}{Position()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Transform\+::\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Change position of object to given float values. 
+
+Sets object\textquotesingle{}s position to the new position given in x,y and z parameters. Each value is corresponding to one of the X,Y,Z axes. \mbox{\Hypertarget{class_transform_ad8a1ed0e1024d93a8722e6d1b8e886c8}\label{class_transform_ad8a1ed0e1024d93a8722e6d1b8e886c8}} 
+\index{Transform@{Transform}!Right@{Right}}
+\index{Right@{Right}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Right()}{Right()}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+::\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns object right vector considering it\textquotesingle{}s rotation. 
+
+Mostly used to transform object position right with considering it\textquotesingle{}s rotation. \mbox{\Hypertarget{class_transform_a4d1718230fdc4dd8f3a0cf810cf223f4}\label{class_transform_a4d1718230fdc4dd8f3a0cf810cf223f4}} 
+\index{Transform@{Transform}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Rotation()}{Rotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+::\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns current rotation of object. 
+
+This method return rotation of object packed in glm\+::vec3 type. Each field of glm\+::vec3 is representing rotation in degrees for corresponding axis. \mbox{\Hypertarget{class_transform_ae19384ad3a8fc19d997bab8be905eb8a}\label{class_transform_ae19384ad3a8fc19d997bab8be905eb8a}} 
+\index{Transform@{Transform}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Rotation()}{Rotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Transform\+::\+Rotation (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{new\+Rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates object with rotation given in X,Y,Z axes inside glm\+::vec3. 
+
+Sets rotation of object with given glm\+::vec3 value. Each field from glm\+::vec3 represents each axis of rotation. This method of rotation will cause Gimbal Lock \mbox{\Hypertarget{class_transform_a08eb7ce459e2be8c180741f29990583a}\label{class_transform_a08eb7ce459e2be8c180741f29990583a}} 
+\index{Transform@{Transform}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Rotation()}{Rotation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Transform\+::\+Rotation (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates object with rotation given in X,Y,Z float values. 
+
+Sets rotation of object with given float values. Each field from glm\+::vec3 represents each axis of rotation. This method of rotation will cause Gimbal Lock \mbox{\Hypertarget{class_transform_a60238a62017be874dea8514a4b172fcc}\label{class_transform_a60238a62017be874dea8514a4b172fcc}} 
+\index{Transform@{Transform}!Scale@{Scale}}
+\index{Scale@{Scale}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Scale()}{Scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+::\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns current scale of object. 
+
+This method returns scale of object packed in glm\+::vec3 type which is created by joining 3 float values for X, Y and Z axes. \mbox{\Hypertarget{class_transform_ab4af0a98c37f0284074e30e3d6d2ca41}\label{class_transform_ab4af0a98c37f0284074e30e3d6d2ca41}} 
+\index{Transform@{Transform}!Scale@{Scale}}
+\index{Scale@{Scale}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Scale()}{Scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Transform\+::\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{new\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scales object with scale given in X,Y,Z axes. 
+
+Sets scale of transformed object to the given glm\+::vec3 with set x,y,z axes. \mbox{\Hypertarget{class_transform_a0a30b57dd24261f559604ea64e69e0f9}\label{class_transform_a0a30b57dd24261f559604ea64e69e0f9}} 
+\index{Transform@{Transform}!Scale@{Scale}}
+\index{Scale@{Scale}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Scale()}{Scale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Transform\+::\+Scale (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scales object with given scale in X,Y,Z axes. 
+
+Sets scale of transformed object to the given float values with axes x,y,z. \mbox{\Hypertarget{class_transform_a647f01f73a5ad2d729080649bc477b76}\label{class_transform_a647f01f73a5ad2d729080649bc477b76}} 
+\index{Transform@{Transform}!Up@{Up}}
+\index{Up@{Up}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{Up()}{Up()}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+::\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns object up vector considering it\textquotesingle{}s rotation. 
+
+Mostly used to transform object position up with considering it\textquotesingle{}s rotation. \mbox{\Hypertarget{class_transform_a631ff0990e3297ed142ce6f5259c2c1a}\label{class_transform_a631ff0990e3297ed142ce6f5259c2c1a}} 
+\index{Transform@{Transform}!WorldPosition@{WorldPosition}}
+\index{WorldPosition@{WorldPosition}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{WorldPosition()}{WorldPosition()}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+::\+World\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns position in world space. 
+
+This method uses \mbox{\hyperlink{class_transform_a550c9c8417c6d288e6352d6cc424a0e9}{Apply\+Transform()}} and multiplies it by world central position to get position in world space. \mbox{\hyperlink{class_transform}{Transform}} matrix is then converted to glm\+::vec3. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_transform_aa1e92491c9905869a108ec09a08e5eb4}\label{class_transform_aa1e92491c9905869a108ec09a08e5eb4}} 
+\index{Transform@{Transform}!parent@{parent}}
+\index{parent@{parent}!Transform@{Transform}}
+\subsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform}{Transform}}$\ast$ Transform\+::parent = nullptr}
+
+
+
+\mbox{\hyperlink{class_transform}{Transform}}\textquotesingle{}s parent object used to calculate transform from parent\textquotesingle{}s values. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+Engine/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\item 
+Umi\+Engine/\mbox{\hyperlink{_transform_8cpp}{Transform.\+cpp}}\end{DoxyCompactItemize}

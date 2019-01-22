@@ -31,7 +31,7 @@ void VisualObject::DrawShadow()
 	this->model.DrawShadow();
 }
 
-VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : model(model_file)
+VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : GameObject(), model(model_file)
 {
 	switch (shaderType)
 	{

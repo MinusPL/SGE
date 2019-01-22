@@ -1,0 +1,80 @@
+\hypertarget{class_resource_manager}{}\section{Resource\+Manager Class Reference}
+\label{class_resource_manager}\index{ResourceManager@{ResourceManager}}
+
+
+{\ttfamily \#include $<$Resource\+Manager.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_resource_manager_a00f5f597ddb23cfc50f5215e0768a336}{Load\+Shader}} (const G\+Lchar $\ast$vertex\+Source, const G\+Lchar $\ast$fragment\+Source, const G\+Lchar $\ast$geometry\+Source, std\+::string name)
+\item 
+static void \mbox{\hyperlink{class_resource_manager_abe39b263c98ff63a9ce991b171356982}{Load\+Texture}} (const G\+Lchar $\ast$texture, std\+::string name, \mbox{\hyperlink{_texture_8h_a65468556d79304b3a4bfc464cc12e549}{Texture\+Type}} type=\mbox{\hyperlink{_texture_8h_a65468556d79304b3a4bfc464cc12e549a94e94133f4bdc1794c6b647b8ea134d0}{Texture\+Type\+::\+S\+T\+A\+N\+D\+A\+RD}})
+\item 
+static void \mbox{\hyperlink{class_resource_manager_aa1b2f4a63ed096bbcd1e3732078f35f6}{Load\+Cube\+Map}} (std\+::vector$<$ G\+Lchar $\ast$ $>$ filenames, std\+::string name)
+\item 
+static \mbox{\hyperlink{class_shader}{Shader}} $\ast$ \mbox{\hyperlink{class_resource_manager_ae95ecdc6de1127616485f7d069437332}{Get\+Shader}} (std\+::string name)
+\item 
+static \mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{class_resource_manager_aa1456969a733c58bc47f372005699cbc}{Get\+Texture}} (std\+::string name)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ std\+::string, \mbox{\hyperlink{class_shader}{Shader}} $>$ \mbox{\hyperlink{class_resource_manager_a8c1bc8fe6e0f92ab3c7e2dca94b0e491}{Shaders}}
+\item 
+static std\+::map$<$ std\+::string, \mbox{\hyperlink{class_texture}{Texture}} $\ast$ $>$ \mbox{\hyperlink{class_resource_manager_a43a756e8e9ce85e0cf25946205749a9f}{Textures}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_resource_manager_ae95ecdc6de1127616485f7d069437332}\label{class_resource_manager_ae95ecdc6de1127616485f7d069437332}} 
+\index{ResourceManager@{ResourceManager}!GetShader@{GetShader}}
+\index{GetShader@{GetShader}!ResourceManager@{ResourceManager}}
+\subsubsection{\texorpdfstring{GetShader()}{GetShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader}{Shader}} $\ast$ Resource\+Manager\+::\+Get\+Shader (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_resource_manager_aa1456969a733c58bc47f372005699cbc}\label{class_resource_manager_aa1456969a733c58bc47f372005699cbc}} 
+\index{ResourceManager@{ResourceManager}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!ResourceManager@{ResourceManager}}
+\subsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}} $\ast$ Resource\+Manager\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_resource_manager_aa1b2f4a63ed096bbcd1e3732078f35f6}\label{class_resource_manager_aa1b2f4a63ed096bbcd1e3732078f35f6}} 
+\index{ResourceManager@{ResourceManager}!LoadCubeMap@{LoadCubeMap}}
+\index{LoadCubeMap@{LoadCubeMap}!ResourceManager@{ResourceManager}}
+\subsubsection{\texorpdfstring{LoadCubeMap()}{LoadCubeMap()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::\+Load\+Cube\+Map (\begin{DoxyParamCaption}\item[{std\+::vector$<$ G\+Lchar $\ast$ $>$}]{filenames,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_resource_manager_a00f5f597ddb23cfc50f5215e0768a336}\label{class_resource_manager_a00f5f597ddb23cfc50f5215e0768a336}} 
+\index{ResourceManager@{ResourceManager}!LoadShader@{LoadShader}}
+\index{LoadShader@{LoadShader}!ResourceManager@{ResourceManager}}
+\subsubsection{\texorpdfstring{LoadShader()}{LoadShader()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::\+Load\+Shader (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{vertex\+Source,  }\item[{const G\+Lchar $\ast$}]{fragment\+Source,  }\item[{const G\+Lchar $\ast$}]{geometry\+Source,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_resource_manager_abe39b263c98ff63a9ce991b171356982}\label{class_resource_manager_abe39b263c98ff63a9ce991b171356982}} 
+\index{ResourceManager@{ResourceManager}!LoadTexture@{LoadTexture}}
+\index{LoadTexture@{LoadTexture}!ResourceManager@{ResourceManager}}
+\subsubsection{\texorpdfstring{LoadTexture()}{LoadTexture()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::\+Load\+Texture (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{texture,  }\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{_texture_8h_a65468556d79304b3a4bfc464cc12e549}{Texture\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{_texture_8h_a65468556d79304b3a4bfc464cc12e549a94e94133f4bdc1794c6b647b8ea134d0}{Texture\+Type\+::\+S\+T\+A\+N\+D\+A\+RD}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_resource_manager_a8c1bc8fe6e0f92ab3c7e2dca94b0e491}\label{class_resource_manager_a8c1bc8fe6e0f92ab3c7e2dca94b0e491}} 
+\index{ResourceManager@{ResourceManager}!Shaders@{Shaders}}
+\index{Shaders@{Shaders}!ResourceManager@{ResourceManager}}
+\subsubsection{\texorpdfstring{Shaders}{Shaders}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \mbox{\hyperlink{class_shader}{Shader}} $>$ Resource\+Manager\+::\+Shaders\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_resource_manager_a43a756e8e9ce85e0cf25946205749a9f}\label{class_resource_manager_a43a756e8e9ce85e0cf25946205749a9f}} 
+\index{ResourceManager@{ResourceManager}!Textures@{Textures}}
+\index{Textures@{Textures}!ResourceManager@{ResourceManager}}
+\subsubsection{\texorpdfstring{Textures}{Textures}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \mbox{\hyperlink{class_texture}{Texture}} $\ast$ $>$ Resource\+Manager\+::\+Textures\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+Engine/\mbox{\hyperlink{_resource_manager_8h}{Resource\+Manager.\+h}}\item 
+Umi\+Engine/\mbox{\hyperlink{_resource_manager_8cpp}{Resource\+Manager.\+cpp}}\end{DoxyCompactItemize}

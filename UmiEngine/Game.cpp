@@ -28,7 +28,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	this->screen_width = screen_width;
 	this->screen_height = screen_height;
 
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	
 	if ((ilGetInteger(IL_VERSION_NUM) < IL_VERSION) ||
 		ilGetInteger(ILUT_VERSION_NUM) < ILUT_VERSION)
@@ -58,6 +58,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_STENCIL_TEST);
 	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	float screenVertices[24] = {
@@ -211,12 +212,11 @@ void Game::Render()
 	glViewport(0, 0, this->SHADOW_WIDTH, this->SHADOW_HEIGHT);
 	glBindFramebuffer(GL_FRAMEBUFFER, this->depthMapFBO);
 	glClear(GL_DEPTH_BUFFER_BIT);
-
 	for (auto &object : objects)
 	{
 		object->DrawShadow();
 	}
-	
+
 	glBindFramebuffer(GL_FRAMEBUFFER, this->hdrFBO);
 	glViewport(0, 0, this->screen_width, this->screen_height);
 	

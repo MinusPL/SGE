@@ -10,5 +10,4 @@ public:
 	~Cube();
 	// Inherited via PrimitiveVisual
 	virtual void Update(GLfloat dt) override;
-
 };

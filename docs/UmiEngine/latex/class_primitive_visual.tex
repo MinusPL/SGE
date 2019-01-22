@@ -1,0 +1,119 @@
+\hypertarget{class_primitive_visual}{}\section{Primitive\+Visual Class Reference}
+\label{class_primitive_visual}\index{PrimitiveVisual@{PrimitiveVisual}}
+
+
+{\ttfamily \#include $<$Primitive\+Visual.\+h$>$}
+
+
+
+Inheritance diagram for Primitive\+Visual\+:
+% FIG 0
+
+
+Collaboration diagram for Primitive\+Visual\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_primitive_visual_a9ce21acf4bb9b9d9ac24c75f6aa9aec3}{Draw}} () override
+\item 
+virtual void \mbox{\hyperlink{class_primitive_visual_a67915de082572ca4f6467c1402587024}{Draw\+Shadow}} () override
+\item 
+\mbox{\hyperlink{class_primitive_visual_a8198e82c2dc99af36b96a2ad35ec36aa}{Primitive\+Visual}} (\mbox{\hyperlink{_game_object_8h_a6230e1b9ecbf2d82d10856fd7e1fde46}{Shader\+Type}} shader\+Type=\mbox{\hyperlink{_texture_8h_a65468556d79304b3a4bfc464cc12e549a94e94133f4bdc1794c6b647b8ea134d0}{S\+T\+A\+N\+D\+A\+RD}})
+\item 
+\mbox{\hyperlink{class_primitive_visual_a2d1ca03da960111c6cce0852e02b10f6}{$\sim$\+Primitive\+Visual}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shader}{Shader}} $\ast$ \mbox{\hyperlink{class_primitive_visual_a463e83ee34d0727a19cf417f74ea67e7}{shader}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{class_primitive_visual_a12252f7d680eb47471a13d121c0898d5}{meshes}}
+\item 
+\mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{class_primitive_visual_a775945d5dc204a98315eda90d6482278}{material}}
+\item 
+float \mbox{\hyperlink{class_primitive_visual_ae1cf9c3c3df2513f00cda8d788404bec}{rot}} = 0.\+0f
+\item 
+bool \mbox{\hyperlink{class_primitive_visual_ab3f6291a1a2914f0403ae118f8d9d8e5}{receive\+Shadows}} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_primitive_visual_a8198e82c2dc99af36b96a2ad35ec36aa}\label{class_primitive_visual_a8198e82c2dc99af36b96a2ad35ec36aa}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!PrimitiveVisual@{PrimitiveVisual}}
+\index{PrimitiveVisual@{PrimitiveVisual}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{PrimitiveVisual()}{PrimitiveVisual()}}
+{\footnotesize\ttfamily Primitive\+Visual\+::\+Primitive\+Visual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_object_8h_a6230e1b9ecbf2d82d10856fd7e1fde46}{Shader\+Type}}}]{shader\+Type = {\ttfamily \mbox{\hyperlink{_texture_8h_a65468556d79304b3a4bfc464cc12e549a94e94133f4bdc1794c6b647b8ea134d0}{S\+T\+A\+N\+D\+A\+RD}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_primitive_visual_a2d1ca03da960111c6cce0852e02b10f6}\label{class_primitive_visual_a2d1ca03da960111c6cce0852e02b10f6}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!````~PrimitiveVisual@{$\sim$PrimitiveVisual}}
+\index{````~PrimitiveVisual@{$\sim$PrimitiveVisual}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{$\sim$PrimitiveVisual()}{~PrimitiveVisual()}}
+{\footnotesize\ttfamily Primitive\+Visual\+::$\sim$\+Primitive\+Visual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_primitive_visual_a9ce21acf4bb9b9d9ac24c75f6aa9aec3}\label{class_primitive_visual_a9ce21acf4bb9b9d9ac24c75f6aa9aec3}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!Draw@{Draw}}
+\index{Draw@{Draw}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Primitive\+Visual\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Check and bind diffuse map from material
+
+Check and bind specular map from material
+
+Check and bind specular map from material 
+
+Implements \mbox{\hyperlink{class_game_object_a29a665f46fda87982825bc5c0ca6a888}{Game\+Object}}.
+
+\mbox{\Hypertarget{class_primitive_visual_a67915de082572ca4f6467c1402587024}\label{class_primitive_visual_a67915de082572ca4f6467c1402587024}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!DrawShadow@{DrawShadow}}
+\index{DrawShadow@{DrawShadow}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{DrawShadow()}{DrawShadow()}}
+{\footnotesize\ttfamily void Primitive\+Visual\+::\+Draw\+Shadow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_game_object_a78bf45c8ef3805247435583556087788}{Game\+Object}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_primitive_visual_a775945d5dc204a98315eda90d6482278}\label{class_primitive_visual_a775945d5dc204a98315eda90d6482278}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!material@{material}}
+\index{material@{material}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{material}{material}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material}{Material}} Primitive\+Visual\+::material}
+
+\mbox{\Hypertarget{class_primitive_visual_a12252f7d680eb47471a13d121c0898d5}\label{class_primitive_visual_a12252f7d680eb47471a13d121c0898d5}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!meshes@{meshes}}
+\index{meshes@{meshes}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{meshes}{meshes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_mesh}{Mesh}}$\ast$$>$ Primitive\+Visual\+::meshes}
+
+\mbox{\Hypertarget{class_primitive_visual_ab3f6291a1a2914f0403ae118f8d9d8e5}\label{class_primitive_visual_ab3f6291a1a2914f0403ae118f8d9d8e5}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!receiveShadows@{receiveShadows}}
+\index{receiveShadows@{receiveShadows}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{receiveShadows}{receiveShadows}}
+{\footnotesize\ttfamily bool Primitive\+Visual\+::receive\+Shadows = false}
+
+\mbox{\Hypertarget{class_primitive_visual_ae1cf9c3c3df2513f00cda8d788404bec}\label{class_primitive_visual_ae1cf9c3c3df2513f00cda8d788404bec}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!rot@{rot}}
+\index{rot@{rot}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{rot}{rot}}
+{\footnotesize\ttfamily float Primitive\+Visual\+::rot = 0.\+0f}
+
+\mbox{\Hypertarget{class_primitive_visual_a463e83ee34d0727a19cf417f74ea67e7}\label{class_primitive_visual_a463e83ee34d0727a19cf417f74ea67e7}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!shader@{shader}}
+\index{shader@{shader}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader}{Shader}}$\ast$ Primitive\+Visual\+::shader}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+Engine/\mbox{\hyperlink{_primitive_visual_8h}{Primitive\+Visual.\+h}}\item 
+Umi\+Engine/\mbox{\hyperlink{_primitive_visual_8cpp}{Primitive\+Visual.\+cpp}}\end{DoxyCompactItemize}

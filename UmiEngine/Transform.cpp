@@ -12,6 +12,7 @@ void Transform::UpdateVectors()
 	up = glm::normalize(glm::cross(right, forward));
 }
 
+
 glm::mat4 Transform::ApplyTransform()
 {
 	glm::mat4 transMat(1.0f);
@@ -27,6 +28,8 @@ glm::mat4 Transform::ApplyTransform()
 
 	return transMat;
 }
+
+
 
 glm::vec3 Transform::WorldPosition()
 {
@@ -44,4 +47,5 @@ Transform::Transform()
 
 Transform::~Transform()
 {
+	this->parent = nullptr;
 }

@@ -12,6 +12,14 @@
 #include "GameObject.h"
 #include "Skybox.h"
 
+
+//! Main Game class
+
+/*!
+Main game class that is extended in an implementation.
+It has all base methods and fields required to work.
+It also has all vectors that hold all game objects.
+*/
 class Game
 {
 public:

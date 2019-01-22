@@ -1,0 +1,9 @@
+<map id="Cube" name="Cube">
+<area shape="rect" id="node1" title=" " alt="" coords="167,424,219,451"/>
+<area shape="rect" id="node2" href="$class_primitive_visual.html" title=" " alt="" coords="139,348,246,375"/>
+<area shape="rect" id="node3" href="$class_game_object.html" title=" " alt="" coords="32,191,127,218"/>
+<area shape="rect" id="node4" href="$class_transform.html" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node5" href="$struct_material.html" title=" " alt="" coords="159,191,227,218"/>
+<area shape="rect" id="node6" href="$class_texture.html" title="Texture class." alt="" coords="173,5,239,32"/>
+<area shape="rect" id="node7" href="$class_shader.html" title=" " alt="" coords="352,191,415,218"/>
+</map>
