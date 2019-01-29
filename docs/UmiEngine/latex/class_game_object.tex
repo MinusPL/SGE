@@ -2,35 +2,54 @@
 \label{class_game_object}\index{GameObject@{GameObject}}
 
 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} class.  
+
+
+
+
 {\ttfamily \#include $<$Game\+Object.\+h$>$}
 
 
 
 Inheritance diagram for Game\+Object\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_game_object__inherit__graph}
+\end{center}
+\end{figure}
 
 
-Collaboration diagram for Game\+Object\+:
-% FIG 1
+Collaboration diagram for Game\+Object\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_game_object__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_game_object_ab82dfdb656f9051c0587e6593b2dda97}{$\sim$\+Game\+Object}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_game_object_aa100c768006aca3e7cdbabe27b48b9e5}{Update}} (G\+Lfloat dt)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Updates logic of the object. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_game_object_a29a665f46fda87982825bc5c0ca6a888}{Draw}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Draw object normally. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_game_object_a78bf45c8ef3805247435583556087788}{Draw\+Shadow}} ()=0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draw object to shadowmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_transform}{Transform}} \mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tranform of the object in world space. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_game_object}{Game\+Object}} class. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}\label{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}} 
@@ -39,11 +58,19 @@ virtual void \mbox{\hyperlink{class_game_object_a78bf45c8ef380524743558355608778
 \subsubsection{\texorpdfstring{GameObject()}{GameObject()}}
 {\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Constructor. 
+
 \mbox{\Hypertarget{class_game_object_ab82dfdb656f9051c0587e6593b2dda97}\label{class_game_object_ab82dfdb656f9051c0587e6593b2dda97}} 
 \index{GameObject@{GameObject}!````~GameObject@{$\sim$GameObject}}
 \index{````~GameObject@{$\sim$GameObject}!GameObject@{GameObject}}
 \subsubsection{\texorpdfstring{$\sim$GameObject()}{~GameObject()}}
 {\footnotesize\ttfamily Game\+Object\+::$\sim$\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
 
 
 
@@ -56,6 +83,10 @@ virtual void \mbox{\hyperlink{class_game_object_a78bf45c8ef380524743558355608778
 
 
 
+Draw object normally. 
+
+Draws object normally using standard shaders. 
+
 Implemented in \mbox{\hyperlink{class_primitive_visual_a9ce21acf4bb9b9d9ac24c75f6aa9aec3}{Primitive\+Visual}}, and \mbox{\hyperlink{class_visual_object_a10c0e01e375fd4af08e57f3475dd312c}{Visual\+Object}}.
 
 \mbox{\Hypertarget{class_game_object_a78bf45c8ef3805247435583556087788}\label{class_game_object_a78bf45c8ef3805247435583556087788}} 
@@ -65,6 +96,10 @@ Implemented in \mbox{\hyperlink{class_primitive_visual_a9ce21acf4bb9b9d9ac24c75f
 {\footnotesize\ttfamily virtual void Game\+Object\+::\+Draw\+Shadow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
+
+Draw object to shadowmap. 
+
+Draws object to shadowmap using simplified shadow shader. 
 
 Implemented in \mbox{\hyperlink{class_primitive_visual_a67915de082572ca4f6467c1402587024}{Primitive\+Visual}}, and \mbox{\hyperlink{class_visual_object_a88e778dc97ad93cefd5193d6899d6c82}{Visual\+Object}}.
 
@@ -76,7 +111,16 @@ Implemented in \mbox{\hyperlink{class_primitive_visual_a67915de082572ca4f6467c14
 
 
 
-Implemented in \mbox{\hyperlink{class_cube_a52a6950310f4529d9a3df4bc60c0625b}{Cube}}, and \mbox{\hyperlink{class_plane_af1ed004221fa7b42136789cb2c48b124}{Plane}}.
+Updates logic of the object. 
+
+This method is not implmented in \mbox{\hyperlink{class_game_object}{Game\+Object}}. All derrived classes must implement it. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & delta time between frames of game. Allows to have frame independent movement. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_plane_af1ed004221fa7b42136789cb2c48b124}{Plane}}, and \mbox{\hyperlink{class_cube_a52a6950310f4529d9a3df4bc60c0625b}{Cube}}.
 
 
 
@@ -88,6 +132,10 @@ Implemented in \mbox{\hyperlink{class_cube_a52a6950310f4529d9a3df4bc60c0625b}{Cu
 {\footnotesize\ttfamily \mbox{\hyperlink{class_transform}{Transform}} Game\+Object\+::transform}
 
 
+
+Tranform of the object in world space. 
+
+This field is used to move object around world and rotate or scale it. It can be attached to another \mbox{\hyperlink{class_transform}{Transform}} from other object to move group of objects together. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

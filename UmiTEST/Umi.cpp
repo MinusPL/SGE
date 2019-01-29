@@ -5,9 +5,7 @@ TestGame game;
 
 int main(int argc, char* args[])
 {
-	game.Init(1280, 720);
-	
-
+	game.Init(1920, 1080);
 	game.MainLoop();
 	game.Exit();
 	return 0;

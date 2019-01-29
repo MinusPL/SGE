@@ -54,8 +54,8 @@ var NAVTREEINDEX =
 [
 "_camera_8cpp.html",
 "class_mesh.html#a484b6f05575dbac43b3f5de817f90069",
-"glad_8c.html#a6c2a3c3fc5eed469a8fd498073e5a78e",
-"globals_vars.html"
+"glad_8c.html#a6cfe9bfeff2e738877b8c94c78f11888",
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

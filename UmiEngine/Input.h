@@ -2,10 +2,13 @@
 
 #include <map>
 
-/// FOR NOW SUPPORTS ONLY KEYBOARD INPUT, IN FEW DAYS I'LL ADD SOME MOUSE INPUT TOO.
-/// Look in UmiTEST project for usage. Later it will be added to some kind of docs.
-///
+//! Enum of all keys used as input.
+
+/*!
+List of all keys that are currently supported by Input.
 //TO-DO insert whole keybaord (at least US layout) to this enum and implement various methods to actually use it.
+*/
+
 enum class Key {
 	KEY_UKNNOWN = -1,
 	KEY_SPACE = 32,
@@ -130,22 +133,51 @@ enum class Key {
 	KEY_MENU = 348
 };
 
+//! Structure representing mouse position on screen.
 struct MousePosition
 {
 	double x;
 	double y;
 };
 
-
+//! Input manager for engine.
 class Input
 {
-	friend class Game;
 public:
-	//Get instance of input manager
+	//!Get instance of input manager
+	
+	/*!
+	Gets instance of input manager and prevents from creating another one.
+	There shouldn't be two input managers, because it could cause many random errors.
+	*/
 	static Input* GetInstance();
+
+	//! Get information if key was pressed.
+
+	/*!
+	\param key key value from Key list that we want to check.
+	\return true or false depending on if key was pressed.
+	*/
 	static bool GetKeyDown(Key key);
+	//! Get information if key was released.
+
+	/*!
+	\param key key value from Key list that we want to check.
+	\return true or false depending on if key was released.
+	*/
 	static bool GetKeyUp(Key key);
+	//! Get information if key is beeing held
+
+	/*!
+	\param key key value from Key list that we want to check.
+	\return true or false depending on if key is beeing held.
+	*/
 	static bool GetKey(Key key);
+	//! Gets current mouse position on screen.
+
+	/*!
+	\return MousePosition with x and y coordinates of mouse on screen.
+	*/
 	static MousePosition GetMousePos();
 private:
 	static std::map<Key, bool> keyState;
@@ -153,4 +185,5 @@ private:
 	static Input* instance;
 	static MousePosition mousePos;
 	Input();
+	friend class Game;
 };

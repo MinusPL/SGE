@@ -1,10 +1,9 @@
 #pragma once
 #include <IL/il.h>
 
-#include <Model.h>
-#include <VisualObject.h>
+#include <Cube.h>
 
-class Player : public VisualObject
+class Player : public Cube
 {
 public:
 	Player();

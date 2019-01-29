@@ -17,6 +17,8 @@
 #include "BuildingA.h"
 #include "BuildingB.h"
 
+#include "Player.h"
+
 TestGame::TestGame() : Game()
 {
 	camera["main"] = new Camera();
@@ -33,8 +35,9 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 
 	ResourceManager::LoadTexture("assets/textures/grass/grass_terrain.jpg", "grass_terrain");
 
-	ResourceManager::LoadTexture("assets/textures/storage_crate.png", "storage_crate");
+	ResourceManager::LoadTexture("assets/textures/test_crate.png", "storage_crate");
 	ResourceManager::LoadTexture("assets/textures/storage_crate_spec.png", "storage_crate_spec");
+	ResourceManager::LoadTexture("assets/textures/player_crate.png", "player_crate");
 
 	std::vector<GLchar*> filenames;
 	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
@@ -60,6 +63,11 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	
 	sky = new Skybox();
 	sky->texture = ResourceManager::GetTexture("skybox_ocean");
+
+	Player* tPlayer = new Player();
+	tPlayer->transform.Position(glm::vec3(0.0f, 0.5f, 0.0f));
+	objects.push_back(tPlayer);
+	opaque_objs.push_back(tPlayer);
 
 	Plane* ground = new Plane();
 	ground->material = Material::white;
@@ -123,7 +131,8 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	}
 
 	BuildingA* tBuild = new BuildingA();
-	tBuild->transform.Position(glm::vec3(5.0f, 0.0f, 10.0f));
+	tBuild->transform.Position(glm::vec3(-5.0f, 0.0f, 10.0f));
+	tBuild->receiveShadows = true;
 	objects.push_back(tBuild);
 	opaque_objs.push_back(tBuild);
 

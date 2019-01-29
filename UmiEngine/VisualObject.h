@@ -18,6 +18,5 @@ public:
 	VisualObject(GLchar* model_file, ShaderType shaderType = STANDARD);
 	~VisualObject();
 
-	float rot = 0.0f;
 	bool receiveShadows = false;
 };

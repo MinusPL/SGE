@@ -139,7 +139,7 @@ vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){
 	float shadow = 0.0;
 	if(receiveShadows)
 	{
-		float bias = max(0.03 * (1.0 - dot(normal, lightDir)), 0.003);  
+		float bias = max(0.005 * (1.0 - dot(normal, lightDir)), 0.003);  
 		vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
 		for(int x = -1; x <= 1; x++){
 			for(int y = -1; y <=1; y++){

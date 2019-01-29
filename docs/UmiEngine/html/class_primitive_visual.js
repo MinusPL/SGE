@@ -7,6 +7,5 @@ var class_primitive_visual =
     [ "material", "class_primitive_visual.html#a775945d5dc204a98315eda90d6482278", null ],
     [ "meshes", "class_primitive_visual.html#a12252f7d680eb47471a13d121c0898d5", null ],
     [ "receiveShadows", "class_primitive_visual.html#ab3f6291a1a2914f0403ae118f8d9d8e5", null ],
-    [ "rot", "class_primitive_visual.html#ae1cf9c3c3df2513f00cda8d788404bec", null ],
     [ "shader", "class_primitive_visual.html#a463e83ee34d0727a19cf417f74ea67e7", null ]
 ];

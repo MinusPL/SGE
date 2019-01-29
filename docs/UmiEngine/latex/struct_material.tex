@@ -2,38 +2,48 @@
 \label{struct_material}\index{Material@{Material}}
 
 
+\mbox{\hyperlink{struct_material}{Material}} structure holding all characteristics of each material.  
+
+
+
+
 {\ttfamily \#include $<$Material.\+h$>$}
 
 
 
-Collaboration diagram for Material\+:
-% FIG 0
+Collaboration diagram for Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{struct_material__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_material_a0be7dba7f259e659502c4b543cdd7d8c}{Material}} (glm\+::vec3 \mbox{\hyperlink{struct_material_af99c823542e497c98a35d1aac5fc9012}{ambient}}, glm\+::vec3 \mbox{\hyperlink{struct_material_a099904e2f5a7bbec3cba6bf8ec546b11}{diffuse}}, glm\+::vec3 \mbox{\hyperlink{struct_material_aac1c499923ff99564cdd97a4b5e504a9}{specular}}, float \mbox{\hyperlink{struct_material_ac40b4d892e9bff09f793d86ca1f3257e}{shiness}})
-\item 
+\begin{DoxyCompactList}\small\item\em Creates material with given values. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_material_a137e987401b63eb7c6c27c3e38bc74b5}{Material}} ()
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{struct_material_a187af0c557b8521fa0a88507ae618c42}{diffuse\+Texture}} = nullptr
-\item 
+\begin{DoxyCompactList}\small\item\em Diffuse \mbox{\hyperlink{class_texture}{Texture}} of material. Can be changed after setting material to object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{struct_material_a1ca33d2644100f269b8289ddd08dd6e4}{specular\+Texture}} = nullptr
-\item 
+\begin{DoxyCompactList}\small\item\em Specular Texutre of material. Can be changed after setting material to object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{struct_material_a915ba1f28243cdd67be5ccc70d4073d8}{normal\+Map}} = nullptr
-\item 
+\begin{DoxyCompactList}\small\item\em Normal Map \mbox{\hyperlink{class_texture}{Texture}} of material. Can be changed after setting material to object. \end{DoxyCompactList}\item 
 glm\+::vec3 \mbox{\hyperlink{struct_material_af99c823542e497c98a35d1aac5fc9012}{ambient}}
-\item 
+\begin{DoxyCompactList}\small\item\em glm\+::vec3 value that represents ambient color of material. \end{DoxyCompactList}\item 
 glm\+::vec3 \mbox{\hyperlink{struct_material_a099904e2f5a7bbec3cba6bf8ec546b11}{diffuse}}
-\item 
+\begin{DoxyCompactList}\small\item\em glm\+::vec3 value that represents diffuse color of material. \end{DoxyCompactList}\item 
 glm\+::vec3 \mbox{\hyperlink{struct_material_aac1c499923ff99564cdd97a4b5e504a9}{specular}}
-\item 
+\begin{DoxyCompactList}\small\item\em glm\+::vec3 value that represents specular color of material. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{struct_material_ab331a289b85cc07810ded7f4ebb66175}{alfa}} = 1.\+0f
-\item 
+\begin{DoxyCompactList}\small\item\em Represents how translucent material is going to be. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{struct_material_ac40b4d892e9bff09f793d86ca1f3257e}{shiness}} = 32
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represents how shiny material would appear in game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -89,6 +99,9 @@ static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_mate
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\mbox{\hyperlink{struct_material}{Material}} structure holding all characteristics of each material. 
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{struct_material_a0be7dba7f259e659502c4b543cdd7d8c}\label{struct_material_a0be7dba7f259e659502c4b543cdd7d8c}} 
 \index{Material@{Material}!Material@{Material}}
@@ -96,6 +109,24 @@ static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_mate
 \subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Material\+::\+Material (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{ambient,  }\item[{glm\+::vec3}]{diffuse,  }\item[{glm\+::vec3}]{specular,  }\item[{float}]{shiness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Creates material with given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ambient} & glm\+::vec3 representing color of material\textquotesingle{}s ambient. \\
+\hline
+{\em diffuse} & glm\+::vec3 representing color of material\textquotesingle{}s diffuse. \\
+\hline
+{\em specular} & glm\+::vec3 representing color of material\textquotesingle{}s specular. \\
+\hline
+{\em shiness} & float value representing shiny object will look in game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new \mbox{\hyperlink{struct_material}{Material}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{struct_material_a137e987401b63eb7c6c27c3e38bc74b5}\label{struct_material_a137e987401b63eb7c6c27c3e38bc74b5}} 
 \index{Material@{Material}!Material@{Material}}
 \index{Material@{Material}!Material@{Material}}
@@ -111,11 +142,19 @@ static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_mate
 \subsubsection{\texorpdfstring{alfa}{alfa}}
 {\footnotesize\ttfamily float Material\+::alfa = 1.\+0f}
 
+
+
+Represents how translucent material is going to be. 
+
 \mbox{\Hypertarget{struct_material_af99c823542e497c98a35d1aac5fc9012}\label{struct_material_af99c823542e497c98a35d1aac5fc9012}} 
 \index{Material@{Material}!ambient@{ambient}}
 \index{ambient@{ambient}!Material@{Material}}
 \subsubsection{\texorpdfstring{ambient}{ambient}}
 {\footnotesize\ttfamily glm\+::vec3 Material\+::ambient}
+
+
+
+glm\+::vec3 value that represents ambient color of material. 
 
 \mbox{\Hypertarget{struct_material_a7d31f06894812f15ccca287f46703b99}\label{struct_material_a7d31f06894812f15ccca287f46703b99}} 
 \index{Material@{Material}!blackPlastic@{blackPlastic}}
@@ -171,11 +210,19 @@ static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_mate
 \subsubsection{\texorpdfstring{diffuse}{diffuse}}
 {\footnotesize\ttfamily glm\+::vec3 Material\+::diffuse}
 
+
+
+glm\+::vec3 value that represents diffuse color of material. 
+
 \mbox{\Hypertarget{struct_material_a187af0c557b8521fa0a88507ae618c42}\label{struct_material_a187af0c557b8521fa0a88507ae618c42}} 
 \index{Material@{Material}!diffuseTexture@{diffuseTexture}}
 \index{diffuseTexture@{diffuseTexture}!Material@{Material}}
 \subsubsection{\texorpdfstring{diffuseTexture}{diffuseTexture}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}}$\ast$ Material\+::diffuse\+Texture = nullptr}
+
+
+
+Diffuse \mbox{\hyperlink{class_texture}{Texture}} of material. Can be changed after setting material to object. 
 
 \mbox{\Hypertarget{struct_material_ad6a424d01ca060a25ce520c4dc5b00c2}\label{struct_material_ad6a424d01ca060a25ce520c4dc5b00c2}} 
 \index{Material@{Material}!emerald@{emerald}}
@@ -213,6 +260,10 @@ static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_mate
 \subsubsection{\texorpdfstring{normalMap}{normalMap}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}}$\ast$ Material\+::normal\+Map = nullptr}
 
+
+
+Normal Map \mbox{\hyperlink{class_texture}{Texture}} of material. Can be changed after setting material to object. 
+
 \mbox{\Hypertarget{struct_material_aa189bbbd916aaf6a451296e2ffc6a47c}\label{struct_material_aa189bbbd916aaf6a451296e2ffc6a47c}} 
 \index{Material@{Material}!obsidian@{obsidian}}
 \index{obsidian@{obsidian}!Material@{Material}}
@@ -249,6 +300,10 @@ static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_mate
 \subsubsection{\texorpdfstring{shiness}{shiness}}
 {\footnotesize\ttfamily float Material\+::shiness = 32}
 
+
+
+Represents how shiny material would appear in game. 
+
 \mbox{\Hypertarget{struct_material_aef9dfcd5c4f7aaa53ee68831a19f68ca}\label{struct_material_aef9dfcd5c4f7aaa53ee68831a19f68ca}} 
 \index{Material@{Material}!silver@{silver}}
 \index{silver@{silver}!Material@{Material}}
@@ -261,11 +316,19 @@ static \mbox{\hyperlink{struct_material}{Material}} \mbox{\hyperlink{struct_mate
 \subsubsection{\texorpdfstring{specular}{specular}}
 {\footnotesize\ttfamily glm\+::vec3 Material\+::specular}
 
+
+
+glm\+::vec3 value that represents specular color of material. 
+
 \mbox{\Hypertarget{struct_material_a1ca33d2644100f269b8289ddd08dd6e4}\label{struct_material_a1ca33d2644100f269b8289ddd08dd6e4}} 
 \index{Material@{Material}!specularTexture@{specularTexture}}
 \index{specularTexture@{specularTexture}!Material@{Material}}
 \subsubsection{\texorpdfstring{specularTexture}{specularTexture}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}}$\ast$ Material\+::specular\+Texture = nullptr}
+
+
+
+Specular Texutre of material. Can be changed after setting material to object. 
 
 \mbox{\Hypertarget{struct_material_aa0d30b652e32ae61aa50cedf8ed38656}\label{struct_material_aa0d30b652e32ae61aa50cedf8ed38656}} 
 \index{Material@{Material}!turquoise@{turquoise}}

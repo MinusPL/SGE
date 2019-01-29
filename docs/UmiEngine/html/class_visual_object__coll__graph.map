@@ -1,6 +1,6 @@
 <map id="VisualObject" name="VisualObject">
 <area shape="rect" id="node1" title=" " alt="" coords="107,184,203,211"/>
-<area shape="rect" id="node2" href="$class_game_object.html" title=" " alt="" coords="5,95,100,121"/>
+<area shape="rect" id="node2" href="$class_game_object.html" title="GameObject class." alt="" coords="5,95,100,121"/>
 <area shape="rect" id="node3" href="$class_transform.html" title=" " alt="" coords="13,5,92,32"/>
 <area shape="rect" id="node4" href="$class_shader.html" title=" " alt="" coords="124,95,187,121"/>
 <area shape="rect" id="node5" href="$class_model.html" title=" " alt="" coords="211,95,268,121"/>

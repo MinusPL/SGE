@@ -95,29 +95,42 @@ $(document).ready(function(){initNavTree('class_skybox.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_skybox.html" title="Skybox object.">Skybox</a> object.  
+ <a href="class_skybox.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_skybox_8h_source.html">Skybox.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Skybox:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_skybox__coll__graph.png" border="0" usemap="#_skybox_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="_skybox_coll__map" id="_skybox_coll__map">
+<area shape="rect"  title="Skybox object." alt="" coords="5,95,72,121"/>
+<area shape="rect"  href="class_texture.html" title="Texture class." alt="" coords="6,5,71,32"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a77a92db4492ed94ed4bd101b05ffb1f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_skybox.html#a77a92db4492ed94ed4bd101b05ffb1f4">Skybox</a> ()</td></tr>
+<tr class="memdesc:a77a92db4492ed94ed4bd101b05ffb1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a77a92db4492ed94ed4bd101b05ffb1f4">More...</a><br /></td></tr>
 <tr class="separator:a77a92db4492ed94ed4bd101b05ffb1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ad4c6b4b1965a0a6d8536a50d4c090"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_skybox.html#a62ad4c6b4b1965a0a6d8536a50d4c090">~Skybox</a> ()</td></tr>
+<tr class="memdesc:a62ad4c6b4b1965a0a6d8536a50d4c090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a62ad4c6b4b1965a0a6d8536a50d4c090">More...</a><br /></td></tr>
 <tr class="separator:a62ad4c6b4b1965a0a6d8536a50d4c090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bf85652e4f0559530eb7a1f5ed87439"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_skybox.html#a8bf85652e4f0559530eb7a1f5ed87439">Draw</a> ()</td></tr>
+<tr class="memdesc:a8bf85652e4f0559530eb7a1f5ed87439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws skybox using skybox shader.  <a href="#a8bf85652e4f0559530eb7a1f5ed87439">More...</a><br /></td></tr>
 <tr class="separator:a8bf85652e4f0559530eb7a1f5ed87439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6e1ace9b3bcf2c50136a833d2a1d2118"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_skybox.html#a6e1ace9b3bcf2c50136a833d2a1d2118">texture</a></td></tr>
+<tr class="memdesc:a6e1ace9b3bcf2c50136a833d2a1d2118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cubemap texture of sky.  <a href="#a6e1ace9b3bcf2c50136a833d2a1d2118">More...</a><br /></td></tr>
 <tr class="separator:a6e1ace9b3bcf2c50136a833d2a1d2118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_skybox.html" title="Skybox object.">Skybox</a> object. </p>
+<p>Works almost like <a class="el" href="class_primitive_visual.html" title="Primitive visual object.">PrimitiveVisual</a> class, but uses simple openGL values instead of built-in <a class="el" href="class_mesh.html">Mesh</a> class. It uses cubemap <a class="el" href="class_texture.html" title="Texture class.">Texture</a> to represent each side of the box. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a77a92db4492ed94ed4bd101b05ffb1f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a77a92db4492ed94ed4bd101b05ffb1f4">&#9670;&nbsp;</a></span>Skybox()</h2>
 
@@ -132,6 +145,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor. </p>
+<p>Setup vertices to create skybox cube. Generates VBOs. Sets skybox shader. </p>
 
 </div>
 </div>
@@ -149,6 +165,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destructor. </p>
 
 </div>
 </div>
@@ -168,6 +186,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Draws skybox using skybox shader. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -182,6 +202,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Cubemap texture of sky. </p>
 
 </div>
 </div>

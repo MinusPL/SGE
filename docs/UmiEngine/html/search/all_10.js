@@ -10,7 +10,6 @@ var searchData=
   ['resourcemanager_2ecpp',['ResourceManager.cpp',['../_resource_manager_8cpp.html',1,'']]],
   ['resourcemanager_2eh',['ResourceManager.h',['../_resource_manager_8h.html',1,'']]],
   ['right',['Right',['../class_transform.html#ad8a1ed0e1024d93a8722e6d1b8e886c8',1,'Transform']]],
-  ['rot',['rot',['../class_primitive_visual.html#ae1cf9c3c3df2513f00cda8d788404bec',1,'PrimitiveVisual::rot()'],['../class_visual_object.html#ae07ac7780e0fca78a7c61c364fa1bf05',1,'VisualObject::rot()']]],
   ['rotation',['Rotation',['../class_transform.html#a4d1718230fdc4dd8f3a0cf810cf223f4',1,'Transform::Rotation()'],['../class_transform.html#ae19384ad3a8fc19d997bab8be905eb8a',1,'Transform::Rotation(glm::vec3 newRot)'],['../class_transform.html#a08eb7ce459e2be8c180741f29990583a',1,'Transform::Rotation(float x, float y, float z)']]],
   ['ruby',['ruby',['../struct_material.html#ae269e4b2375a840f121a2560a9d2b05b',1,'Material']]]
 ];

@@ -1,4 +1,4 @@
 <map id="Skybox" name="Skybox">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,72,121"/>
+<area shape="rect" id="node1" title="Skybox object." alt="" coords="5,95,72,121"/>
 <area shape="rect" id="node2" href="$class_texture.html" title="Texture class." alt="" coords="6,5,71,32"/>
 </map>

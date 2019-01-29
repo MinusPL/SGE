@@ -2,22 +2,36 @@
 \label{class_light}\index{Light@{Light}}
 
 
+Base \mbox{\hyperlink{class_light}{Light}} class.  
+
+
+
+
 {\ttfamily \#include $<$Light.\+h$>$}
 
 
 
 Inheritance diagram for Light\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_light__inherit__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 glm\+::vec3 \mbox{\hyperlink{class_light_ad47b5347556fd8cd9ebdc60fdfed196b}{diffuse}}
-\item 
+\begin{DoxyCompactList}\small\item\em Diffuse color of light. \end{DoxyCompactList}\item 
 glm\+::vec3 \mbox{\hyperlink{class_light_afaa34bb2efc167adcb2055359fd08a49}{ambient}}
-\item 
+\begin{DoxyCompactList}\small\item\em Ambient color of light. \end{DoxyCompactList}\item 
 glm\+::vec3 \mbox{\hyperlink{class_light_aefcfb83a0540ddb885c2622061b28d7e}{specular}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Specular color of light. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Base \mbox{\hyperlink{class_light}{Light}} class. 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_light_afaa34bb2efc167adcb2055359fd08a49}\label{class_light_afaa34bb2efc167adcb2055359fd08a49}} 
@@ -26,17 +40,29 @@ glm\+::vec3 \mbox{\hyperlink{class_light_aefcfb83a0540ddb885c2622061b28d7e}{spec
 \subsubsection{\texorpdfstring{ambient}{ambient}}
 {\footnotesize\ttfamily glm\+::vec3 Light\+::ambient}
 
+
+
+Ambient color of light. 
+
 \mbox{\Hypertarget{class_light_ad47b5347556fd8cd9ebdc60fdfed196b}\label{class_light_ad47b5347556fd8cd9ebdc60fdfed196b}} 
 \index{Light@{Light}!diffuse@{diffuse}}
 \index{diffuse@{diffuse}!Light@{Light}}
 \subsubsection{\texorpdfstring{diffuse}{diffuse}}
 {\footnotesize\ttfamily glm\+::vec3 Light\+::diffuse}
 
+
+
+Diffuse color of light. 
+
 \mbox{\Hypertarget{class_light_aefcfb83a0540ddb885c2622061b28d7e}\label{class_light_aefcfb83a0540ddb885c2622061b28d7e}} 
 \index{Light@{Light}!specular@{specular}}
 \index{specular@{specular}!Light@{Light}}
 \subsubsection{\texorpdfstring{specular}{specular}}
 {\footnotesize\ttfamily glm\+::vec3 Light\+::specular}
+
+
+
+Specular color of light. 
 
 
 

@@ -2,27 +2,43 @@
 \label{class_skybox}\index{Skybox@{Skybox}}
 
 
+\mbox{\hyperlink{class_skybox}{Skybox}} object.  
+
+
+
+
 {\ttfamily \#include $<$Skybox.\+h$>$}
 
 
 
 Collaboration diagram for Skybox\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{class_skybox__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_skybox_a77a92db4492ed94ed4bd101b05ffb1f4}{Skybox}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_skybox_a62ad4c6b4b1965a0a6d8536a50d4c090}{$\sim$\+Skybox}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_skybox_a8bf85652e4f0559530eb7a1f5ed87439}{Draw}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draws skybox using skybox shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_texture}{Texture}} $\ast$ \mbox{\hyperlink{class_skybox_a6e1ace9b3bcf2c50136a833d2a1d2118}{texture}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Cubemap texture of sky. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_skybox}{Skybox}} object. 
+
+Works almost like \mbox{\hyperlink{class_primitive_visual}{Primitive\+Visual}} class, but uses simple open\+GL values instead of built-\/in \mbox{\hyperlink{class_mesh}{Mesh}} class. It uses cubemap \mbox{\hyperlink{class_texture}{Texture}} to represent each side of the box. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_skybox_a77a92db4492ed94ed4bd101b05ffb1f4}\label{class_skybox_a77a92db4492ed94ed4bd101b05ffb1f4}} 
@@ -31,11 +47,19 @@ void \mbox{\hyperlink{class_skybox_a8bf85652e4f0559530eb7a1f5ed87439}{Draw}} ()
 \subsubsection{\texorpdfstring{Skybox()}{Skybox()}}
 {\footnotesize\ttfamily Skybox\+::\+Skybox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_skybox_a62ad4c6b4b1965a0a6d8536a50d4c090}\label{class_skybox_a62ad4c6b4b1965a0a6d8536a50d4c090}} 
+
+
+Constructor. 
+
+Setup vertices to create skybox cube. Generates V\+B\+Os. Sets skybox shader. \mbox{\Hypertarget{class_skybox_a62ad4c6b4b1965a0a6d8536a50d4c090}\label{class_skybox_a62ad4c6b4b1965a0a6d8536a50d4c090}} 
 \index{Skybox@{Skybox}!````~Skybox@{$\sim$Skybox}}
 \index{````~Skybox@{$\sim$Skybox}!Skybox@{Skybox}}
 \subsubsection{\texorpdfstring{$\sim$Skybox()}{~Skybox()}}
 {\footnotesize\ttfamily Skybox\+::$\sim$\+Skybox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
 
 
 
@@ -48,12 +72,20 @@ void \mbox{\hyperlink{class_skybox_a8bf85652e4f0559530eb7a1f5ed87439}{Draw}} ()
 
 
 
+Draws skybox using skybox shader. 
+
+
+
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_skybox_a6e1ace9b3bcf2c50136a833d2a1d2118}\label{class_skybox_a6e1ace9b3bcf2c50136a833d2a1d2118}} 
 \index{Skybox@{Skybox}!texture@{texture}}
 \index{texture@{texture}!Skybox@{Skybox}}
 \subsubsection{\texorpdfstring{texture}{texture}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}}$\ast$ Skybox\+::texture}
+
+
+
+Cubemap texture of sky. 
 
 
 

@@ -7,20 +7,32 @@
 
 
 Inheritance diagram for Cube\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_cube__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Cube\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cube__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_cube_a06f3d86fb63e3aad08623610aa3c17b4}{Cube}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_cube_aa814e979cecb8c451fdb332ded2cea1e}{$\sim$\+Cube}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_cube_a52a6950310f4529d9a3df4bc60c0625b}{Update}} (G\+Lfloat dt) override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates logic of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -31,11 +43,19 @@ virtual void \mbox{\hyperlink{class_cube_a52a6950310f4529d9a3df4bc60c0625b}{Upda
 \subsubsection{\texorpdfstring{Cube()}{Cube()}}
 {\footnotesize\ttfamily Cube\+::\+Cube (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_cube_aa814e979cecb8c451fdb332ded2cea1e}\label{class_cube_aa814e979cecb8c451fdb332ded2cea1e}} 
+
+
+Constructor. 
+
+Setups cube mesh and recreates normals. \mbox{\Hypertarget{class_cube_aa814e979cecb8c451fdb332ded2cea1e}\label{class_cube_aa814e979cecb8c451fdb332ded2cea1e}} 
 \index{Cube@{Cube}!````~Cube@{$\sim$Cube}}
 \index{````~Cube@{$\sim$Cube}!Cube@{Cube}}
 \subsubsection{\texorpdfstring{$\sim$Cube()}{~Cube()}}
 {\footnotesize\ttfamily Cube\+::$\sim$\+Cube (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
 
 
 
@@ -46,6 +66,15 @@ virtual void \mbox{\hyperlink{class_cube_a52a6950310f4529d9a3df4bc60c0625b}{Upda
 \subsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily void Cube\+::\+Update (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Updates logic of the object. 
+
+This method is not implmented in \mbox{\hyperlink{class_game_object}{Game\+Object}}. All derrived classes must implement it. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & delta time between frames of game. Allows to have frame independent movement. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{class_game_object_aa100c768006aca3e7cdbabe27b48b9e5}{Game\+Object}}.

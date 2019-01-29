@@ -5,9 +5,14 @@
 class Cube : public PrimitiveVisual
 {
 public:
+	//! Constructor
 
+	/*!
+	Setups cube mesh and recreates normals.
+	*/
 	Cube();
+	//! Destructor
 	~Cube();
-	// Inherited via PrimitiveVisual
+
 	virtual void Update(GLfloat dt) override;
 };

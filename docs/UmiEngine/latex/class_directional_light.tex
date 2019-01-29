@@ -2,27 +2,47 @@
 \label{class_directional_light}\index{DirectionalLight@{DirectionalLight}}
 
 
+Directional \mbox{\hyperlink{class_light}{Light}} class.  
+
+
+
+
 {\ttfamily \#include $<$Directional\+Light.\+h$>$}
 
 
 
 Inheritance diagram for Directional\+Light\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_directional_light__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Directional\+Light\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_directional_light__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_directional_light_a258c15fc957f8ffb76161dc000830418}{Apply\+To\+Shader}} (\mbox{\hyperlink{class_shader}{Shader}} $\ast$shader)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Aply light to shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 glm\+::vec3 \mbox{\hyperlink{class_directional_light_a5b2956fd8583e5ef45fbf1f1e778cd39}{direction}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Direction to which \mbox{\hyperlink{class_directional_light}{Directional\+Light}} will point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Directional \mbox{\hyperlink{class_light}{Light}} class. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_directional_light_a258c15fc957f8ffb76161dc000830418}\label{class_directional_light_a258c15fc957f8ffb76161dc000830418}} 
@@ -33,6 +53,15 @@ glm\+::vec3 \mbox{\hyperlink{class_directional_light_a5b2956fd8583e5ef45fbf1f1e7
 
 
 
+Aply light to shader. 
+
+Apply light values (colors and direction) to shader. 
+\begin{DoxyParams}{Parameters}
+{\em shader} & -\/ pointer to shader that will have aplied ligths. \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_directional_light_a5b2956fd8583e5ef45fbf1f1e778cd39}\label{class_directional_light_a5b2956fd8583e5ef45fbf1f1e778cd39}} 
 \index{DirectionalLight@{DirectionalLight}!direction@{direction}}
@@ -41,6 +70,10 @@ glm\+::vec3 \mbox{\hyperlink{class_directional_light_a5b2956fd8583e5ef45fbf1f1e7
 {\footnotesize\ttfamily glm\+::vec3 Directional\+Light\+::direction}
 
 
+
+Direction to which \mbox{\hyperlink{class_directional_light}{Directional\+Light}} will point. 
+
+Due to how directional light is modelled in all games this light cannot have position. All light rays are parallel, so no position is needed. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

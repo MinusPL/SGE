@@ -96,17 +96,24 @@ $(document).ready(function(){initNavTree('struct_material.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="struct_material.html" title="Material structure holding all characteristics of each material.">Material</a> structure holding all characteristics of each material.  
+ <a href="struct_material.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_material_8h_source.html">Material.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Material:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_material__coll__graph.png" border="0" usemap="#_material_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="_material_coll__map" id="_material_coll__map">
+<area shape="rect"  title="Material structure holding all characteristics of each material." alt="" coords="5,191,73,218"/>
+<area shape="rect"  href="class_texture.html" title="Texture class." alt="" coords="7,5,72,32"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0be7dba7f259e659502c4b543cdd7d8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#a0be7dba7f259e659502c4b543cdd7d8c">Material</a> (glm::vec3 <a class="el" href="struct_material.html#af99c823542e497c98a35d1aac5fc9012">ambient</a>, glm::vec3 <a class="el" href="struct_material.html#a099904e2f5a7bbec3cba6bf8ec546b11">diffuse</a>, glm::vec3 <a class="el" href="struct_material.html#aac1c499923ff99564cdd97a4b5e504a9">specular</a>, float <a class="el" href="struct_material.html#ac40b4d892e9bff09f793d86ca1f3257e">shiness</a>)</td></tr>
+<tr class="memdesc:a0be7dba7f259e659502c4b543cdd7d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates material with given values.  <a href="#a0be7dba7f259e659502c4b543cdd7d8c">More...</a><br /></td></tr>
 <tr class="separator:a0be7dba7f259e659502c4b543cdd7d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a137e987401b63eb7c6c27c3e38bc74b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#a137e987401b63eb7c6c27c3e38bc74b5">Material</a> ()</td></tr>
 <tr class="separator:a137e987401b63eb7c6c27c3e38bc74b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,20 +121,28 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a187af0c557b8521fa0a88507ae618c42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#a187af0c557b8521fa0a88507ae618c42">diffuseTexture</a> = nullptr</td></tr>
+<tr class="memdesc:a187af0c557b8521fa0a88507ae618c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diffuse <a class="el" href="class_texture.html" title="Texture class.">Texture</a> of material. Can be changed after setting material to object.  <a href="#a187af0c557b8521fa0a88507ae618c42">More...</a><br /></td></tr>
 <tr class="separator:a187af0c557b8521fa0a88507ae618c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca33d2644100f269b8289ddd08dd6e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#a1ca33d2644100f269b8289ddd08dd6e4">specularTexture</a> = nullptr</td></tr>
+<tr class="memdesc:a1ca33d2644100f269b8289ddd08dd6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specular Texutre of material. Can be changed after setting material to object.  <a href="#a1ca33d2644100f269b8289ddd08dd6e4">More...</a><br /></td></tr>
 <tr class="separator:a1ca33d2644100f269b8289ddd08dd6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a915ba1f28243cdd67be5ccc70d4073d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#a915ba1f28243cdd67be5ccc70d4073d8">normalMap</a> = nullptr</td></tr>
+<tr class="memdesc:a915ba1f28243cdd67be5ccc70d4073d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normal Map <a class="el" href="class_texture.html" title="Texture class.">Texture</a> of material. Can be changed after setting material to object.  <a href="#a915ba1f28243cdd67be5ccc70d4073d8">More...</a><br /></td></tr>
 <tr class="separator:a915ba1f28243cdd67be5ccc70d4073d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af99c823542e497c98a35d1aac5fc9012"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#af99c823542e497c98a35d1aac5fc9012">ambient</a></td></tr>
+<tr class="memdesc:af99c823542e497c98a35d1aac5fc9012"><td class="mdescLeft">&#160;</td><td class="mdescRight">glm::vec3 value that represents ambient color of material.  <a href="#af99c823542e497c98a35d1aac5fc9012">More...</a><br /></td></tr>
 <tr class="separator:af99c823542e497c98a35d1aac5fc9012"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a099904e2f5a7bbec3cba6bf8ec546b11"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#a099904e2f5a7bbec3cba6bf8ec546b11">diffuse</a></td></tr>
+<tr class="memdesc:a099904e2f5a7bbec3cba6bf8ec546b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">glm::vec3 value that represents diffuse color of material.  <a href="#a099904e2f5a7bbec3cba6bf8ec546b11">More...</a><br /></td></tr>
 <tr class="separator:a099904e2f5a7bbec3cba6bf8ec546b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac1c499923ff99564cdd97a4b5e504a9"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#aac1c499923ff99564cdd97a4b5e504a9">specular</a></td></tr>
+<tr class="memdesc:aac1c499923ff99564cdd97a4b5e504a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">glm::vec3 value that represents specular color of material.  <a href="#aac1c499923ff99564cdd97a4b5e504a9">More...</a><br /></td></tr>
 <tr class="separator:aac1c499923ff99564cdd97a4b5e504a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab331a289b85cc07810ded7f4ebb66175"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#ab331a289b85cc07810ded7f4ebb66175">alfa</a> = 1.0f</td></tr>
+<tr class="memdesc:ab331a289b85cc07810ded7f4ebb66175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents how translucent material is going to be.  <a href="#ab331a289b85cc07810ded7f4ebb66175">More...</a><br /></td></tr>
 <tr class="separator:ab331a289b85cc07810ded7f4ebb66175"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac40b4d892e9bff09f793d86ca1f3257e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#ac40b4d892e9bff09f793d86ca1f3257e">shiness</a> = 32</td></tr>
+<tr class="memdesc:ac40b4d892e9bff09f793d86ca1f3257e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents how shiny material would appear in game.  <a href="#ac40b4d892e9bff09f793d86ca1f3257e">More...</a><br /></td></tr>
 <tr class="separator:ac40b4d892e9bff09f793d86ca1f3257e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -183,7 +198,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a0bce3d9c7e1e38fbf55e85a0104c2564"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_material.html">Material</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_material.html#a0bce3d9c7e1e38fbf55e85a0104c2564">white</a> = <a class="el" href="struct_material.html">Material</a>(glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0f, 1.0f, 1.0f), 1.0f * 256.0f)</td></tr>
 <tr class="separator:a0bce3d9c7e1e38fbf55e85a0104c2564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="struct_material.html" title="Material structure holding all characteristics of each material.">Material</a> structure holding all characteristics of each material. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0be7dba7f259e659502c4b543cdd7d8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0be7dba7f259e659502c4b543cdd7d8c">&#9670;&nbsp;</a></span>Material() <span class="overload">[1/2]</span></h2>
 
@@ -230,6 +247,18 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates material with given values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ambient</td><td>glm::vec3 representing color of material's ambient. </td></tr>
+    <tr><td class="paramname">diffuse</td><td>glm::vec3 representing color of material's diffuse. </td></tr>
+    <tr><td class="paramname">specular</td><td>glm::vec3 representing color of material's specular. </td></tr>
+    <tr><td class="paramname">shiness</td><td>float value representing shiny object will look in game. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>new <a class="el" href="struct_material.html" title="Material structure holding all characteristics of each material.">Material</a> </dd></dl>
+
 </div>
 </div>
 <a id="a137e987401b63eb7c6c27c3e38bc74b5"></a>
@@ -270,6 +299,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Represents how translucent material is going to be. </p>
+
 </div>
 </div>
 <a id="af99c823542e497c98a35d1aac5fc9012"></a>
@@ -283,6 +314,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>glm::vec3 value that represents ambient color of material. </p>
 
 </div>
 </div>
@@ -474,6 +507,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>glm::vec3 value that represents diffuse color of material. </p>
+
 </div>
 </div>
 <a id="a187af0c557b8521fa0a88507ae618c42"></a>
@@ -487,6 +522,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Diffuse <a class="el" href="class_texture.html" title="Texture class.">Texture</a> of material. Can be changed after setting material to object. </p>
 
 </div>
 </div>
@@ -612,6 +649,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Normal Map <a class="el" href="class_texture.html" title="Texture class.">Texture</a> of material. Can be changed after setting material to object. </p>
+
 </div>
 </div>
 <a id="aa189bbbd916aaf6a451296e2ffc6a47c"></a>
@@ -736,6 +775,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Represents how shiny material would appear in game. </p>
+
 </div>
 </div>
 <a id="aef9dfcd5c4f7aaa53ee68831a19f68ca"></a>
@@ -772,6 +813,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>glm::vec3 value that represents specular color of material. </p>
+
 </div>
 </div>
 <a id="a1ca33d2644100f269b8289ddd08dd6e4"></a>
@@ -785,6 +828,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Specular Texutre of material. Can be changed after setting material to object. </p>
 
 </div>
 </div>

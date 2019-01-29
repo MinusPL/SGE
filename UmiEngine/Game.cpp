@@ -45,7 +45,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-	window = glfwCreateWindow(screen_width, screen_height, "UMI Engine v0.0.1", nullptr, nullptr);
+	window = glfwCreateWindow(screen_width, screen_height, "UMI Engine v0.0.1", glfwGetPrimaryMonitor(), nullptr);
 	glfwMakeContextCurrent(window);
 	ilutRenderer(ILUT_OPENGL);
 	glewExperimental = GL_TRUE;

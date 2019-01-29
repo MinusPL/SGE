@@ -7,15 +7,6 @@
 
 class Mesh
 {
-private:
-	GLuint VBO, EBO, VAO;
-	GLuint VBOClr, VBONorm;
-	GLuint VBOTangent;
-	GLuint VBOuv;
-
-	glm::vec3 NormalFromIndices(GLuint a, GLuint b, GLuint c);
-	glm::vec3 TangentFromIndices(GLuint a, GLuint b, GLuint c);
-
 public:
 	GLenum vertexFlag = GL_TRIANGLES;
 
@@ -38,4 +29,13 @@ public:
 	void RecalculateNormals();
 
 	~Mesh();
+
+private:
+	GLuint VBO, EBO, VAO;
+	GLuint VBOClr, VBONorm;
+	GLuint VBOTangent;
+	GLuint VBOuv;
+
+	glm::vec3 NormalFromIndices(GLuint a, GLuint b, GLuint c);
+	glm::vec3 TangentFromIndices(GLuint a, GLuint b, GLuint c);
 };

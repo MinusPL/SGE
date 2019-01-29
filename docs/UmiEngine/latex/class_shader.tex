@@ -10,34 +10,34 @@
 \mbox{\hyperlink{class_shader_a0d654ebaca4e0555197c0724c6d30610}{Shader}} ()
 \item 
 \mbox{\hyperlink{class_shader}{Shader}} \& \mbox{\hyperlink{class_shader_a02292f4fdae284b29169db5da29e519a}{Use}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the current shader as active. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_a4d42d98a025018d7ce564a78ac5b921e}{Compile}} (const G\+Lchar $\ast$vertex\+Source, const G\+Lchar $\ast$fragment\+Source, const G\+Lchar $\ast$geometry\+Source=nullptr)
-\item 
+\begin{DoxyCompactList}\small\item\em Compiles the shader from given source code. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_af08ebcd8cd00553bce2134a476187496}{Set\+Float}} (const G\+Lchar $\ast$name, G\+Lfloat value, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Float variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_a2c362029c73289761529a5d8b9d6a6b3}{Set\+Integer}} (const G\+Lchar $\ast$name, G\+Lint value, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Integer variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_a6f0213e1a40b9ee631f4154da22f6f52}{Set\+Vector2f}} (const G\+Lchar $\ast$name, G\+Lfloat x, G\+Lfloat y, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Vector2f variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_ae4c81083a20b2790c15d9fbc8e8c7b38}{Set\+Vector2f}} (const G\+Lchar $\ast$name, const glm\+::vec2 \&value, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Vector2f variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_ad7e3033cb0250e83bc118c0677ef678a}{Set\+Vector3f}} (const G\+Lchar $\ast$name, G\+Lfloat x, G\+Lfloat y, G\+Lfloat z, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Vector2f variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_af564b9fd25379dafacba930fc414dae8}{Set\+Vector3f}} (const G\+Lchar $\ast$name, const glm\+::vec3 \&value, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Float variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_a9f0f5bf4f960f299e6d7f69ecc612474}{Set\+Vector4f}} (const G\+Lchar $\ast$name, G\+Lfloat x, G\+Lfloat y, G\+Lfloat z, G\+Lfloat w, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Vector2f variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_a2d24719a9edc9541bd01cf230f0b3a12}{Set\+Vector4f}} (const G\+Lchar $\ast$name, const glm\+::vec4 \&value, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Float variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_a0c8e93a639ef45644c1e27043be586b2}{Set\+Matrix4}} (const G\+Lchar $\ast$name, const glm\+::mat4 \&matrix, G\+Lboolean use\+Shader=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Set Matrix4 variable for shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_shader_a70230092a3435a7c0a05736225bb0dd1}{Set\+Matrix3}} (const G\+Lchar $\ast$name, const glm\+::mat3 \&matrix, G\+Lboolean use\+Shader=false)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set Matrix3 variable for shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 G\+Luint \mbox{\hyperlink{class_shader_a7be2afcbd5ba5873a04536a2b4b5e576}{ID}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ID of generated shader program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -56,71 +56,230 @@ G\+Luint \mbox{\hyperlink{class_shader_a7be2afcbd5ba5873a04536a2b4b5e576}{ID}}
 \subsubsection{\texorpdfstring{Compile()}{Compile()}}
 {\footnotesize\ttfamily void Shader\+::\+Compile (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{vertex\+Source,  }\item[{const G\+Lchar $\ast$}]{fragment\+Source,  }\item[{const G\+Lchar $\ast$}]{geometry\+Source = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
+
+
+Compiles the shader from given source code. 
+
+Compile and create shader. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Source} & -\/ path to the file containing vertex shader. \\
+\hline
+{\em fragment\+Source} & -\/ path to the file containing fragment shader. \\
+\hline
+{\em geometry\+Source} & -\/ path to the file containing geometry shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_af08ebcd8cd00553bce2134a476187496}\label{class_shader_af08ebcd8cd00553bce2134a476187496}} 
 \index{Shader@{Shader}!SetFloat@{SetFloat}}
 \index{SetFloat@{SetFloat}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetFloat()}{SetFloat()}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Float (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{G\+Lfloat}]{value,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Float variable for shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em value} & -\/ float value of variable that is beeing set. \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_a2c362029c73289761529a5d8b9d6a6b3}\label{class_shader_a2c362029c73289761529a5d8b9d6a6b3}} 
 \index{Shader@{Shader}!SetInteger@{SetInteger}}
 \index{SetInteger@{SetInteger}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetInteger()}{SetInteger()}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Integer (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{G\+Lint}]{value,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Integer variable for shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em value} & -\/ integer value of variable that is beeing set. \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_a70230092a3435a7c0a05736225bb0dd1}\label{class_shader_a70230092a3435a7c0a05736225bb0dd1}} 
 \index{Shader@{Shader}!SetMatrix3@{SetMatrix3}}
 \index{SetMatrix3@{SetMatrix3}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetMatrix3()}{SetMatrix3()}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Matrix3 (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{const glm\+::mat3 \&}]{matrix,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Matrix3 variable for shader. 
+
+Sets 3x3 matrix as variable for shader. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em value} & -\/ glm\+::mat3 representing matrix with size 3x3. \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_a0c8e93a639ef45644c1e27043be586b2}\label{class_shader_a0c8e93a639ef45644c1e27043be586b2}} 
 \index{Shader@{Shader}!SetMatrix4@{SetMatrix4}}
 \index{SetMatrix4@{SetMatrix4}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetMatrix4()}{SetMatrix4()}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Matrix4 (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{const glm\+::mat4 \&}]{matrix,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Matrix4 variable for shader. 
+
+Sets 4x4 matrix as variable for shader. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em value} & -\/ glm\+::mat4 representing matrix with size 4x4. \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_a6f0213e1a40b9ee631f4154da22f6f52}\label{class_shader_a6f0213e1a40b9ee631f4154da22f6f52}} 
 \index{Shader@{Shader}!SetVector2f@{SetVector2f}}
 \index{SetVector2f@{SetVector2f}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetVector2f()}{SetVector2f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Vector2f (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{G\+Lfloat}]{x,  }\item[{G\+Lfloat}]{y,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Vector2f variable for shader. 
+
+Sets 2 element vector using two separate float variables. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em x} & -\/ first vector value \\
+\hline
+{\em y} & -\/ second vector value \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_ae4c81083a20b2790c15d9fbc8e8c7b38}\label{class_shader_ae4c81083a20b2790c15d9fbc8e8c7b38}} 
 \index{Shader@{Shader}!SetVector2f@{SetVector2f}}
 \index{SetVector2f@{SetVector2f}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetVector2f()}{SetVector2f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Vector2f (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{const glm\+::vec2 \&}]{value,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Vector2f variable for shader. 
+
+Sets 2 element vector using one glm\+::vec2 variable. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em value} & -\/ glm\+::vec2 that stores x and y values as one variable. \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_ad7e3033cb0250e83bc118c0677ef678a}\label{class_shader_ad7e3033cb0250e83bc118c0677ef678a}} 
 \index{Shader@{Shader}!SetVector3f@{SetVector3f}}
 \index{SetVector3f@{SetVector3f}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetVector3f()}{SetVector3f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Vector3f (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{G\+Lfloat}]{x,  }\item[{G\+Lfloat}]{y,  }\item[{G\+Lfloat}]{z,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Vector2f variable for shader. 
+
+Sets 3 element vector using three separate float variables. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em x} & -\/ first vector value \\
+\hline
+{\em y} & -\/ second vector value \\
+\hline
+{\em z} & -\/ third vector value \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_af564b9fd25379dafacba930fc414dae8}\label{class_shader_af564b9fd25379dafacba930fc414dae8}} 
 \index{Shader@{Shader}!SetVector3f@{SetVector3f}}
 \index{SetVector3f@{SetVector3f}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetVector3f()}{SetVector3f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Vector3f (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{const glm\+::vec3 \&}]{value,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Float variable for shader. 
+
+Sets 3 element vector using one glm\+::vec3 variable. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em value} & -\/ glm\+::vec3 that stores x, y and z values as one variable. \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_a9f0f5bf4f960f299e6d7f69ecc612474}\label{class_shader_a9f0f5bf4f960f299e6d7f69ecc612474}} 
 \index{Shader@{Shader}!SetVector4f@{SetVector4f}}
 \index{SetVector4f@{SetVector4f}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetVector4f()}{SetVector4f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Vector4f (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{G\+Lfloat}]{x,  }\item[{G\+Lfloat}]{y,  }\item[{G\+Lfloat}]{z,  }\item[{G\+Lfloat}]{w,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Vector2f variable for shader. 
+
+Sets 4 element vector using two separate float variables. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em x} & -\/ first vector value \\
+\hline
+{\em y} & -\/ second vector value \\
+\hline
+{\em z} & -\/ third vector value \\
+\hline
+{\em w} & -\/ fourth vector value \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_a2d24719a9edc9541bd01cf230f0b3a12}\label{class_shader_a2d24719a9edc9541bd01cf230f0b3a12}} 
 \index{Shader@{Shader}!SetVector4f@{SetVector4f}}
 \index{SetVector4f@{SetVector4f}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{SetVector4f()}{SetVector4f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Shader\+::\+Set\+Vector4f (\begin{DoxyParamCaption}\item[{const G\+Lchar $\ast$}]{name,  }\item[{const glm\+::vec4 \&}]{value,  }\item[{G\+Lboolean}]{use\+Shader = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Set Float variable for shader. 
+
+Sets 4 element vector using one glm\+::vec2 variable. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of variable. \\
+\hline
+{\em value} & -\/ glm\+::vec4 that stores x, y, z and w values as one variable. \\
+\hline
+{\em use\+Shader} & -\/ boolean that tells if shader should be set as current active shader. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_shader_a02292f4fdae284b29169db5da29e519a}\label{class_shader_a02292f4fdae284b29169db5da29e519a}} 
 \index{Shader@{Shader}!Use@{Use}}
 \index{Use@{Use}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{Use()}{Use()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_shader}{Shader}} \& Shader\+::\+Use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the current shader as active. 
 
 
 
@@ -130,6 +289,10 @@ G\+Luint \mbox{\hyperlink{class_shader_a7be2afcbd5ba5873a04536a2b4b5e576}{ID}}
 \index{ID@{ID}!Shader@{Shader}}
 \subsubsection{\texorpdfstring{ID}{ID}}
 {\footnotesize\ttfamily G\+Luint Shader\+::\+ID}
+
+
+
+ID of generated shader program. 
 
 
 
