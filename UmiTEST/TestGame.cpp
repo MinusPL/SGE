@@ -18,6 +18,10 @@
 #include "BuildingB.h"
 
 #include "Player.h"
+#include "Bucket.h"
+#include "Water.h"
+
+StorageCrate* NormKostka = nullptr;
 
 TestGame::TestGame() : Game()
 {
@@ -40,19 +44,26 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadTexture("assets/textures/player_crate.png", "player_crate");
 
 	std::vector<GLchar*> filenames;
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
 
-	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/right.png");
-	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/left.png");
-	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/top.png");
-	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/bottom.png");
-	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/front.png");
-	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/back.png");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/right.png");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/left.png");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/top.png");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/bottom.png");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/front.png");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/back.png");
+
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/right.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/left.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/top.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/bottom.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/front.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/back.jpg");
 
 	ResourceManager::LoadCubeMap(filenames, "skybox_ocean");
 
@@ -69,20 +80,20 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	objects.push_back(tPlayer);
 	opaque_objs.push_back(tPlayer);
 
-	Plane* ground = new Plane();
-	ground->material = Material::white;
-	ground->material.specular = glm::vec3(0.0f, 0.0f, 0.0f);
-	ground->material.diffuseTexture = ResourceManager::GetTexture("grass_terrain");
-	ground->transform.Scale(100.0f, 1.0f, 100.0f);
-	for (auto &uv : ground->meshes[0]->uvs)
-	{
-		uv *= 50;
-	}
-	ground->meshes[0]->RecalculateNormals();
-	ground->meshes[0]->CreateMesh();
-	ground->receiveShadows = true;
-	objects.push_back(ground);
-	opaque_objs.push_back(ground);
+	////Plane* ground = new Plane();
+	////ground->material = Material::white;
+	////ground->material.specular = glm::vec3(0.0f, 0.0f, 0.0f);
+	////ground->material.diffuseTexture = ResourceManager::GetTexture("grass_terrain");
+	////ground->transform.Scale(100.0f, 1.0f, 100.0f);
+	////for (auto &uv : ground->meshes[0]->uvs)
+	//{
+	//	uv *= 50;
+	//}
+	//ground->meshes[0]->RecalculateNormals();
+	//ground->meshes[0]->CreateMesh();
+	//ground->receiveShadows = true;
+	//objects.push_back(ground);
+	//opaque_objs.push_back(ground);
 
 	StorageCrate* kostka = nullptr;
 	int z = 0;
@@ -106,29 +117,31 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	z = rand() % 50 + 1;
 	kostka->transform.Position(glm::vec3(5.0f, 1.0f + (z / 10), -5.0f));
 	kostka->setRotationDirection(glm::vec3(1, 0, -1));
-	kostka->setRotationSpeed(10.0f);
+	kostka->setRotationSpeed(0.0f);
 	objects.push_back(kostka);
-	opaque_objs.push_back(kostka);
+	relfective_objs.push_back(kostka);
+	NormKostka = kostka;
 
 	kostka = new StorageCrate();
 	z = rand() % 50 + 1;
 	kostka->transform.Position(glm::vec3(-5.0f, 1.0f + (z / 10), -5.0f));
 	kostka->setRotationDirection(glm::vec3(1, 0, -1));
 	kostka->setRotationSpeed(10.0f);
+	kostka->transform.parent = &objects[0]->transform;
 	objects.push_back(kostka);
 	opaque_objs.push_back(kostka);
 
 
-	Grass* tGrass = nullptr;
-	for (int i = 0; i < 100; i++)
-	{
-		int x = rand() % 101 - 50;
-		int y = rand() % 101 - 50;
-		tGrass = new Grass();
-		tGrass->transform.Position(glm::vec3(x, 0.0f, y));
-		transparent_objs.push_back(tGrass);
-		this->objects.push_back(tGrass);
-	}
+	//Grass* tGrass = nullptr;
+	//for (int i = 0; i < 100; i++)
+	//{
+	//	int x = rand() % 101 - 50;
+	//	int y = rand() % 101 - 50;
+	//	tGrass = new Grass();
+	//	tGrass->transform.Position(glm::vec3(x, 0.0f, y));
+	//	transparent_objs.push_back(tGrass);
+	//	this->objects.push_back(tGrass);
+	//}
 
 	BuildingA* tBuild = new BuildingA();
 	tBuild->transform.Position(glm::vec3(-5.0f, 0.0f, 10.0f));
@@ -142,6 +155,30 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	objects.push_back(tBuild2);
 	opaque_objs.push_back(tBuild2);
 
+	Bucket *tBucket = nullptr;
+	tBucket = new Bucket();
+	tBucket->transform.Position(glm::vec3(-15.0f, 0.0f, 10.0f));
+	tBucket->transform.Scale(2.0f, 0.5f, 2.0f);
+	tBucket->receiveShadows = true;
+	objects.push_back(tBucket);
+	relfective_objs.push_back(tBucket);
+
+	Water *tWater = nullptr;
+	tWater = new Water();
+	tWater->transform.Position(glm::vec3(-15.0f, 0.0f, 10.0f));
+	tWater->transform.Scale(2.0f, 0.5f, 2.0f);
+	tWater->receiveShadows = false;
+	objects.push_back(tWater);
+	relfective_objs.push_back(tWater);
+
+	kostka = new StorageCrate();
+	kostka->transform.Position(glm::vec3(-15.0f, 0.5f, 10.0f));
+	kostka->setRotationDirection(glm::vec3(1, 0, -1));
+	kostka->transform.Scale(glm::vec3(0.2f, 0.2f, 0.2f));
+	kostka->setRotationSpeed(20.0f);
+	objects.push_back(kostka);
+	opaque_objs.push_back(kostka);
+
 
 	DirectionalLight* tLight = new DirectionalLight();
 	tLight->direction = glm::vec3(-0.5f, -1.0f, 1.5f);
@@ -154,11 +191,6 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	
 }
 
-bool TestGame::testCompare(glm::vec3 lhs, glm::vec3 rhs)
-{
-	return glm::distance(lhs, this->camera["main"]->transform.Position()) < glm::distance(rhs, this->camera["main"]->transform.Position());
-}
-
 void TestGame::Update(GLfloat dt)
 {
 	camera["main"]->Update(dt);
@@ -166,6 +198,13 @@ void TestGame::Update(GLfloat dt)
 	{
 		object->Update(dt);
 	}
+
+	if (Input::GetKey(Key::KEY_MINUS)) this->shininess_control -= 0.01f;
+	if (shininess_control < 0.0f) shininess_control = 0.0f;
+
+	if (Input::GetKey(Key::KEY_EQUAL)) this->shininess_control += 0.01f;
+	if (shininess_control > 256.0f) shininess_control = 256.0f;
+
 }
 
 void TestGame::MainLoop()

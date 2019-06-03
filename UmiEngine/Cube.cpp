@@ -25,6 +25,7 @@ Cube::Cube() : PrimitiveVisual(STANDARD)
 	tMesh->uvs.push_back(glm::vec2(1, 0));
 	tMesh->uvs.push_back(glm::vec2(0, 0));
 	tMesh->uvs.push_back(glm::vec2(0, 1));
+
 	//right
 	tMesh->vertices.push_back(glm::vec3(0.5, 0.5, -0.5));
 	tMesh->vertices.push_back(glm::vec3(0.5, 0.5, 0.5));
@@ -35,6 +36,7 @@ Cube::Cube() : PrimitiveVisual(STANDARD)
 	tMesh->uvs.push_back(glm::vec2(1, 1));
 	tMesh->uvs.push_back(glm::vec2(0, 1));
 	tMesh->uvs.push_back(glm::vec2(0, 0));
+
 	//left
 	tMesh->vertices.push_back(glm::vec3(-0.5, 0.5, 0.5));
 	tMesh->vertices.push_back(glm::vec3(-0.5, 0.5, -0.5));
@@ -45,6 +47,7 @@ Cube::Cube() : PrimitiveVisual(STANDARD)
 	tMesh->uvs.push_back(glm::vec2(1, 0));
 	tMesh->uvs.push_back(glm::vec2(0, 0));
 	tMesh->uvs.push_back(glm::vec2(0, 1));
+
 	//up
 	tMesh->vertices.push_back(glm::vec3(0.5, 0.5, -0.5));
 	tMesh->vertices.push_back(glm::vec3(-0.5, 0.5, -0.5));
@@ -55,6 +58,7 @@ Cube::Cube() : PrimitiveVisual(STANDARD)
 	tMesh->uvs.push_back(glm::vec2(0, 0));
 	tMesh->uvs.push_back(glm::vec2(0, 1));
 	tMesh->uvs.push_back(glm::vec2(1, 1));
+
 	//bottom
 	tMesh->vertices.push_back(glm::vec3(0.5, -0.5, 0.5));
 	tMesh->vertices.push_back(glm::vec3(-0.5, -0.5, 0.5));
@@ -65,6 +69,7 @@ Cube::Cube() : PrimitiveVisual(STANDARD)
 	tMesh->uvs.push_back(glm::vec2(1, 0));
 	tMesh->uvs.push_back(glm::vec2(0, 0));
 	tMesh->uvs.push_back(glm::vec2(0, 1));
+
 	
 	for (size_t i = 0; i < 6; i++)
 	{

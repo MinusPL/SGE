@@ -3,13 +3,12 @@
 #include <GLFW/glfw3.h>
 #include <Input.h>
 #include <ResourceManager.h>
+#include <Game.h>
 
 
-Player::Player() : Cube()
+Player::Player() : VisualObject((GLchar*)"assets/models/player/kotori.fbx")
 {
-	this->material = Material::white;
-	this->material.diffuseTexture = ResourceManager::GetTexture("player_crate");
-	this->material.specularTexture = ResourceManager::GetTexture("storage_crate_spec");
+
 }
 
 Player::~Player()
@@ -17,11 +16,19 @@ Player::~Player()
 	
 }
 
-
 void Player::Update(GLfloat dt)
 {
-	float speed = 2.0f;
-	float rot_speed = 20.0f;
+	float speed = 4.0f;
+	float rot_speed = 35.0f;
+
+	if (Input::GetKey(Key::KEY_LEFT_SHIFT))
+	{
+		speed = 10.0f;
+	}
+	else
+	{
+		speed = 4.0f;
+	}
 
 	if (Input::GetKey(Key::KEY_UP))
 	{
@@ -35,12 +42,12 @@ void Player::Update(GLfloat dt)
 	
 	if (Input::GetKey(Key::KEY_LEFT))
 	{
-		this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, -rot_speed * dt, 0.0f));
+		this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, rot_speed * dt, 0.0f));
 	}
 
 	if (Input::GetKey(Key::KEY_RIGHT))
 	{
-		this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, rot_speed * dt, 0.0f));
+		this->transform.Rotation(this->transform.Rotation() + glm::vec3(0.0f, -rot_speed * dt, 0.0f));
 	}
 
 	if (Input::GetKey(Key::KEY_R))
@@ -69,4 +76,6 @@ void Player::Update(GLfloat dt)
 	{
 		this->transform.Rotation(this->transform.Rotation() + glm::vec3(-rot_speed * dt, 0.0f, 0.0f));
 	}
+	//Game::instance->camera["main"]->transform.Position(this->transform.Position() + glm::vec3(0.0f, 2.0f, 0.0f));
+	//Game::instance->camera["main"]->transform.Rotation(this->transform.Rotation());
 }

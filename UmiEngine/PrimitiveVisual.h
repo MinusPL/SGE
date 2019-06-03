@@ -39,4 +39,5 @@ public:
 	//Inherited from GameObject
 	virtual void Draw() override;
 	virtual void DrawShadow() override;
+	virtual void DrawReflection() override;
 };

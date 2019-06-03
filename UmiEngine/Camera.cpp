@@ -56,8 +56,8 @@ void Camera::Update(GLfloat dt)
 		pitch = 89.0;
 	if (pitch < -89.0)
 		pitch = -89.0;
-	
-	this->transform.Rotation(glm::vec3(pitch, -yaw, 0.0));
+
+	this->transform.Rotation(glm::vec3(pitch, yaw, 0.0));
 }
 
 void Camera::LookAt(glm::vec3 target)

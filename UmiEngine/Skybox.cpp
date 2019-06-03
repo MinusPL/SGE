@@ -72,7 +72,7 @@ void Skybox::Draw()
 	this->shader->SetMatrix4("view", view);
 	this->shader->SetMatrix4("projection", Game::instance->camera["main"]->GetProjectionMatrix());
 
-	this->texture->BindTexture();
+	this->texture->BindCubemap();
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 	glDepthMask(GL_TRUE);
 }

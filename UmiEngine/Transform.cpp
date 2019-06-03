@@ -5,7 +5,7 @@ void Transform::UpdateVectors()
 	glm::vec3 front;
 	front.x = cos(glm::radians(rotation.y)) * cos(glm::radians(rotation.x));
 	front.y = sin(glm::radians(rotation.x));
-	front.z = sin(glm::radians(rotation.y)) * cos(glm::radians(rotation.x));
+	front.z = -(sin(glm::radians(rotation.y)) * cos(glm::radians(rotation.x)));
 	forward = glm::normalize(front);
 	// Also re-calculate the Right and Up vector
 	right = glm::normalize(glm::cross(forward, glm::vec3(0, 1, 0)));  // Normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.

@@ -2,18 +2,28 @@
 \label{class_model}\index{Model@{Model}}
 
 
+\mbox{\hyperlink{class_model}{Model}} class.  
+
+
+
+
 {\ttfamily \#include $<$Model.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_model_a0521de97cb482940ccf4a416d35fa336}{Model}} (G\+Lchar $\ast$filename)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for models. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_model_a8444e404fcc9cc66827c2f628b92ece3}{Draw}} (\mbox{\hyperlink{class_shader}{Shader}} $\ast$shader)
-\item 
+\begin{DoxyCompactList}\small\item\em Draw model normally. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_model_ac2e396a05a6b7af011c213dcbd2dae21}{Draw\+Shadow}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draw model to shadowmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_model}{Model}} class. 
+
+\mbox{\hyperlink{class_model}{Model}} has multiple materials and meshes used to create one whole object. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_model_a0521de97cb482940ccf4a416d35fa336}\label{class_model_a0521de97cb482940ccf4a416d35fa336}} 
@@ -24,6 +34,15 @@ void \mbox{\hyperlink{class_model_ac2e396a05a6b7af011c213dcbd2dae21}{Draw\+Shado
 
 
 
+Constructor for models. 
+
+Load model with assimp library. Load textures for materials. Load materials. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & -\/ path to the model file (eg. fbx file). \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_a8444e404fcc9cc66827c2f628b92ece3}\label{class_model_a8444e404fcc9cc66827c2f628b92ece3}} 
 \index{Model@{Model}!Draw@{Draw}}
@@ -31,6 +50,15 @@ void \mbox{\hyperlink{class_model_ac2e396a05a6b7af011c213dcbd2dae21}{Draw\+Shado
 \subsubsection{\texorpdfstring{Draw()}{Draw()}}
 {\footnotesize\ttfamily void Model\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption})}
 
+
+
+Draw model normally. 
+
+Draws object normally using specified shader. 
+\begin{DoxyParams}{Parameters}
+{\em shader} & -\/ pointer to the shader used to render model. \\
+\hline
+\end{DoxyParams}
 Check and bind diffuse map from material
 
 Check and bind specular map from material
@@ -42,6 +70,10 @@ Check and bind specular map from material \mbox{\Hypertarget{class_model_ac2e396
 {\footnotesize\ttfamily void Model\+::\+Draw\+Shadow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Draw model to shadowmap. 
+
+Draws model to shadowmap using simplified shadow shader. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

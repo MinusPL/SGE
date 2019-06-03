@@ -5,7 +5,7 @@
 #include "Transform.h"
 #include <gl/glew.h>
 
-enum ShaderType {STANDARD, STANDARD_ALPHA, STANDARD_SHADELESS};
+enum ShaderType {STANDARD, STANDARD_ALPHA, STANDARD_SHADELESS, STANDARD_ENV};
 
 //! GameObject class
 class GameObject
@@ -44,4 +44,6 @@ public:
 	Draws object to shadowmap using simplified shadow shader.
 	*/
 	virtual void DrawShadow() = 0;
+
+	virtual void DrawReflection() = 0;
 };

@@ -2,6 +2,11 @@
 \label{class_camera}\index{Camera@{Camera}}
 
 
+\mbox{\hyperlink{class_camera}{Camera}} class.  
+
+
+
+
 {\ttfamily \#include $<$Camera.\+h$>$}
 
 
@@ -17,28 +22,28 @@ Collaboration diagram for Camera\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_camera_a706e41a11eee92cd3f597386ae860885}{Camera}} (int mode)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor with specified mode. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_camera}{Camera}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_camera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_camera_ac8e78ac212afde90f72d59b3795474d0}{Update}} (G\+Lfloat dt)
-\item 
+\begin{DoxyCompactList}\small\item\em Update camera logic. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_camera_a657181de0da2b330865d005a3e08cc9f}{Look\+At}} (glm\+::vec3 target)
-\item 
+\begin{DoxyCompactList}\small\item\em Set camera to look at position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_camera_a61d3c3da4bab7c69c7f24c3f37abe1e5}{Perspective}} (G\+Lfloat fov, G\+Lfloat aspect\+Ratio, G\+Lfloat near\+Plane, G\+Lfloat far\+Plane)
-\item 
+\begin{DoxyCompactList}\small\item\em Set camera to work with perspective projection. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_camera_ad434a557e137d9c24369a3737f857736}{Orthographic}} (G\+Lfloat left, G\+Lfloat right, G\+Lfloat top, G\+Lfloat bottom, G\+Lfloat near\+\_\+plane, G\+Lfloat far\+\_\+plane)
-\item 
+\begin{DoxyCompactList}\small\item\em Set camera to work with perspective projection. \end{DoxyCompactList}\item 
 glm\+::mat4 \mbox{\hyperlink{class_camera_ab0a4bf5a65d45f25529e3cffda1c361b}{Get\+Projection\+Matrix}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get projection matrix form the camera. \end{DoxyCompactList}\item 
 glm\+::mat4 \mbox{\hyperlink{class_camera_a06b3f8e75270f4f2415f8591a315f231}{Get\+View\+Mat}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get current camera view matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_transform}{Transform}} \mbox{\hyperlink{class_camera_ad5cea63239e1519c1fe7d414f5e047a8}{transform}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_transform}{Transform}} of the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,6 +64,9 @@ class \mbox{\hyperlink{class_camera_aa2fab026580d6f14280c2ffb8063a314}{Game}}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_camera}{Camera}} class. 
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_camera_a706e41a11eee92cd3f597386ae860885}\label{class_camera_a706e41a11eee92cd3f597386ae860885}} 
 \index{Camera@{Camera}!Camera@{Camera}}
@@ -66,17 +74,34 @@ class \mbox{\hyperlink{class_camera_aa2fab026580d6f14280c2ffb8063a314}{Game}}
 \subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{int}]{mode }\end{DoxyParamCaption})}
 
+
+
+Constructor with specified mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & -\/ set if camera will work in perpective or orthographic projection. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_camera_a01f94c3543f56ede7af49dc778f19331}\label{class_camera_a01f94c3543f56ede7af49dc778f19331}} 
 \index{Camera@{Camera}!Camera@{Camera}}
 \index{Camera@{Camera}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Constructor for \mbox{\hyperlink{class_camera}{Camera}}. 
+
 \mbox{\Hypertarget{class_camera_ad1897942d0ccf91052386388a497349f}\label{class_camera_ad1897942d0ccf91052386388a497349f}} 
 \index{Camera@{Camera}!````~Camera@{$\sim$Camera}}
 \index{````~Camera@{$\sim$Camera}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{$\sim$Camera()}{~Camera()}}
 {\footnotesize\ttfamily Camera\+::$\sim$\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
 
 
 
@@ -87,11 +112,22 @@ class \mbox{\hyperlink{class_camera_aa2fab026580d6f14280c2ffb8063a314}{Game}}
 \subsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
 {\footnotesize\ttfamily glm\+::mat4 Camera\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get projection matrix form the camera. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::mat4 holding all required information about currently used projection. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_camera_a06b3f8e75270f4f2415f8591a315f231}\label{class_camera_a06b3f8e75270f4f2415f8591a315f231}} 
 \index{Camera@{Camera}!GetViewMat@{GetViewMat}}
 \index{GetViewMat@{GetViewMat}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{GetViewMat()}{GetViewMat()}}
 {\footnotesize\ttfamily glm\+::mat4 Camera\+::\+Get\+View\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get current camera view matrix. 
 
 \mbox{\Hypertarget{class_camera_a657181de0da2b330865d005a3e08cc9f}\label{class_camera_a657181de0da2b330865d005a3e08cc9f}} 
 \index{Camera@{Camera}!LookAt@{LookAt}}
@@ -99,24 +135,76 @@ class \mbox{\hyperlink{class_camera_aa2fab026580d6f14280c2ffb8063a314}{Game}}
 \subsubsection{\texorpdfstring{LookAt()}{LookAt()}}
 {\footnotesize\ttfamily void Camera\+::\+Look\+At (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{target }\end{DoxyParamCaption})}
 
+
+
+Set camera to look at position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & -\/ position at which camera will look. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_camera_ad434a557e137d9c24369a3737f857736}\label{class_camera_ad434a557e137d9c24369a3737f857736}} 
 \index{Camera@{Camera}!Orthographic@{Orthographic}}
 \index{Orthographic@{Orthographic}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{Orthographic()}{Orthographic()}}
 {\footnotesize\ttfamily void Camera\+::\+Orthographic (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{left,  }\item[{G\+Lfloat}]{right,  }\item[{G\+Lfloat}]{top,  }\item[{G\+Lfloat}]{bottom,  }\item[{G\+Lfloat}]{near\+\_\+plane,  }\item[{G\+Lfloat}]{far\+\_\+plane }\end{DoxyParamCaption})}
 
+
+
+Set camera to work with perspective projection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & -\/ specifies how much to the left of the screen camera will see. \\
+\hline
+{\em right} & -\/ specifies how much to the right of the screen camera will see. \\
+\hline
+{\em top} & -\/ specifies how much to the top of the screen camera will see. \\
+\hline
+{\em bottom} & -\/ specifies how much to the bottom of the screen camera will see. \\
+\hline
+{\em near\+\_\+plane} & -\/ speciies how close objects will start to be discarded. \\
+\hline
+{\em far\+\_\+plane} & -\/ specfies how far objects will start to be discarded. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_camera_a61d3c3da4bab7c69c7f24c3f37abe1e5}\label{class_camera_a61d3c3da4bab7c69c7f24c3f37abe1e5}} 
 \index{Camera@{Camera}!Perspective@{Perspective}}
 \index{Perspective@{Perspective}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{Perspective()}{Perspective()}}
 {\footnotesize\ttfamily void Camera\+::\+Perspective (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{fov,  }\item[{G\+Lfloat}]{aspect\+Ratio,  }\item[{G\+Lfloat}]{near\+Plane,  }\item[{G\+Lfloat}]{far\+Plane }\end{DoxyParamCaption})}
 
+
+
+Set camera to work with perspective projection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & -\/ specifies how much space camera will see. \\
+\hline
+{\em aspect\+Ratio} & -\/ specifies current aspect ratio of camera. \\
+\hline
+{\em near\+Plane} & -\/ speciies how close objects will start to be discarded. \\
+\hline
+{\em far\+Plane} & -\/ specfies how far objects will start to be discarded. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_camera_ac8e78ac212afde90f72d59b3795474d0}\label{class_camera_ac8e78ac212afde90f72d59b3795474d0}} 
 \index{Camera@{Camera}!Update@{Update}}
 \index{Update@{Update}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily void Camera\+::\+Update (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{dt }\end{DoxyParamCaption})}
 
+
+
+Update camera logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ delta time \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Friends And Related Function Documentation}
@@ -152,6 +240,10 @@ class \mbox{\hyperlink{class_camera_aa2fab026580d6f14280c2ffb8063a314}{Game}}
 \index{transform@{transform}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{transform}{transform}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_transform}{Transform}} Camera\+::transform}
+
+
+
+\mbox{\hyperlink{class_transform}{Transform}} of the camera. 
 
 \mbox{\Hypertarget{class_camera_add93fedd6b9a6a6e2c784aeda624de83}\label{class_camera_add93fedd6b9a6a6e2c784aeda624de83}} 
 \index{Camera@{Camera}!view@{view}}

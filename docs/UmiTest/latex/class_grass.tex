@@ -1,0 +1,88 @@
+\hypertarget{class_grass}{}\section{Grass Class Reference}
+\label{class_grass}\index{Grass@{Grass}}
+
+
+\mbox{\hyperlink{class_grass}{Grass}} bush placed randomly on scene.  
+
+
+
+
+{\ttfamily \#include $<$Grass.\+h$>$}
+
+
+
+Inheritance diagram for Grass\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{class_grass__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Grass\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{class_grass__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_grass_a6a01aa19eb0946977e7574f3a4896d02}{Grass}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_grass_ac527ea231c26b96ec7ad601e307666f3}{$\sim$\+Grass}} ()
+\item 
+virtual void \mbox{\hyperlink{class_grass_a131e61f169777625ba4b955fdab9287e}{Update}} (G\+Lfloat dt) override
+\begin{DoxyCompactList}\small\item\em Update all object logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_grass}{Grass}} bush placed randomly on scene. 
+
+It is using other shader than normal Visual\+Object, because it has transparent texture. All bushes are created and placed randomly in Init(\+G\+Luint screen\+\_\+width, G\+Luint screen\+\_\+height) method of \mbox{\hyperlink{class_test_game}{Test\+Game}}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_grass_a6a01aa19eb0946977e7574f3a4896d02}\label{class_grass_a6a01aa19eb0946977e7574f3a4896d02}} 
+\index{Grass@{Grass}!Grass@{Grass}}
+\index{Grass@{Grass}!Grass@{Grass}}
+\subsubsection{\texorpdfstring{Grass()}{Grass()}}
+{\footnotesize\ttfamily Grass\+::\+Grass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Load object model using assimp library. Load all object textures. Asign all textures to corresponding materials. Change shader from standard to standard\+\_\+alpha. \mbox{\Hypertarget{class_grass_ac527ea231c26b96ec7ad601e307666f3}\label{class_grass_ac527ea231c26b96ec7ad601e307666f3}} 
+\index{Grass@{Grass}!````~Grass@{$\sim$Grass}}
+\index{````~Grass@{$\sim$Grass}!Grass@{Grass}}
+\subsubsection{\texorpdfstring{$\sim$Grass()}{~Grass()}}
+{\footnotesize\ttfamily Grass\+::$\sim$\+Grass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_grass_a131e61f169777625ba4b955fdab9287e}\label{class_grass_a131e61f169777625ba4b955fdab9287e}} 
+\index{Grass@{Grass}!Update@{Update}}
+\index{Update@{Update}!Grass@{Grass}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Grass\+::\+Update (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update all object logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ delta time calculated between frames. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+T\+E\+S\+T/\mbox{\hyperlink{_grass_8h}{Grass.\+h}}\item 
+Umi\+T\+E\+S\+T/\mbox{\hyperlink{_grass_8cpp}{Grass.\+cpp}}\end{DoxyCompactItemize}

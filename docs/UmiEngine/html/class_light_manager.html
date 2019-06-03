@@ -94,18 +94,27 @@ $(document).ready(function(){initNavTree('class_light_manager.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_light.html" title="Base Light class.">Light</a> manager class.  
+ <a href="class_light_manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_light_manager_8h_source.html">LightManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1002b006844e6b87e173dab3e9a26b17"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light_manager.html#a1002b006844e6b87e173dab3e9a26b17">AddDirectionalLight</a> (<a class="el" href="class_directional_light.html">DirectionalLight</a> *light)</td></tr>
+<tr class="memdesc:a1002b006844e6b87e173dab3e9a26b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add directional light to list.  <a href="#a1002b006844e6b87e173dab3e9a26b17">More...</a><br /></td></tr>
 <tr class="separator:a1002b006844e6b87e173dab3e9a26b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d24844d79e4e6a62017584ce9f1a154"><td class="memItemLeft" align="right" valign="top">static glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light_manager.html#a9d24844d79e4e6a62017584ce9f1a154">GetDirLightSpaceMatrix</a> ()</td></tr>
+<tr class="memdesc:a9d24844d79e4e6a62017584ce9f1a154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get calculated Directional <a class="el" href="class_light.html" title="Base Light class.">Light</a> space matrix.  <a href="#a9d24844d79e4e6a62017584ce9f1a154">More...</a><br /></td></tr>
 <tr class="separator:a9d24844d79e4e6a62017584ce9f1a154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a107e825c6ce685f9946ffbf83b6018de"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light_manager.html#a107e825c6ce685f9946ffbf83b6018de">ApplyToShader</a> (<a class="el" href="class_shader.html">Shader</a> *shader)</td></tr>
+<tr class="memdesc:a107e825c6ce685f9946ffbf83b6018de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply all lights to shader.  <a href="#a107e825c6ce685f9946ffbf83b6018de">More...</a><br /></td></tr>
 <tr class="separator:a107e825c6ce685f9946ffbf83b6018de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_light.html" title="Base Light class.">Light</a> manager class. </p>
+<p><a class="el" href="class_light.html" title="Base Light class.">Light</a> manager is a singleton that manages all lights and aplies them to appropiate shaders. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1002b006844e6b87e173dab3e9a26b17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1002b006844e6b87e173dab3e9a26b17">&#9670;&nbsp;</a></span>AddDirectionalLight()</h2>
 
@@ -129,6 +138,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Add directional light to list. </p>
 
 </div>
 </div>
@@ -156,6 +167,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Apply all lights to shader. </p>
+
 </div>
 </div>
 <a id="a9d24844d79e4e6a62017584ce9f1a154"></a>
@@ -180,6 +193,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get calculated Directional <a class="el" href="class_light.html" title="Base Light class.">Light</a> space matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::mat4 that holds position and all needed data to render objects with light. </dd></dl>
 
 </div>
 </div>

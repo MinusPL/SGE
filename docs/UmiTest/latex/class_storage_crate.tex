@@ -1,0 +1,112 @@
+\hypertarget{class_storage_crate}{}\section{Storage\+Crate Class Reference}
+\label{class_storage_crate}\index{StorageCrate@{StorageCrate}}
+
+
+Storage crate object (one rotating in air)  
+
+
+
+
+{\ttfamily \#include $<$Storage\+Crate.\+h$>$}
+
+
+
+Inheritance diagram for Storage\+Crate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_storage_crate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Storage\+Crate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_storage_crate__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_storage_crate_a057b9d2797b3e1e901473b7edcb9c572}{Storage\+Crate}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_storage_crate_a44efdd9b2cb799a3667667bbd83be376}{Update}} (G\+Lfloat dt)
+\begin{DoxyCompactList}\small\item\em Update all object logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_crate_ad0e3a1eabd7fdca9bb8bf2d7106cafab}{set\+Rotation\+Direction}} (glm\+::vec3 rot\+Template)
+\begin{DoxyCompactList}\small\item\em Set object rotation direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_crate_ae68f13fa51f9306b641fbb8944eae60c}{set\+Rotation\+Speed}} (float speed)
+\begin{DoxyCompactList}\small\item\em Set rotation speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Storage crate object (one rotating in air) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_storage_crate_a057b9d2797b3e1e901473b7edcb9c572}\label{class_storage_crate_a057b9d2797b3e1e901473b7edcb9c572}} 
+\index{StorageCrate@{StorageCrate}!StorageCrate@{StorageCrate}}
+\index{StorageCrate@{StorageCrate}!StorageCrate@{StorageCrate}}
+\subsubsection{\texorpdfstring{StorageCrate()}{StorageCrate()}}
+{\footnotesize\ttfamily Storage\+Crate\+::\+Storage\+Crate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Set storage crate material and texture. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_storage_crate_ad0e3a1eabd7fdca9bb8bf2d7106cafab}\label{class_storage_crate_ad0e3a1eabd7fdca9bb8bf2d7106cafab}} 
+\index{StorageCrate@{StorageCrate}!setRotationDirection@{setRotationDirection}}
+\index{setRotationDirection@{setRotationDirection}!StorageCrate@{StorageCrate}}
+\subsubsection{\texorpdfstring{setRotationDirection()}{setRotationDirection()}}
+{\footnotesize\ttfamily void Storage\+Crate\+::set\+Rotation\+Direction (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{rot\+Template }\end{DoxyParamCaption})}
+
+
+
+Set object rotation direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rot\+Template} & -\/ glm\+::vec3 with float values for rotation in each axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_storage_crate_ae68f13fa51f9306b641fbb8944eae60c}\label{class_storage_crate_ae68f13fa51f9306b641fbb8944eae60c}} 
+\index{StorageCrate@{StorageCrate}!setRotationSpeed@{setRotationSpeed}}
+\index{setRotationSpeed@{setRotationSpeed}!StorageCrate@{StorageCrate}}
+\subsubsection{\texorpdfstring{setRotationSpeed()}{setRotationSpeed()}}
+{\footnotesize\ttfamily void Storage\+Crate\+::set\+Rotation\+Speed (\begin{DoxyParamCaption}\item[{float}]{speed }\end{DoxyParamCaption})}
+
+
+
+Set rotation speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & -\/ defines speed of rotation in all axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_storage_crate_a44efdd9b2cb799a3667667bbd83be376}\label{class_storage_crate_a44efdd9b2cb799a3667667bbd83be376}} 
+\index{StorageCrate@{StorageCrate}!Update@{Update}}
+\index{Update@{Update}!StorageCrate@{StorageCrate}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Storage\+Crate\+::\+Update (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update all object logic. 
+
+Update storage crate rotation. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ delta time calculated between frames. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+T\+E\+S\+T/\mbox{\hyperlink{_storage_crate_8h}{Storage\+Crate.\+h}}\item 
+Umi\+T\+E\+S\+T/\mbox{\hyperlink{_storage_crate_8cpp}{Storage\+Crate.\+cpp}}\end{DoxyCompactItemize}

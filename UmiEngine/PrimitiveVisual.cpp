@@ -90,6 +90,29 @@ void PrimitiveVisual::DrawShadow()
 	}
 }
 
+void PrimitiveVisual::DrawReflection()
+{
+	glm::mat4 model = transform.ApplyTransform();
+	glm::mat4 MVP = Game::instance->camera["main"]->GetProjectionMatrix() * Game::instance->camera["main"]->GetViewMat() * model;
+	glm::mat4 normalModel = glm::transpose(glm::inverse(model));
+
+	ResourceManager::GetShader("standard_env")->Use();
+
+	ResourceManager::GetShader("standard_env")->SetMatrix4("model", model);
+	ResourceManager::GetShader("standard_env")->SetMatrix4("normalModel", normalModel);
+	ResourceManager::GetShader("standard_env")->SetMatrix4("MVP", MVP);
+
+	glActiveTexture(GL_TEXTURE1);
+	
+	Game::instance->sky->texture->BindCubemap();
+	ResourceManager::GetShader("standard_env")->SetInteger("skybox", 1);
+	ResourceManager::GetShader("standard_env")->SetVector3f("cameraPos", Game::instance->camera["main"]->transform.Position());
+	for (auto &mesh : this->meshes)
+	{
+		mesh->Draw();
+	}
+}
+
 PrimitiveVisual::PrimitiveVisual(ShaderType shaderType)
 {
 	switch (shaderType)

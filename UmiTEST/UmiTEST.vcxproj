@@ -133,14 +133,17 @@ copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bucket.h" />
     <ClInclude Include="BuildingA.h" />
     <ClInclude Include="BuildingB.h" />
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="StorageCrate.h" />
     <ClInclude Include="TestGame.h" />
+    <ClInclude Include="Water.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bucket.cpp" />
     <ClCompile Include="BuildingA.cpp" />
     <ClCompile Include="BuildingB.cpp" />
     <ClCompile Include="Grass.cpp" />
@@ -148,6 +151,7 @@ copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\
     <ClCompile Include="StorageCrate.cpp" />
     <ClCompile Include="Umi.cpp" />
     <ClCompile Include="TestGame.cpp" />
+    <ClCompile Include="Water.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

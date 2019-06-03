@@ -113,7 +113,7 @@ public:
 	/*!
 	Sets 4x4 matrix as variable for shader.
 	\param name - name of variable.
-	\param value - glm::mat4 representing matrix with size 4x4.
+	\param matrix - glm::mat4 representing matrix with size 4x4.
 	\param useShader - boolean that tells if shader should be set as current active shader.
 	*/
 	void    SetMatrix4(const GLchar *name, const glm::mat4 &matrix, GLboolean useShader = false);
@@ -123,7 +123,7 @@ public:
 	/*!
 	Sets 3x3 matrix as variable for shader.
 	\param name - name of variable.
-	\param value - glm::mat3 representing matrix with size 3x3.
+	\param matrix - glm::mat3 representing matrix with size 3x3.
 	\param useShader - boolean that tells if shader should be set as current active shader.
 	*/
 	void	SetMatrix3(const GLchar *name, const glm::mat3 &matrix, GLboolean useShader = false);

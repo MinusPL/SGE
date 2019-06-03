@@ -2,18 +2,28 @@
 \label{class_light_manager}\index{LightManager@{LightManager}}
 
 
+\mbox{\hyperlink{class_light}{Light}} manager class.  
+
+
+
+
 {\ttfamily \#include $<$Light\+Manager.\+h$>$}
 
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_light_manager_a1002b006844e6b87e173dab3e9a26b17}{Add\+Directional\+Light}} (\mbox{\hyperlink{class_directional_light}{Directional\+Light}} $\ast$light)
-\item 
+\begin{DoxyCompactList}\small\item\em Add directional light to list. \end{DoxyCompactList}\item 
 static glm\+::mat4 \mbox{\hyperlink{class_light_manager_a9d24844d79e4e6a62017584ce9f1a154}{Get\+Dir\+Light\+Space\+Matrix}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get calculated Directional \mbox{\hyperlink{class_light}{Light}} space matrix. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_light_manager_a107e825c6ce685f9946ffbf83b6018de}{Apply\+To\+Shader}} (\mbox{\hyperlink{class_shader}{Shader}} $\ast$shader)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Apply all lights to shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_light}{Light}} manager class. 
+
+\mbox{\hyperlink{class_light}{Light}} manager is a singleton that manages all lights and aplies them to appropiate shaders. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_light_manager_a1002b006844e6b87e173dab3e9a26b17}\label{class_light_manager_a1002b006844e6b87e173dab3e9a26b17}} 
@@ -22,11 +32,19 @@ static void \mbox{\hyperlink{class_light_manager_a107e825c6ce685f9946ffbf83b6018
 \subsubsection{\texorpdfstring{AddDirectionalLight()}{AddDirectionalLight()}}
 {\footnotesize\ttfamily static void Light\+Manager\+::\+Add\+Directional\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_directional_light}{Directional\+Light}} $\ast$}]{light }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Add directional light to list. 
+
 \mbox{\Hypertarget{class_light_manager_a107e825c6ce685f9946ffbf83b6018de}\label{class_light_manager_a107e825c6ce685f9946ffbf83b6018de}} 
 \index{LightManager@{LightManager}!ApplyToShader@{ApplyToShader}}
 \index{ApplyToShader@{ApplyToShader}!LightManager@{LightManager}}
 \subsubsection{\texorpdfstring{ApplyToShader()}{ApplyToShader()}}
 {\footnotesize\ttfamily void Light\+Manager\+::\+Apply\+To\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apply all lights to shader. 
 
 \mbox{\Hypertarget{class_light_manager_a9d24844d79e4e6a62017584ce9f1a154}\label{class_light_manager_a9d24844d79e4e6a62017584ce9f1a154}} 
 \index{LightManager@{LightManager}!GetDirLightSpaceMatrix@{GetDirLightSpaceMatrix}}
@@ -34,6 +52,13 @@ static void \mbox{\hyperlink{class_light_manager_a107e825c6ce685f9946ffbf83b6018
 \subsubsection{\texorpdfstring{GetDirLightSpaceMatrix()}{GetDirLightSpaceMatrix()}}
 {\footnotesize\ttfamily glm\+::mat4 Light\+Manager\+::\+Get\+Dir\+Light\+Space\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Get calculated Directional \mbox{\hyperlink{class_light}{Light}} space matrix. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::mat4 that holds position and all needed data to render objects with light. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

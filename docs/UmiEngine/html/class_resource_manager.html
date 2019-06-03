@@ -95,29 +95,42 @@ $(document).ready(function(){initNavTree('class_resource_manager.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Resource manager singleton.  
+ <a href="class_resource_manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a00f5f597ddb23cfc50f5215e0768a336"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#a00f5f597ddb23cfc50f5215e0768a336">LoadShader</a> (const GLchar *vertexSource, const GLchar *fragmentSource, const GLchar *geometrySource, std::string name)</td></tr>
+<tr class="memdesc:a00f5f597ddb23cfc50f5215e0768a336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads shader from specified files.  <a href="#a00f5f597ddb23cfc50f5215e0768a336">More...</a><br /></td></tr>
 <tr class="separator:a00f5f597ddb23cfc50f5215e0768a336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe39b263c98ff63a9ce991b171356982"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#abe39b263c98ff63a9ce991b171356982">LoadTexture</a> (const GLchar *texture, std::string name, <a class="el" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549">TextureType</a> type=<a class="el" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549a94e94133f4bdc1794c6b647b8ea134d0">TextureType::STANDARD</a>)</td></tr>
+<tr class="memdesc:abe39b263c98ff63a9ce991b171356982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads texture from specified file.  <a href="#abe39b263c98ff63a9ce991b171356982">More...</a><br /></td></tr>
 <tr class="separator:abe39b263c98ff63a9ce991b171356982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1b2f4a63ed096bbcd1e3732078f35f6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#aa1b2f4a63ed096bbcd1e3732078f35f6">LoadCubeMap</a> (std::vector&lt; GLchar * &gt; filenames, std::string name)</td></tr>
+<tr class="memdesc:aa1b2f4a63ed096bbcd1e3732078f35f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads cubemap texture.  <a href="#aa1b2f4a63ed096bbcd1e3732078f35f6">More...</a><br /></td></tr>
 <tr class="separator:aa1b2f4a63ed096bbcd1e3732078f35f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae95ecdc6de1127616485f7d069437332"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_shader.html">Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#ae95ecdc6de1127616485f7d069437332">GetShader</a> (std::string name)</td></tr>
+<tr class="memdesc:ae95ecdc6de1127616485f7d069437332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="class_shader.html">Shader</a> with given name.  <a href="#ae95ecdc6de1127616485f7d069437332">More...</a><br /></td></tr>
 <tr class="separator:ae95ecdc6de1127616485f7d069437332"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1456969a733c58bc47f372005699cbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#aa1456969a733c58bc47f372005699cbc">GetTexture</a> (std::string name)</td></tr>
+<tr class="memdesc:aa1456969a733c58bc47f372005699cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="class_texture.html" title="Texture class.">Texture</a> with given name.  <a href="#aa1456969a733c58bc47f372005699cbc">More...</a><br /></td></tr>
 <tr class="separator:aa1456969a733c58bc47f372005699cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a8c1bc8fe6e0f92ab3c7e2dca94b0e491"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_shader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#a8c1bc8fe6e0f92ab3c7e2dca94b0e491">Shaders</a></td></tr>
+<tr class="memdesc:a8c1bc8fe6e0f92ab3c7e2dca94b0e491"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::map holding all shaders.  <a href="#a8c1bc8fe6e0f92ab3c7e2dca94b0e491">More...</a><br /></td></tr>
 <tr class="separator:a8c1bc8fe6e0f92ab3c7e2dca94b0e491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43a756e8e9ce85e0cf25946205749a9f"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_texture.html">Texture</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#a43a756e8e9ce85e0cf25946205749a9f">Textures</a></td></tr>
+<tr class="memdesc:a43a756e8e9ce85e0cf25946205749a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::map holding all textures.  <a href="#a43a756e8e9ce85e0cf25946205749a9f">More...</a><br /></td></tr>
 <tr class="separator:a43a756e8e9ce85e0cf25946205749a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Resource manager singleton. </p>
+<p>Resource manager is a singleton used to load and manage all resources. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae95ecdc6de1127616485f7d069437332"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae95ecdc6de1127616485f7d069437332">&#9670;&nbsp;</a></span>GetShader()</h2>
 
@@ -141,6 +154,15 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get <a class="el" href="class_shader.html">Shader</a> with given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>- name of the shader that we want. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_shader.html">Shader</a> with given name. </dd></dl>
 
 </div>
 </div>
@@ -167,6 +189,15 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get <a class="el" href="class_texture.html" title="Texture class.">Texture</a> with given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>- name of the shader that we want. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_shader.html">Shader</a> with given name. </dd></dl>
 
 </div>
 </div>
@@ -203,6 +234,15 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Loads cubemap texture. </p>
+<p>This method loads cubemap texture with given filenames and adds it to Textures map with given name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filenames</td><td>- vector array of 6 textures used to create cubemap. </td></tr>
+    <tr><td class="paramname">name</td><td>- name used to identify this texture. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -252,6 +292,17 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Loads shader from specified files. </p>
+<p>This method loads shader from specified files and adds it to Shaders map with given name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertexSource</td><td>- path to a file with vertex shader code. </td></tr>
+    <tr><td class="paramname">fragmentSource</td><td>- path to a file with fragment shader code. </td></tr>
+    <tr><td class="paramname">geometrySource</td><td>- path to a file with geometry shader code. </td></tr>
+    <tr><td class="paramname">name</td><td>- name used to identify this shader. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="abe39b263c98ff63a9ce991b171356982"></a>
@@ -294,6 +345,16 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Loads texture from specified file. </p>
+<p>This method loads shader from specified files and adds it to Textures map with given name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>- path to a texture image file. </td></tr>
+    <tr><td class="paramname">name</td><td>- name used to identify this texture. </td></tr>
+    <tr><td class="paramname">type</td><td>- specifies if this texture is normal texture or cubemap. By default it's set to STANDARD type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -317,6 +378,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>std::map holding all shaders. </p>
+
 </div>
 </div>
 <a id="a43a756e8e9ce85e0cf25946205749a9f"></a>
@@ -338,6 +401,8 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>std::map holding all textures. </p>
 
 </div>
 </div>

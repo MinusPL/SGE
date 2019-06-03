@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 
+//#include <PxPhysicsAPI.h>
+
 #include "Camera.h"
 #include "GameObject.h"
 #include "Skybox.h"
@@ -102,11 +104,18 @@ public:
 	std::vector<GameObject*> transparent_objs;
 	//! Vector to hold all opaque objects that are rendered firstly.
 	std::vector<GameObject*> opaque_objs;
+
+	std::vector<GameObject*>relfective_objs;
+
+	//! TO REMOVE THIS VALUE IS ONLY FOR TESTING PURPOSES
+	float shininess_control = 0.8f;
+
+	//! Skybox used ingame.
+	Skybox* sky;
+
 protected:
 	//! Main game window
 	GLFWwindow* window;
-	//! Skybox used ingame.
-	Skybox* sky;
 	//! Vertex Array Object adress used to hold created screen geometry.
 	unsigned int screenVAO;
 	//! Vertex Buffer Object adress. It is used to hold our geometry in high-speed GPU memory.
@@ -130,11 +139,17 @@ protected:
 	//! OpenGL Textures used to create bloom effect.
 	unsigned int pingpongColorbuffers[2];
 	//! Width of used shadowmap - will be changeable in future.
-	const int SHADOW_WIDTH = 8192;
+	const int SHADOW_WIDTH = 4096;
 	//! Height of used shadowmap - will be changeable in future.
-	const int SHADOW_HEIGHT = 8192;
+	const int SHADOW_HEIGHT = 4096;
 	//! Currently set width of window and viewport.
 	int screen_width = 1920;
 	//! Currently set height of window and viewport.
 	int screen_height = 1080;
+
+	//! TO-DO: Create separate class for scene loading with possibility to save placed objects to some kind of "binary" file
+	/*!
+	PhysX Scene to calculate physics.
+	*/
+
 };

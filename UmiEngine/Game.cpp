@@ -31,7 +31,8 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	srand((unsigned int)time(NULL));
 	
 	if ((ilGetInteger(IL_VERSION_NUM) < IL_VERSION) ||
-		ilGetInteger(ILUT_VERSION_NUM) < ILUT_VERSION)
+		(ilGetInteger(ILU_VERSION_NUM) < ILU_VERSION) ||
+		(ilGetInteger(ILUT_VERSION_NUM) < ILUT_VERSION))
 	{
 		printf("DevIL version is different...exiting!\n");
 	}
@@ -45,7 +46,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-	window = glfwCreateWindow(screen_width, screen_height, "UMI Engine v0.0.1", glfwGetPrimaryMonitor(), nullptr);
+	window = glfwCreateWindow(screen_width, screen_height, "UMI Engine v0.0.1", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
 	ilutRenderer(ILUT_OPENGL);
 	glewExperimental = GL_TRUE;
@@ -107,8 +108,8 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	glGenTextures(1, &this->depthMap);
 	glBindTexture(GL_TEXTURE_2D, this->depthMap);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, this->SHADOW_WIDTH, this->SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 	float borderColor[] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -174,6 +175,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadShader("standard.vs", "standard_alpha.fs", nullptr, "standard_alpha");
 	ResourceManager::LoadShader("standard.vs", "standard_shadeless.fs", nullptr, "standard_shadeless");
 	ResourceManager::LoadShader("skybox.vs", "skybox.fs", nullptr, "skybox");
+	ResourceManager::LoadShader("env.vs", "env.fs", nullptr, "standard_env");
 
 	ResourceManager::LoadShader("shadows.vs", "shadows.fs", nullptr, "shadow");
 
@@ -190,6 +192,8 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadShader("post_process.vs", "post_process.fs", nullptr, "post_process");
 	ResourceManager::GetShader("post_process")->Use();
 	ResourceManager::GetShader("post_process")->SetInteger("screenTexture", 0);
+
+	
 }
 
 void Game::ProcessInput(GLfloat dt)
@@ -233,6 +237,11 @@ void Game::Render()
 		object->Draw();
 	}
 
+	for (auto &object : relfective_objs)
+	{
+		object->DrawReflection();
+	}
+
 	glDisable(GL_CULL_FACE);
 
 	std::map<float, GameObject*> sorted;
@@ -247,20 +256,21 @@ void Game::Render()
 		it->second->Draw();
 	}
 
+
 	glEnable(GL_CULL_FACE);
 
 	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
 
 	//BLUR
 	bool horizontal = true, first_iteration = true;
-	unsigned int amount = 10;
+	unsigned int amount = 50;
 	ResourceManager::GetShader("blur")->Use();
 	for (unsigned int i = 0; i < amount; i++)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, this->pingpongFBO[horizontal]);
 		ResourceManager::GetShader("blur")->SetInteger("horizontal", horizontal);
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, first_iteration ? this->colorBuffers[1] : this->pingpongColorbuffers[!horizontal]);  // bind texture of other framebuffer (or scene if first iteration)
+		glBindTexture(GL_TEXTURE_2D, first_iteration ? this->colorBuffers[1] : this->pingpongColorbuffers[!horizontal]);
 		glBindVertexArray(this->screenVAO);
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 		horizontal = !horizontal;
@@ -272,7 +282,7 @@ void Game::Render()
 	//Finalize bloom
 	ResourceManager::GetShader("bloom")->Use();
 	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, this->colorBuffers[0]);
 	glActiveTexture(GL_TEXTURE1);
@@ -287,11 +297,11 @@ void Game::Render()
 	glDisable(GL_DEPTH_TEST);
 	ResourceManager::GetShader("post_process")->Use();
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindVertexArray(this->screenVAO);
-	glBindTexture(GL_TEXTURE_2D, this->tbo);	// use the color attachment texture as the texture of the quad plane
+	glBindTexture(GL_TEXTURE_2D, this->fbo);	// use the color attachment texture as the texture of the quad plane
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	glfwSwapBuffers(this->window);

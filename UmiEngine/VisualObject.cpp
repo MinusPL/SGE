@@ -31,6 +31,22 @@ void VisualObject::DrawShadow()
 	this->model.DrawShadow();
 }
 
+void VisualObject::DrawReflection()
+{
+	glm::mat4 model = transform.ApplyTransform();
+	glm::mat4 MVP = Game::instance->camera["main"]->GetProjectionMatrix() * Game::instance->camera["main"]->GetViewMat() * model;
+	glm::mat3 normalModel = (glm::mat3) glm::transpose(glm::inverse(model));
+
+	ResourceManager::GetShader("standard_env")->Use();
+
+	ResourceManager::GetShader("standard_env")->SetMatrix4("model", model);
+	ResourceManager::GetShader("standard_env")->SetMatrix4("MVP", MVP);
+	ResourceManager::GetShader("standard_env")->SetMatrix3("normalModel", normalModel);
+	
+
+	this->model.DrawReflection(ResourceManager::GetShader("standard_env"));
+}
+
 VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : GameObject(), model(model_file)
 {
 	switch (shaderType)
@@ -48,6 +64,11 @@ VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : GameObje
 		case STANDARD_SHADELESS:
 		{
 			this->shader = ResourceManager::GetShader("standard_shadeless");
+			break;
+		}
+		case STANDARD_ENV:
+		{
+			this->shader = ResourceManager::GetShader("standard_env");
 			break;
 		}
 	}

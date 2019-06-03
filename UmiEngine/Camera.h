@@ -56,8 +56,8 @@ public:
 	\param right - specifies how much to the right of the screen camera will see.
 	\param top - specifies how much to the top of the screen camera will see.
 	\param bottom - specifies how much to the bottom of the screen camera will see.
-	\param nearPlane - speciies how close objects will start to be discarded.
-	\param farPlane - specfies how far objects will start to be discarded.
+	\param near_plane - speciies how close objects will start to be discarded.
+	\param far_plane - specfies how far objects will start to be discarded.
 	*/
 	void Orthographic(GLfloat left, GLfloat right, GLfloat top, GLfloat bottom, GLfloat near_plane, GLfloat far_plane);
 

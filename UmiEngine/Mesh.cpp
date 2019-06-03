@@ -1,4 +1,5 @@
 #include "Mesh.h"
+#include <iostream>
 
 glm::vec3 Mesh::NormalFromIndices(GLuint a, GLuint b, GLuint c)
 {
@@ -137,6 +138,7 @@ void Mesh::RecalculateNormals()
 		throw "Cannot calculate normals with given flag!";
 	}
 
+	//normals.clear();
 	normals.resize(vertices.size());
 
 	for (size_t i = 0; i < indices.size() / 3; i++)
@@ -183,6 +185,14 @@ void Mesh::RecalculateNormals()
 			tangents[pointC] = tangent;
 
 		}
+	}
+}
+
+void Mesh::print_normals()
+{
+	for (size_t i = 0; i < normals.size(); i++)
+	{
+		std::cout << "[ " << i << " ]" << "   " << normals[i].x << "  " << normals[i].y << "  " << normals[i].z << "  " << std::endl;
 	}
 }
 

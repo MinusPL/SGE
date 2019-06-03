@@ -50,6 +50,11 @@ public:
 	*/
 	void BindTexture();
 
+	/*!
+This method allows to bind created texture for use with OpenGL renderer.
+*/
+	void BindCubemap();
+
 	//! Get width of the texture
 
 	/*!

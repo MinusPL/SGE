@@ -5,6 +5,7 @@
 #include <sstream>
 
 #include "ResourceManager.h"
+#include "Game.h"
 
 
 Model::Model(GLchar * filename)
@@ -59,7 +60,8 @@ void Model::Draw(Shader* shader)
 		shader->SetVector3f("material.ambient", materials[i]->ambient);
 		shader->SetVector3f("material.diffuse", materials[i]->diffuse);
 		shader->SetVector3f("material.specular", materials[i]->specular);
-		shader->SetFloat("material.shiness", materials[i]->shiness);
+		//shader->SetFloat("material.shiness", materials[i]->shiness);
+		shader->SetFloat("material.shiness", Game::instance->shininess_control);
 
 		meshes[i]->Draw();
 
@@ -69,6 +71,26 @@ void Model::Draw(Shader* shader)
 		glBindTexture(GL_TEXTURE_2D, NULL);
 		glActiveTexture(GL_TEXTURE3);
 		glBindTexture(GL_TEXTURE_2D, NULL);
+	}
+}
+
+void Model::DrawReflection(Shader* shader)
+{
+	glActiveTexture(GL_TEXTURE0);
+	Game::instance->sky->texture->BindCubemap();
+	shader->SetInteger("skybox", 0);
+	shader->SetVector3f("cameraPos", Game::instance->camera["main"]->transform.Position());
+	for (unsigned int i = 0; i < meshes.size(); i++)
+	{
+		meshes[i]->Draw();
+	}
+}
+
+void Model::print_normals()
+{
+	for (unsigned int i = 0; i < meshes.size(); i++)
+	{
+		meshes[i]->print_normals();
 	}
 }
 
@@ -173,10 +195,34 @@ Mesh* Model::processMesh(aiMesh * mesh, const aiScene * scene)
 			mat->diffuseTexture = ResourceManager::GetTexture(texString.C_Str());
 		}
 
+		if (material->GetTextureCount(aiTextureType_NORMALS) > 0)
+		{
+			aiString texString;
+			material->GetTexture(aiTextureType_NORMALS, 0, &texString);
+			if (ResourceManager::GetTexture(texString.C_Str()) == nullptr)
+			{
+				std::string texture_path = this->directory + "/" + texString.C_Str();
+				ResourceManager::LoadTexture(texture_path.c_str(), texString.C_Str());
+			}
+			mat->normalMap = ResourceManager::GetTexture(texString.C_Str());
+		}
+
+		if (material->GetTextureCount(aiTextureType_SPECULAR) > 0)
+		{
+			aiString texString;
+			material->GetTexture(aiTextureType_SPECULAR, 0, &texString);
+			if (ResourceManager::GetTexture(texString.C_Str()) == nullptr)
+			{
+				std::string texture_path = this->directory + "/" + texString.C_Str();
+				ResourceManager::LoadTexture(texture_path.c_str(), texString.C_Str());
+			}
+			mat->specularTexture = ResourceManager::GetTexture(texString.C_Str());
+		}
+
 		materials.push_back(mat);
 	}
 
-	model_mesh->RecalculateNormals();
+	//model_mesh->RecalculateNormals();
 	model_mesh->CreateMesh();
 	return model_mesh;
 }

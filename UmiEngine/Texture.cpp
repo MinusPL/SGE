@@ -2,7 +2,7 @@
 #include <iostream>
 
 Texture::Texture() :
-	width(0), height(0), internal_format(GL_RGBA), image_format(GL_RGBA), wrap_s(GL_REPEAT), wrap_t(GL_REPEAT), filter_min(GL_LINEAR), filter_max(GL_LINEAR), type(TextureType::STANDARD)
+	width(0), height(0), internal_format(GL_RGBA), image_format(GL_RGBA), wrap_s(GL_REPEAT), wrap_t(GL_REPEAT), filter_min(GL_LINEAR_MIPMAP_LINEAR), filter_max(GL_LINEAR), type(TextureType::STANDARD)
 {
 	glGenTextures(1, &this->id);
 }
@@ -15,6 +15,11 @@ Texture::~Texture()
 void Texture::BindTexture()
 {
 	glBindTexture(GL_TEXTURE_2D, this->id);
+}
+
+void Texture::BindCubemap()
+{
+	glBindTexture(GL_TEXTURE_CUBE_MAP, this->id);
 }
 
 GLuint Texture::GetWidth()
@@ -56,6 +61,7 @@ void Texture::LoadFromFile(GLchar* filename)
 	glBindTexture(GL_TEXTURE_2D, this->id);
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, this->width, this->height, 0, GL_RGBA, GL_UNSIGNED_BYTE, ilGetData());
+	glGenerateMipmap(GL_TEXTURE_2D);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, this->wrap_s);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, this->wrap_t);

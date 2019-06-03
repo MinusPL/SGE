@@ -2,41 +2,51 @@
 \label{class_mesh}\index{Mesh@{Mesh}}
 
 
+\mbox{\hyperlink{class_mesh}{Mesh}} class.  
+
+
+
+
 {\ttfamily \#include $<$Mesh.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 G\+Luint \mbox{\hyperlink{class_mesh_ad4917bc56c71f31974af4be3eb90a390}{Get\+V\+AO}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get Vertex Array Object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_mesh_a916735fb6745a444abc21011e11ed3e4}{Create\+Instance\+Attrib\+Pointer}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_mesh_afdd95c079fd0442afef8a6c421c8bfc9}{Draw}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Draw mesh using created V\+AO. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_mesh_ab4d75bfd6e4603aa774eba1cfb83bffe}{Create\+Mesh}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Create mesh based on vertices, colors, indices, uvs and tangents. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_mesh_a2688a608e0185faef28105fae57ad76d}{Recalculate\+Normals}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Recalculate normals after modyfing mesh. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{$\sim$\+Mesh}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 G\+Lenum \mbox{\hyperlink{class_mesh_aa4fa174a34713f4f3286bd202d5d3617}{vertex\+Flag}} = G\+L\+\_\+\+T\+R\+I\+A\+N\+G\+L\+ES
-\item 
+\begin{DoxyCompactList}\small\item\em Flag that tells Open\+GL to render geometry using triangles rather than squares. \end{DoxyCompactList}\item 
 std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aee572fab7113a18cf174a8418394aef4}{vertices}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::vector that holds all vertex positions. \end{DoxyCompactList}\item 
 std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_a484b6f05575dbac43b3f5de817f90069}{colors}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::vector that holds colors for vertices. \end{DoxyCompactList}\item 
 std\+::vector$<$ G\+Luint $>$ \mbox{\hyperlink{class_mesh_a5e55b84c6c967608bcf23ed7d68e4215}{indices}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::vector that holds all indices used to render faces. \end{DoxyCompactList}\item 
 std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_a51622ff35f286e2015954aad76ee4bc2}{normals}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::vector that holds normals. \end{DoxyCompactList}\item 
 std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{class_mesh_af98b594a339f9e92ed0a4e1e4d84a6d9}{uvs}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::vectro that holds texture coordinates (UV) for each vertex. \end{DoxyCompactList}\item 
 std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aabfc88c0c59371aca2d8fe6227a1c3f1}{tangents}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em std\+::vector that holds tangents. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_mesh}{Mesh}} class. 
+
+This is mesh class. It is used to hold geometry data of any object. Models are created by joining multiple meshes together. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}\label{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}} 
@@ -47,6 +57,10 @@ std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aabfc88c0c59371aca2
 
 
 
+Destructor. 
+
+
+
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_mesh_a916735fb6745a444abc21011e11ed3e4}\label{class_mesh_a916735fb6745a444abc21011e11ed3e4}} 
 \index{Mesh@{Mesh}!CreateInstanceAttribPointer@{CreateInstanceAttribPointer}}
@@ -54,11 +68,19 @@ std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aabfc88c0c59371aca2
 \subsubsection{\texorpdfstring{CreateInstanceAttribPointer()}{CreateInstanceAttribPointer()}}
 {\footnotesize\ttfamily void Mesh\+::\+Create\+Instance\+Attrib\+Pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED. 
+
 \mbox{\Hypertarget{class_mesh_ab4d75bfd6e4603aa774eba1cfb83bffe}\label{class_mesh_ab4d75bfd6e4603aa774eba1cfb83bffe}} 
 \index{Mesh@{Mesh}!CreateMesh@{CreateMesh}}
 \index{CreateMesh@{CreateMesh}!Mesh@{Mesh}}
 \subsubsection{\texorpdfstring{CreateMesh()}{CreateMesh()}}
 {\footnotesize\ttfamily void Mesh\+::\+Create\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create mesh based on vertices, colors, indices, uvs and tangents. 
 
 \mbox{\Hypertarget{class_mesh_afdd95c079fd0442afef8a6c421c8bfc9}\label{class_mesh_afdd95c079fd0442afef8a6c421c8bfc9}} 
 \index{Mesh@{Mesh}!Draw@{Draw}}
@@ -66,17 +88,32 @@ std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aabfc88c0c59371aca2
 \subsubsection{\texorpdfstring{Draw()}{Draw()}}
 {\footnotesize\ttfamily void Mesh\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Draw mesh using created V\+AO. 
+
 \mbox{\Hypertarget{class_mesh_ad4917bc56c71f31974af4be3eb90a390}\label{class_mesh_ad4917bc56c71f31974af4be3eb90a390}} 
 \index{Mesh@{Mesh}!GetVAO@{GetVAO}}
 \index{GetVAO@{GetVAO}!Mesh@{Mesh}}
 \subsubsection{\texorpdfstring{GetVAO()}{GetVAO()}}
 {\footnotesize\ttfamily G\+Luint Mesh\+::\+Get\+V\+AO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get Vertex Array Object. 
+
+\begin{DoxyReturn}{Returns}
+G\+Luint -\/ vertex array object adress. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_mesh_a2688a608e0185faef28105fae57ad76d}\label{class_mesh_a2688a608e0185faef28105fae57ad76d}} 
 \index{Mesh@{Mesh}!RecalculateNormals@{RecalculateNormals}}
 \index{RecalculateNormals@{RecalculateNormals}!Mesh@{Mesh}}
 \subsubsection{\texorpdfstring{RecalculateNormals()}{RecalculateNormals()}}
 {\footnotesize\ttfamily void Mesh\+::\+Recalculate\+Normals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recalculate normals after modyfing mesh. 
 
 
 
@@ -87,11 +124,19 @@ std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aabfc88c0c59371aca2
 \subsubsection{\texorpdfstring{colors}{colors}}
 {\footnotesize\ttfamily std\+::vector$<$glm\+::vec3$>$ Mesh\+::colors}
 
+
+
+std\+::vector that holds colors for vertices. 
+
 \mbox{\Hypertarget{class_mesh_a5e55b84c6c967608bcf23ed7d68e4215}\label{class_mesh_a5e55b84c6c967608bcf23ed7d68e4215}} 
 \index{Mesh@{Mesh}!indices@{indices}}
 \index{indices@{indices}!Mesh@{Mesh}}
 \subsubsection{\texorpdfstring{indices}{indices}}
 {\footnotesize\ttfamily std\+::vector$<$G\+Luint$>$ Mesh\+::indices}
+
+
+
+std\+::vector that holds all indices used to render faces. 
 
 \mbox{\Hypertarget{class_mesh_a51622ff35f286e2015954aad76ee4bc2}\label{class_mesh_a51622ff35f286e2015954aad76ee4bc2}} 
 \index{Mesh@{Mesh}!normals@{normals}}
@@ -99,11 +144,19 @@ std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aabfc88c0c59371aca2
 \subsubsection{\texorpdfstring{normals}{normals}}
 {\footnotesize\ttfamily std\+::vector$<$glm\+::vec3$>$ Mesh\+::normals}
 
+
+
+std\+::vector that holds normals. 
+
 \mbox{\Hypertarget{class_mesh_aabfc88c0c59371aca2d8fe6227a1c3f1}\label{class_mesh_aabfc88c0c59371aca2d8fe6227a1c3f1}} 
 \index{Mesh@{Mesh}!tangents@{tangents}}
 \index{tangents@{tangents}!Mesh@{Mesh}}
 \subsubsection{\texorpdfstring{tangents}{tangents}}
 {\footnotesize\ttfamily std\+::vector$<$glm\+::vec3$>$ Mesh\+::tangents}
+
+
+
+std\+::vector that holds tangents. 
 
 \mbox{\Hypertarget{class_mesh_af98b594a339f9e92ed0a4e1e4d84a6d9}\label{class_mesh_af98b594a339f9e92ed0a4e1e4d84a6d9}} 
 \index{Mesh@{Mesh}!uvs@{uvs}}
@@ -111,17 +164,29 @@ std\+::vector$<$ glm\+::vec3 $>$ \mbox{\hyperlink{class_mesh_aabfc88c0c59371aca2
 \subsubsection{\texorpdfstring{uvs}{uvs}}
 {\footnotesize\ttfamily std\+::vector$<$glm\+::vec2$>$ Mesh\+::uvs}
 
+
+
+std\+::vectro that holds texture coordinates (UV) for each vertex. 
+
 \mbox{\Hypertarget{class_mesh_aa4fa174a34713f4f3286bd202d5d3617}\label{class_mesh_aa4fa174a34713f4f3286bd202d5d3617}} 
 \index{Mesh@{Mesh}!vertexFlag@{vertexFlag}}
 \index{vertexFlag@{vertexFlag}!Mesh@{Mesh}}
 \subsubsection{\texorpdfstring{vertexFlag}{vertexFlag}}
 {\footnotesize\ttfamily G\+Lenum Mesh\+::vertex\+Flag = G\+L\+\_\+\+T\+R\+I\+A\+N\+G\+L\+ES}
 
+
+
+Flag that tells Open\+GL to render geometry using triangles rather than squares. 
+
 \mbox{\Hypertarget{class_mesh_aee572fab7113a18cf174a8418394aef4}\label{class_mesh_aee572fab7113a18cf174a8418394aef4}} 
 \index{Mesh@{Mesh}!vertices@{vertices}}
 \index{vertices@{vertices}!Mesh@{Mesh}}
 \subsubsection{\texorpdfstring{vertices}{vertices}}
 {\footnotesize\ttfamily std\+::vector$<$glm\+::vec3$>$ Mesh\+::vertices}
+
+
+
+std\+::vector that holds all vertex positions. 
 
 
 

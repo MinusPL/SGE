@@ -14,8 +14,17 @@ public:
 	
 	virtual void Draw() override;
 	virtual void DrawShadow() override;
+	virtual void DrawReflection() override;
 
+	//! Constructor
+
+	/*!
+	\param model_file - path to model file.
+	\param shaderType - select type of shader, by default it's set to standard shader.
+	*/
 	VisualObject(GLchar* model_file, ShaderType shaderType = STANDARD);
+
+	//! Destructor
 	~VisualObject();
 
 	bool receiveShadows = false;

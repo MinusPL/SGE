@@ -1,0 +1,127 @@
+\hypertarget{class_test_game}{}\section{Test\+Game Class Reference}
+\label{class_test_game}\index{TestGame@{TestGame}}
+
+
+Test implementation of engine.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Game.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_test_game__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_test_game__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_game_a59adf28e5c02386f31f444e1f85aa80d}{Test\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_test_game_ac0b3267478f7d6ccea98338d3f1dee1a}{$\sim$\+Test\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_game_aabd73405594a1ee0f0d312fe4e1eb237}{Init}} (G\+Luint screen\+\_\+width, G\+Luint screen\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Initialization method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_test_game_a3ce3b3807eab3d1753fa4662f8c79df5}{Update}} (G\+Lfloat dt) override
+\begin{DoxyCompactList}\small\item\em Inherited from Umi\+Engine project. For more information go to Umi\+Engine documentation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_test_game_a302728c6fe309b522e4f10fcb2f55baf}{Main\+Loop}} () override
+\item 
+void \mbox{\hyperlink{class_test_game_aabd73405594a1ee0f0d312fe4e1eb237}{Init}} (G\+Luint screen\+\_\+width, G\+Luint screen\+\_\+height)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test implementation of engine. 
+
+This class inherits from Game class from Umi\+Engine. It is proper game implementation used to represent how to use engine. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_test_game_a59adf28e5c02386f31f444e1f85aa80d}\label{class_test_game_a59adf28e5c02386f31f444e1f85aa80d}} 
+\index{TestGame@{TestGame}!TestGame@{TestGame}}
+\index{TestGame@{TestGame}!TestGame@{TestGame}}
+\subsubsection{\texorpdfstring{TestGame()}{TestGame()}}
+{\footnotesize\ttfamily Test\+Game\+::\+Test\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_test_game_ac0b3267478f7d6ccea98338d3f1dee1a}\label{class_test_game_ac0b3267478f7d6ccea98338d3f1dee1a}} 
+\index{TestGame@{TestGame}!````~TestGame@{$\sim$TestGame}}
+\index{````~TestGame@{$\sim$TestGame}!TestGame@{TestGame}}
+\subsubsection{\texorpdfstring{$\sim$TestGame()}{~TestGame()}}
+{\footnotesize\ttfamily Test\+Game\+::$\sim$\+Test\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_game_aabd73405594a1ee0f0d312fe4e1eb237}\label{class_test_game_aabd73405594a1ee0f0d312fe4e1eb237}} 
+\index{TestGame@{TestGame}!Init@{Init}}
+\index{Init@{Init}!TestGame@{TestGame}}
+\subsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Test\+Game\+::\+Init (\begin{DoxyParamCaption}\item[{G\+Luint}]{screen\+\_\+width,  }\item[{G\+Luint}]{screen\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Initialization method. 
+
+Setup game engine and load all assets. Also create basic scene. 
+\begin{DoxyParams}{Parameters}
+{\em screen\+\_\+width} & -\/ width of the screen. \\
+\hline
+{\em screen\+\_\+height} & -\/ height of the screen. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_test_game_aabd73405594a1ee0f0d312fe4e1eb237}\label{class_test_game_aabd73405594a1ee0f0d312fe4e1eb237}} 
+\index{TestGame@{TestGame}!Init@{Init}}
+\index{Init@{Init}!TestGame@{TestGame}}
+\subsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Test\+Game\+::\+Init (\begin{DoxyParamCaption}\item[{G\+Luint}]{screen\+\_\+width,  }\item[{G\+Luint}]{screen\+\_\+height }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_test_game_a302728c6fe309b522e4f10fcb2f55baf}\label{class_test_game_a302728c6fe309b522e4f10fcb2f55baf}} 
+\index{TestGame@{TestGame}!MainLoop@{MainLoop}}
+\index{MainLoop@{MainLoop}!TestGame@{TestGame}}
+\subsubsection{\texorpdfstring{MainLoop()}{MainLoop()}}
+{\footnotesize\ttfamily void Test\+Game\+::\+Main\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_test_game_a3ce3b3807eab3d1753fa4662f8c79df5}\label{class_test_game_a3ce3b3807eab3d1753fa4662f8c79df5}} 
+\index{TestGame@{TestGame}!Update@{Update}}
+\index{Update@{Update}!TestGame@{TestGame}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Test\+Game\+::\+Update (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inherited from Umi\+Engine project. For more information go to Umi\+Engine documentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ delta time calculated between two frames. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Umi\+T\+E\+S\+T/\mbox{\hyperlink{_test_game_8h}{Test\+Game.\+h}}\item 
+Umi\+T\+E\+S\+T/\mbox{\hyperlink{_test_game_8cpp}{Test\+Game.\+cpp}}\end{DoxyCompactItemize}

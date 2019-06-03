@@ -7,9 +7,20 @@
 class BuildingB : public VisualObject
 {
 public:
+	//! Constructor
+
+	/*!
+	Load object model using assimp library.
+	Load all object textures.
+	Asign all textures to corresponding materials.
+	*/
 	BuildingB();
 	~BuildingB();
-	// Inherited via SGE_GameObject2D
+	//! Update all object logic.
+
+	/*!
+	\param dt - delta time calculated between frames.
+	*/
 	virtual void Update(GLfloat dt) override;
 private:
 
