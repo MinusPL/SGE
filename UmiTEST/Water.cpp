@@ -1,7 +1,7 @@
 #include "Water.h"
 #include <GameObject.h>
 
-Water::Water() : VisualObject((GLchar*)"assets/models/barrels/bucket/water.fbx", STANDARD_ENV)
+Water::Water() : VisualObject((GLchar*)"assets/models/barrels/bucket/water.fbx", WATER)
 {
 
 }

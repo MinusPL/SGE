@@ -76,13 +76,71 @@ void Model::Draw(Shader* shader)
 
 void Model::DrawReflection(Shader* shader)
 {
-	glActiveTexture(GL_TEXTURE0);
-	Game::instance->sky->texture->BindCubemap();
-	shader->SetInteger("skybox", 0);
-	shader->SetVector3f("cameraPos", Game::instance->camera["main"]->transform.Position());
+	
 	for (unsigned int i = 0; i < meshes.size(); i++)
 	{
+		///Check and bind diffuse map from material
+		if (materials[i]->diffuseTexture != nullptr)
+		{
+			glActiveTexture(GL_TEXTURE1);
+			materials[i]->diffuseTexture->BindTexture();
+			shader->SetInteger("hasDiffuseMap", true);
+			shader->SetInteger("diffuseTex", 1);
+		}
+		else
+		{
+			shader->SetInteger("hasDiffuseMap", false);
+		}
+
+		///Check and bind specular map from material
+		if (materials[i]->specularTexture != nullptr)
+		{
+			glActiveTexture(GL_TEXTURE2);
+			materials[i]->specularTexture->BindTexture();
+			shader->SetInteger("hasSpecularMap", true);
+			shader->SetInteger("specularTex", 2);
+		}
+		else
+		{
+			shader->SetInteger("hasSpecularMap", false);
+		}
+
+		///Check and bind specular map from material
+		if (materials[i]->normalMap != nullptr)
+		{
+			glActiveTexture(GL_TEXTURE3);
+			materials[i]->normalMap->BindTexture();
+			shader->SetInteger("hasNormalMap", true);
+			shader->SetInteger("normalMap", 3);
+		}
+		else
+		{
+			shader->SetInteger("hasNormalMap", false);
+		}
+
+		glActiveTexture(GL_TEXTURE4);
+		Game::instance->sky->texture->BindCubemap();
+		shader->SetInteger("skybox", 4);
+		shader->SetVector3f("cameraPos", Game::instance->camera["main"]->transform.Position());
+
+
+		//Pass material to shader
+		shader->SetVector3f("material.ambient", materials[i]->ambient);
+		shader->SetVector3f("material.diffuse", materials[i]->diffuse);
+		shader->SetVector3f("material.specular", materials[i]->specular);
+		//shader->SetFloat("material.shiness", materials[i]->shiness);
+		shader->SetFloat("material.shiness", Game::instance->shininess_control);
+		shader->SetInteger("shadowMap", 0);
 		meshes[i]->Draw();
+
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, NULL);
+		glActiveTexture(GL_TEXTURE2);
+		glBindTexture(GL_TEXTURE_2D, NULL);
+		glActiveTexture(GL_TEXTURE3);
+		glBindTexture(GL_TEXTURE_2D, NULL);
+		glActiveTexture(GL_TEXTURE4);
+		glBindTexture(GL_TEXTURE_2D, NULL);
 	}
 }
 

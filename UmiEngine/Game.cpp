@@ -176,6 +176,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadShader("standard.vs", "standard_shadeless.fs", nullptr, "standard_shadeless");
 	ResourceManager::LoadShader("skybox.vs", "skybox.fs", nullptr, "skybox");
 	ResourceManager::LoadShader("env.vs", "env.fs", nullptr, "standard_env");
+	ResourceManager::LoadShader("water.vs", "water.fs", nullptr, "water");
 
 	ResourceManager::LoadShader("shadows.vs", "shadows.fs", nullptr, "shadow");
 
@@ -236,7 +237,8 @@ void Game::Render()
 	{
 		object->Draw();
 	}
-
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, depthMap);
 	for (auto &object : relfective_objs)
 	{
 		object->DrawReflection();

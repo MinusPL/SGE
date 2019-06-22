@@ -6,7 +6,7 @@
 #include <Game.h>
 
 
-Player::Player() : VisualObject((GLchar*)"assets/models/player/kotori.fbx")
+Player::Player() : VisualObject((GLchar*)"assets/models/player/kotori.fbx", STANDARD_SHADELESS)
 {
 
 }

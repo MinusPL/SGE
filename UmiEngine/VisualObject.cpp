@@ -17,7 +17,7 @@ void VisualObject::Draw()
 	this->shader->SetVector3f("viewPos", Game::instance->camera["main"]->transform.Position());
 	this->shader->SetMatrix3("normalModel", normalModel);
 	LightManager::ApplyToShader(this->shader);
-	this->shader->SetMatrix3("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
+	this->shader->SetMatrix4("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
 	this->shader->SetInteger("receiveShadows", receiveShadows);
 
 
@@ -37,14 +37,18 @@ void VisualObject::DrawReflection()
 	glm::mat4 MVP = Game::instance->camera["main"]->GetProjectionMatrix() * Game::instance->camera["main"]->GetViewMat() * model;
 	glm::mat3 normalModel = (glm::mat3) glm::transpose(glm::inverse(model));
 
-	ResourceManager::GetShader("standard_env")->Use();
+	ResourceManager::GetShader("water")->Use();
 
-	ResourceManager::GetShader("standard_env")->SetMatrix4("model", model);
-	ResourceManager::GetShader("standard_env")->SetMatrix4("MVP", MVP);
-	ResourceManager::GetShader("standard_env")->SetMatrix3("normalModel", normalModel);
+	ResourceManager::GetShader("water")->SetMatrix4("model", model);
+	ResourceManager::GetShader("water")->SetMatrix4("MVP", MVP);
+	ResourceManager::GetShader("water")->SetMatrix3("normalModel", normalModel);
+	ResourceManager::GetShader("water")->SetVector3f("viewPos", Game::instance->camera["main"]->transform.Position());
+	LightManager::ApplyToShader(ResourceManager::GetShader("water"));
+	ResourceManager::GetShader("water")->SetMatrix4("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
+	ResourceManager::GetShader("water")->SetInteger("receiveShadows", receiveShadows);
 	
 
-	this->model.DrawReflection(ResourceManager::GetShader("standard_env"));
+	this->model.DrawReflection(ResourceManager::GetShader("water"));
 }
 
 VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : GameObject(), model(model_file)
@@ -69,6 +73,11 @@ VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : GameObje
 		case STANDARD_ENV:
 		{
 			this->shader = ResourceManager::GetShader("standard_env");
+			break;
+		}
+		case WATER:
+		{
+			this->shader = ResourceManager::GetShader("water");
 			break;
 		}
 	}
