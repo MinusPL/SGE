@@ -1,6 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,101,83"/>
-<area shape="rect" id="node2" href="$class_building_a.html" title=" " alt="" coords="149,5,227,32"/>
-<area shape="rect" id="node3" href="$class_building_b.html" title=" " alt="" coords="149,56,227,83"/>
-<area shape="rect" id="node4" href="$class_grass.html" title="Grass bush placed randomly on scene." alt="" coords="159,107,217,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,101,159"/>
+<area shape="rect" id="node2" href="$class_bucket.html" title="Bucket object." alt="" coords="157,5,219,32"/>
+<area shape="rect" id="node3" href="$class_building_a.html" title=" " alt="" coords="149,56,227,83"/>
+<area shape="rect" id="node4" href="$class_building_b.html" title=" " alt="" coords="149,107,227,133"/>
+<area shape="rect" id="node5" href="$class_grass.html" title="Grass bush placed randomly on scene." alt="" coords="159,157,217,184"/>
+<area shape="rect" id="node6" href="$class_player.html" title="Object representing player in game." alt="" coords="159,208,217,235"/>
+<area shape="rect" id="node7" href="$class_water.html" title="Water surface for bucket." alt="" coords="159,259,217,285"/>
 </map>

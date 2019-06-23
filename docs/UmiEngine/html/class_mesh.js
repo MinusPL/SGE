@@ -5,6 +5,7 @@ var class_mesh =
     [ "CreateMesh", "class_mesh.html#ab4d75bfd6e4603aa774eba1cfb83bffe", null ],
     [ "Draw", "class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9", null ],
     [ "GetVAO", "class_mesh.html#ad4917bc56c71f31974af4be3eb90a390", null ],
+    [ "print_normals", "class_mesh.html#a0cf3f3f0bacd461a12ddff31acbdb6bf", null ],
     [ "RecalculateNormals", "class_mesh.html#a2688a608e0185faef28105fae57ad76d", null ],
     [ "colors", "class_mesh.html#a484b6f05575dbac43b3f5de817f90069", null ],
     [ "indices", "class_mesh.html#a5e55b84c6c967608bcf23ed7d68e4215", null ],

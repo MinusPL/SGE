@@ -1,4 +1,10 @@
 #pragma once
+
+
+#include "ImGui/imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <IL/ilut.h>
@@ -13,6 +19,7 @@
 #include "Camera.h"
 #include "GameObject.h"
 #include "Skybox.h"
+#include "DirectionalLight.h"
 
 
 //! Main Game class
@@ -25,6 +32,29 @@ It also has all vectors that hold all game objects.
 class Game
 {
 public:
+	const char* glsl_version = "#version 330 core";
+	glm::vec3 light_diffuse = glm::vec3(0.85f, 0.85f, 0.8f);
+	glm::vec3 light_ambient = glm::vec3(0.7f, 0.7f, 0.7f);
+	glm::vec3 light_spec = glm::vec3(1.0f,1.0f,1.0f);
+	float ldirX = -0.5f;
+	float ldirY = -1.0f;
+	float ldirZ = 1.5f;
+
+	float pScaleX = 1.0f;
+	float pScaleY = 1.0f;
+	float pScaleZ = 1.0f;
+	float cubeOrbitRadius = 5.0f;
+	float cubeOritSpeed = 1.0f;
+	bool cubeOrbitDirection = false;
+	float waterTransparency = 0.5f;
+	float waterRefl = 0.75f;
+	GameObject* pObject_ptr = nullptr;
+	GameObject* pObject2_ptr = nullptr;
+	DirectionalLight* dirLight_ptr = nullptr;
+	bool mouse_mode = false;
+	bool bloomEnabled = true;
+
+
 	//! Instance of game.
 
 	/*!

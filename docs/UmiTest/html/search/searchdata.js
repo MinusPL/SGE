@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "bgimpstu~",
-  1: "bgpst",
-  2: "bgpstu",
-  3: "bgimpstu~",
-  4: "g"
+  0: "bgimnprstuw~",
+  1: "bgpstw",
+  2: "bgprstuw",
+  3: "bgimpstuw~",
+  4: "gn",
+  5: "i"
 };
 
 var indexSectionNames =
@@ -13,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "variables"
+  4: "variables",
+  5: "defines"
 };
 
 var indexSectionLabels =
@@ -22,6 +24,7 @@ var indexSectionLabels =
   1: "Classes",
   2: "Files",
   3: "Functions",
-  4: "Variables"
+  4: "Variables",
+  5: "Macros"
 };
 

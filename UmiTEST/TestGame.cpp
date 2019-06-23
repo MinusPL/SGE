@@ -44,12 +44,12 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadTexture("assets/textures/player_crate.png", "player_crate");
 
 	std::vector<GLchar*> filenames;
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
+	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
 
 	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/right.png");
 	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/left.png");
@@ -58,12 +58,12 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/front.png");
 	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/back.png");
 
-	filenames.push_back((GLchar*)"assets/textures/skybox/debug/right.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/debug/left.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/debug/top.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/debug/bottom.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/debug/front.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/debug/back.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/right.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/left.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/top.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/bottom.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/front.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/back.jpg");
 
 	ResourceManager::LoadCubeMap(filenames, "skybox_ocean");
 
@@ -79,6 +79,7 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	tPlayer->transform.Position(glm::vec3(0.0f, 0.5f, 0.0f));
 	objects.push_back(tPlayer);
 	opaque_objs.push_back(tPlayer);
+	pObject_ptr = tPlayer;
 
 	Plane* ground = new Plane();
 	ground->material = Material::white;
@@ -130,6 +131,7 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	kostka->transform.parent = &objects[0]->transform;
 	objects.push_back(kostka);
 	opaque_objs.push_back(kostka);
+	pObject2_ptr = kostka;
 
 
 	Grass* tGrass = nullptr;
@@ -147,7 +149,7 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	tBuild->transform.Position(glm::vec3(-5.0f, 0.0f, 10.0f));
 	tBuild->receiveShadows = true;
 	objects.push_back(tBuild);
-	relfective_objs.push_back(tBuild);
+	opaque_objs.push_back(tBuild);
 
 	BuildingB* tBuild2 = new BuildingB();
 	tBuild2->transform.Position(glm::vec3(25.0f, 0.0f, 2.0f));
@@ -186,6 +188,7 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	tLight->diffuse = glm::vec3(0.85f, 0.85f, 0.8f);
 	tLight->ambient = glm::vec3(0.7f,0.7f,0.7f);
 	tLight->specular = glm::vec3(1.0f, 1.0f, 1.0f);
+	dirLight_ptr = tLight;
 
 	LightManager::AddDirectionalLight(tLight);
 
@@ -205,6 +208,32 @@ void TestGame::Update(GLfloat dt)
 
 	if (Input::GetKey(Key::KEY_EQUAL)) this->shininess_control += 0.01f;
 	if (shininess_control > 256.0f) shininess_control = 256.0f;
+
+	if (Input::GetKeyDown(Key::KEY_LEFT_ALT))
+	{
+		if (this->mouse_mode)
+		{
+			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+		}
+		else
+		{
+			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+		}
+		mouse_mode = !mouse_mode;
+	}
+
+	pObject_ptr->transform.Scale(this->pScaleX, this->pScaleY, this->pScaleZ);
+
+	float orbitSpeed = this->cubeOritSpeed;
+	if (this->cubeOrbitDirection) orbitSpeed *= -1.0f;
+
+	pObject2_ptr->transform.Position((float)(glm::sin(glfwGetTime()*orbitSpeed) * this->cubeOrbitRadius), (float)pObject2_ptr->transform.Position().y, (float)(glm::cos(glfwGetTime()*orbitSpeed) * this->cubeOrbitRadius));
+
+	dirLight_ptr->diffuse = this->light_diffuse;
+	dirLight_ptr->ambient = this->light_ambient;
+	dirLight_ptr->specular = this->light_spec;
+
+	dirLight_ptr->direction = glm::vec3(this->ldirX, this->ldirY, this->ldirZ);
 
 }
 

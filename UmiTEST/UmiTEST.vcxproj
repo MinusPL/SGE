@@ -138,6 +138,7 @@ copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\
     <ClInclude Include="BuildingB.h" />
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="StorageCrate.h" />
     <ClInclude Include="TestGame.h" />
     <ClInclude Include="Water.h" />
@@ -155,6 +156,12 @@ copy "$(SolutionDir)Libs\glfw\bin\x86\assimp-vc140-mt.dll" "$(SolutionDir)Debug\
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UmiTEST.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\icon_tFt_icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

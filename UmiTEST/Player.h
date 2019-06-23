@@ -7,8 +7,8 @@
 //! Object representing player in game
 
 /*!
-Currently it is based on Cube primitive and uses it's own update method.
-Player can be moved by arrow keys (now it isn't working properly and cube representing player doesn't move properly.
+Uses own player model (in this case a ball).
+Can be moved by arrow keys
 */
 class Player : public VisualObject
 {

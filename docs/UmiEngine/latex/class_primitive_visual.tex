@@ -37,7 +37,9 @@ Collaboration diagram for Primitive\+Visual\+:\nopagebreak
 virtual void \mbox{\hyperlink{class_primitive_visual_a9ce21acf4bb9b9d9ac24c75f6aa9aec3}{Draw}} () override
 \begin{DoxyCompactList}\small\item\em Draw object normally. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_primitive_visual_a67915de082572ca4f6467c1402587024}{Draw\+Shadow}} () override
-\begin{DoxyCompactList}\small\item\em Draw object to shadowmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draw object to shadowmap. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_primitive_visual_a474e31c4bcf99e49da2ea943d6f25746}{Draw\+Reflection}} () override
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -102,6 +104,16 @@ Check and bind specular map from material
 Check and bind specular map from material 
 
 Implements \mbox{\hyperlink{class_game_object_a29a665f46fda87982825bc5c0ca6a888}{Game\+Object}}.
+
+\mbox{\Hypertarget{class_primitive_visual_a474e31c4bcf99e49da2ea943d6f25746}\label{class_primitive_visual_a474e31c4bcf99e49da2ea943d6f25746}} 
+\index{PrimitiveVisual@{PrimitiveVisual}!DrawReflection@{DrawReflection}}
+\index{DrawReflection@{DrawReflection}!PrimitiveVisual@{PrimitiveVisual}}
+\subsubsection{\texorpdfstring{DrawReflection()}{DrawReflection()}}
+{\footnotesize\ttfamily void Primitive\+Visual\+::\+Draw\+Reflection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_game_object_ad28240509bb63e4fde243e842898cf30}{Game\+Object}}.
 
 \mbox{\Hypertarget{class_primitive_visual_a67915de082572ca4f6467c1402587024}\label{class_primitive_visual_a67915de082572ca4f6467c1402587024}} 
 \index{PrimitiveVisual@{PrimitiveVisual}!DrawShadow@{DrawShadow}}

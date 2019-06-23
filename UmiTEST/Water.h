@@ -6,11 +6,10 @@
 #include <VisualObject.h>
 
 
-//! Object representing player in game
+//! Water surface for bucket
 
 /*!
-Currently it is based on Cube primitive and uses it's own update method.
-Player can be moved by arrow keys (now it isn't working properly and cube representing player doesn't move properly.
+It uses different shader for handling transparency and reflections.
 */
 class Water : public VisualObject
 {
@@ -18,7 +17,7 @@ public:
 	//! Constructor
 
 	/*!
-	Sets player material and texture.
+	Loads water model file and textures.
 	*/
 	Water();
 	~Water();
@@ -26,7 +25,7 @@ public:
 	//! Update all object logic.
 
 	/*!
-	Update player position and rotation based on user input.
+	Update (not used by water for now).
 	\param dt - delta time calculated between frames.
 	*/
 	virtual void Update(GLfloat dt) override;

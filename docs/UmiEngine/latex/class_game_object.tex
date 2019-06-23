@@ -39,7 +39,9 @@ virtual void \mbox{\hyperlink{class_game_object_aa100c768006aca3e7cdbabe27b48b9e
 virtual void \mbox{\hyperlink{class_game_object_a29a665f46fda87982825bc5c0ca6a888}{Draw}} ()=0
 \begin{DoxyCompactList}\small\item\em Draw object normally. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_game_object_a78bf45c8ef3805247435583556087788}{Draw\+Shadow}} ()=0
-\begin{DoxyCompactList}\small\item\em Draw object to shadowmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draw object to shadowmap. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_object_ad28240509bb63e4fde243e842898cf30}{Draw\+Reflection}} ()=0
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -87,6 +89,16 @@ Draw object normally.
 Draws object normally using standard shaders. 
 
 Implemented in \mbox{\hyperlink{class_primitive_visual_a9ce21acf4bb9b9d9ac24c75f6aa9aec3}{Primitive\+Visual}}, and \mbox{\hyperlink{class_visual_object_a10c0e01e375fd4af08e57f3475dd312c}{Visual\+Object}}.
+
+\mbox{\Hypertarget{class_game_object_ad28240509bb63e4fde243e842898cf30}\label{class_game_object_ad28240509bb63e4fde243e842898cf30}} 
+\index{GameObject@{GameObject}!DrawReflection@{DrawReflection}}
+\index{DrawReflection@{DrawReflection}!GameObject@{GameObject}}
+\subsubsection{\texorpdfstring{DrawReflection()}{DrawReflection()}}
+{\footnotesize\ttfamily virtual void Game\+Object\+::\+Draw\+Reflection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_primitive_visual_a474e31c4bcf99e49da2ea943d6f25746}{Primitive\+Visual}}, and \mbox{\hyperlink{class_visual_object_afaf21bc843280f7f8ebf52ab7d71ac2d}{Visual\+Object}}.
 
 \mbox{\Hypertarget{class_game_object_a78bf45c8ef3805247435583556087788}\label{class_game_object_a78bf45c8ef3805247435583556087788}} 
 \index{GameObject@{GameObject}!DrawShadow@{DrawShadow}}

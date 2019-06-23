@@ -235,8 +235,8 @@ Mesh* Model::processMesh(aiMesh * mesh, const aiScene * scene)
 		material->Get(AI_MATKEY_COLOR_SPECULAR, specColor);
 		material->Get(AI_MATKEY_SHININESS, shininess);
 		//mat->ambient = glm::vec3(ambColor.r, ambColor.g, ambColor.b);
-		//mat->diffuse = glm::vec3(difColor.r, difColor.g, difColor.b);
-		mat->diffuse = glm::vec3(1.0f,1.0f,1.0f);
+		mat->diffuse = glm::vec3(difColor.r, difColor.g, difColor.b);
+		//mat->diffuse = glm::vec3(1.0f,1.0f,1.0f);
 
 
 		mat->specular = glm::vec3(specColor.r, specColor.g, specColor.b);

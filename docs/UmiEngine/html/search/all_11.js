@@ -20,6 +20,7 @@ var searchData=
   ['shadow_5fheight',['SHADOW_HEIGHT',['../class_game.html#a6ff4bf491706f3c85c1de2ed7983a51b',1,'Game']]],
   ['shadow_5fwidth',['SHADOW_WIDTH',['../class_game.html#abf4d8e38c95fc6e1351e6dd85a19429f',1,'Game']]],
   ['shiness',['shiness',['../struct_material.html#ac40b4d892e9bff09f793d86ca1f3257e',1,'Material']]],
+  ['shininess_5fcontrol',['shininess_control',['../class_game.html#a91b5545f94ad9a83bac6d9be6ef15737',1,'Game']]],
   ['silver',['silver',['../struct_material.html#aef9dfcd5c4f7aaa53ee68831a19f68ca',1,'Material']]],
   ['sky',['sky',['../class_game.html#a46b9b13579445bc071f6cba24953b531',1,'Game']]],
   ['skybox',['Skybox',['../class_skybox.html',1,'Skybox'],['../class_skybox.html#a77a92db4492ed94ed4bd101b05ffb1f4',1,'Skybox::Skybox()']]],

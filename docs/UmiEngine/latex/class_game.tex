@@ -11,11 +11,12 @@ Main \mbox{\hyperlink{class_game}{Game}} class.
 
 
 
-Collaboration diagram for Game\+:\nopagebreak
+Collaboration diagram for Game\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=185pt]{class_game__coll__graph}
+\includegraphics[width=345pt]{class_game__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -40,6 +41,46 @@ void \mbox{\hyperlink{class_game_ad06e374518f2c8fa38279be6712a6ea4}{Exit}} ()
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+const char $\ast$ \mbox{\hyperlink{class_game_aaa8f957ef3a7b9a386f950ff1f6f89ef}{glsl\+\_\+version}} = \char`\"{}\#version 330 core\char`\"{}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_ad6c83fd9cb6b646a09a5c07a0d2f4127}{light\+\_\+diffuse}} = glm\+::vec3(0.\+85f, 0.\+85f, 0.\+8f)
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_ab59fa6e482623110a011d5319e40bc04}{light\+\_\+ambient}} = glm\+::vec3(0.\+7f, 0.\+7f, 0.\+7f)
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_a600d2f3f0a0407010eb46640d2157290}{light\+\_\+spec}} = glm\+::vec3(1.\+0f,1.\+0f,1.\+0f)
+\item 
+float \mbox{\hyperlink{class_game_a1b522d1c1f329aca47be60f3db2d9056}{ldirX}} = -\/0.\+5f
+\item 
+float \mbox{\hyperlink{class_game_ab1dba5d397b75fe389f0a2569c6d2a09}{ldirY}} = -\/1.\+0f
+\item 
+float \mbox{\hyperlink{class_game_a9c84b35a1a322b8193c8d1443ace58c1}{ldirZ}} = 1.\+5f
+\item 
+float \mbox{\hyperlink{class_game_a7ceb6c09bd7968b1cbfd949de3c53d73}{p\+ScaleX}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_game_abb3c306f0ca519ca040562c6b85f49a1}{p\+ScaleY}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_game_a049182cd8a977e566235e10855418a82}{p\+ScaleZ}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_game_a2b87cb2d287ad76c001515f10de5a257}{cube\+Orbit\+Radius}} = 5.\+0f
+\item 
+float \mbox{\hyperlink{class_game_ab28799b678dfa0b4813d101931a59b1d}{cube\+Orit\+Speed}} = 1.\+0f
+\item 
+bool \mbox{\hyperlink{class_game_a5f78e2edc6fead54dac8acd2f0126d87}{cube\+Orbit\+Direction}} = false
+\item 
+float \mbox{\hyperlink{class_game_a1d2ebf9d3a73b5e032de84a9d9aa6d53}{water\+Transparency}} = 0.\+5f
+\item 
+float \mbox{\hyperlink{class_game_a61286f3abaf4d831fd5a5e681058e37a}{water\+Refl}} = 0.\+75f
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ \mbox{\hyperlink{class_game_a67c299035a53da108a53752997d1a79b}{p\+Object\+\_\+ptr}} = nullptr
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ \mbox{\hyperlink{class_game_a9d8260c3af3cadc4175b9d6fdbd60fd9}{p\+Object2\+\_\+ptr}} = nullptr
+\item 
+\mbox{\hyperlink{class_directional_light}{Directional\+Light}} $\ast$ \mbox{\hyperlink{class_game_abf59c36fc2002f081db238c0c59d281c}{dir\+Light\+\_\+ptr}} = nullptr
+\item 
+bool \mbox{\hyperlink{class_game_a2ba304fc1c700d96594813ea8be1fab4}{mouse\+\_\+mode}} = false
+\item 
+bool \mbox{\hyperlink{class_game_aebb0f727637f73a434faf0418cff1cc8}{bloom\+Enabled}} = true
+\item 
 std\+::map$<$ std\+::string, \mbox{\hyperlink{class_camera}{Camera}} $\ast$ $>$ \mbox{\hyperlink{class_game_af4eb1b9c217dcb0f860ec9b0320f2274}{camera}}
 \begin{DoxyCompactList}\small\item\em Holds all cameras and allows to call them by their names. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_game_ac025aa21d226a5beb9ba19bc418af894}{objects}}
@@ -47,7 +88,13 @@ std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ $>$ \
 std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_game_a29149a40296ca49ec4aacdad04716fe4}{transparent\+\_\+objs}}
 \begin{DoxyCompactList}\small\item\em Vector to hold all transparent objects. Used to render them after all opaque objects. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_game_affc1bb149ae6c474261ba1bfe133af07}{opaque\+\_\+objs}}
-\begin{DoxyCompactList}\small\item\em Vector to hold all opaque objects that are rendered firstly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vector to hold all opaque objects that are rendered firstly. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_game_aeb28e11f6ddb7c1226a42e59c1d7817b}{relfective\+\_\+objs}}
+\item 
+float \mbox{\hyperlink{class_game_a91b5545f94ad9a83bac6d9be6ef15737}{shininess\+\_\+control}} = 0.\+8f
+\begin{DoxyCompactList}\small\item\em TO R\+E\+M\+O\+VE T\+H\+IS V\+A\+L\+UE IS O\+N\+LY F\+OR T\+E\+S\+T\+I\+NG P\+U\+R\+P\+O\+S\+ES. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_skybox}{Skybox}} $\ast$ \mbox{\hyperlink{class_game_a46b9b13579445bc071f6cba24953b531}{sky}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_skybox}{Skybox}} used ingame. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,8 +105,6 @@ static \mbox{\hyperlink{class_game}{Game}} $\ast$ \mbox{\hyperlink{class_game_aa
 \item 
 G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_game_ad9bc7cf39168a1ceaf77d6177116aa94}{window}}
 \begin{DoxyCompactList}\small\item\em Main game window. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_skybox}{Skybox}} $\ast$ \mbox{\hyperlink{class_game_a46b9b13579445bc071f6cba24953b531}{sky}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_skybox}{Skybox}} used ingame. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{class_game_a92aabad09ef89df6964b62b89c2f7edb}{screen\+V\+AO}}
 \begin{DoxyCompactList}\small\item\em Vertex Array Object adress used to hold created screen geometry. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{class_game_a64dfde0688161bc1d584fc448c496e49}{screen\+V\+BO}}
@@ -82,9 +127,9 @@ unsigned int \mbox{\hyperlink{class_game_a0160418629f882b089847e9ddd6901f5}{ping
 \begin{DoxyCompactList}\small\item\em Framebuffer objects used to create bloom effect. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{class_game_abbb66ef5bda6124f03272970cd18707f}{pingpong\+Colorbuffers}} \mbox{[}2\mbox{]}
 \begin{DoxyCompactList}\small\item\em Open\+GL Textures used to create bloom effect. \end{DoxyCompactList}\item 
-const int \mbox{\hyperlink{class_game_abf4d8e38c95fc6e1351e6dd85a19429f}{S\+H\+A\+D\+O\+W\+\_\+\+W\+I\+D\+TH}} = 8192
+const int \mbox{\hyperlink{class_game_abf4d8e38c95fc6e1351e6dd85a19429f}{S\+H\+A\+D\+O\+W\+\_\+\+W\+I\+D\+TH}} = 4096
 \begin{DoxyCompactList}\small\item\em Width of used shadowmap -\/ will be changeable in future. \end{DoxyCompactList}\item 
-const int \mbox{\hyperlink{class_game_a6ff4bf491706f3c85c1de2ed7983a51b}{S\+H\+A\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT}} = 8192
+const int \mbox{\hyperlink{class_game_a6ff4bf491706f3c85c1de2ed7983a51b}{S\+H\+A\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT}} = 4096
 \begin{DoxyCompactList}\small\item\em Height of used shadowmap -\/ will be changeable in future. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_game_ac05df6adfb712932bac2afea1fb01dc3}{screen\+\_\+width}} = 1920
 \begin{DoxyCompactList}\small\item\em Currently set width of window and viewport. \end{DoxyCompactList}\item 
@@ -194,6 +239,12 @@ By default it is not implemented in engine. It is required to implement in game 
 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_aebb0f727637f73a434faf0418cff1cc8}\label{class_game_aebb0f727637f73a434faf0418cff1cc8}} 
+\index{Game@{Game}!bloomEnabled@{bloomEnabled}}
+\index{bloomEnabled@{bloomEnabled}!Game@{Game}}
+\subsubsection{\texorpdfstring{bloomEnabled}{bloomEnabled}}
+{\footnotesize\ttfamily bool Game\+::bloom\+Enabled = true}
+
 \mbox{\Hypertarget{class_game_af4eb1b9c217dcb0f860ec9b0320f2274}\label{class_game_af4eb1b9c217dcb0f860ec9b0320f2274}} 
 \index{Game@{Game}!camera@{camera}}
 \index{camera@{camera}!Game@{Game}}
@@ -213,6 +264,24 @@ Holds all cameras and allows to call them by their names.
 
 
 Two Open\+GL textures used to hold separated H\+DR image -\/ one with normal image, and secound with only bright parts. 
+
+\mbox{\Hypertarget{class_game_a5f78e2edc6fead54dac8acd2f0126d87}\label{class_game_a5f78e2edc6fead54dac8acd2f0126d87}} 
+\index{Game@{Game}!cubeOrbitDirection@{cubeOrbitDirection}}
+\index{cubeOrbitDirection@{cubeOrbitDirection}!Game@{Game}}
+\subsubsection{\texorpdfstring{cubeOrbitDirection}{cubeOrbitDirection}}
+{\footnotesize\ttfamily bool Game\+::cube\+Orbit\+Direction = false}
+
+\mbox{\Hypertarget{class_game_a2b87cb2d287ad76c001515f10de5a257}\label{class_game_a2b87cb2d287ad76c001515f10de5a257}} 
+\index{Game@{Game}!cubeOrbitRadius@{cubeOrbitRadius}}
+\index{cubeOrbitRadius@{cubeOrbitRadius}!Game@{Game}}
+\subsubsection{\texorpdfstring{cubeOrbitRadius}{cubeOrbitRadius}}
+{\footnotesize\ttfamily float Game\+::cube\+Orbit\+Radius = 5.\+0f}
+
+\mbox{\Hypertarget{class_game_ab28799b678dfa0b4813d101931a59b1d}\label{class_game_ab28799b678dfa0b4813d101931a59b1d}} 
+\index{Game@{Game}!cubeOritSpeed@{cubeOritSpeed}}
+\index{cubeOritSpeed@{cubeOritSpeed}!Game@{Game}}
+\subsubsection{\texorpdfstring{cubeOritSpeed}{cubeOritSpeed}}
+{\footnotesize\ttfamily float Game\+::cube\+Orit\+Speed = 1.\+0f}
 
 \mbox{\Hypertarget{class_game_a61853261d678bcfe2638deba1e58fd18}\label{class_game_a61853261d678bcfe2638deba1e58fd18}} 
 \index{Game@{Game}!depthMap@{depthMap}}
@@ -234,6 +303,12 @@ Open\+GL \mbox{\hyperlink{class_texture}{Texture}} for shadowmap.
 
 Framebuffer Object used to hold shadowmap frame. 
 
+\mbox{\Hypertarget{class_game_abf59c36fc2002f081db238c0c59d281c}\label{class_game_abf59c36fc2002f081db238c0c59d281c}} 
+\index{Game@{Game}!dirLight\_ptr@{dirLight\_ptr}}
+\index{dirLight\_ptr@{dirLight\_ptr}!Game@{Game}}
+\subsubsection{\texorpdfstring{dirLight\_ptr}{dirLight\_ptr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_directional_light}{Directional\+Light}}$\ast$ Game\+::dir\+Light\+\_\+ptr = nullptr}
+
 \mbox{\Hypertarget{class_game_a64cdbfe0d81d60426bb6523459d7b52c}\label{class_game_a64cdbfe0d81d60426bb6523459d7b52c}} 
 \index{Game@{Game}!fbo@{fbo}}
 \index{fbo@{fbo}!Game@{Game}}
@@ -243,6 +318,12 @@ Framebuffer Object used to hold shadowmap frame.
 
 
 Framebuffer Object. 
+
+\mbox{\Hypertarget{class_game_aaa8f957ef3a7b9a386f950ff1f6f89ef}\label{class_game_aaa8f957ef3a7b9a386f950ff1f6f89ef}} 
+\index{Game@{Game}!glsl\_version@{glsl\_version}}
+\index{glsl\_version@{glsl\_version}!Game@{Game}}
+\subsubsection{\texorpdfstring{glsl\_version}{glsl\_version}}
+{\footnotesize\ttfamily const char$\ast$ Game\+::glsl\+\_\+version = \char`\"{}\#version 330 core\char`\"{}}
 
 \mbox{\Hypertarget{class_game_aecf2b0705e36b7b510be741add10f974}\label{class_game_aecf2b0705e36b7b510be741add10f974}} 
 \index{Game@{Game}!hdrFBO@{hdrFBO}}
@@ -264,7 +345,49 @@ Framebuffer object used to hold frame rendered in high dynamic range.
 
 Instance of game. 
 
-This is game instance. It is used to prevent creating second isntance of engine in one process. It is created when initializing game. \mbox{\Hypertarget{class_game_ac025aa21d226a5beb9ba19bc418af894}\label{class_game_ac025aa21d226a5beb9ba19bc418af894}} 
+This is game instance. It is used to prevent creating second isntance of engine in one process. It is created when initializing game. \mbox{\Hypertarget{class_game_a1b522d1c1f329aca47be60f3db2d9056}\label{class_game_a1b522d1c1f329aca47be60f3db2d9056}} 
+\index{Game@{Game}!ldirX@{ldirX}}
+\index{ldirX@{ldirX}!Game@{Game}}
+\subsubsection{\texorpdfstring{ldirX}{ldirX}}
+{\footnotesize\ttfamily float Game\+::ldirX = -\/0.\+5f}
+
+\mbox{\Hypertarget{class_game_ab1dba5d397b75fe389f0a2569c6d2a09}\label{class_game_ab1dba5d397b75fe389f0a2569c6d2a09}} 
+\index{Game@{Game}!ldirY@{ldirY}}
+\index{ldirY@{ldirY}!Game@{Game}}
+\subsubsection{\texorpdfstring{ldirY}{ldirY}}
+{\footnotesize\ttfamily float Game\+::ldirY = -\/1.\+0f}
+
+\mbox{\Hypertarget{class_game_a9c84b35a1a322b8193c8d1443ace58c1}\label{class_game_a9c84b35a1a322b8193c8d1443ace58c1}} 
+\index{Game@{Game}!ldirZ@{ldirZ}}
+\index{ldirZ@{ldirZ}!Game@{Game}}
+\subsubsection{\texorpdfstring{ldirZ}{ldirZ}}
+{\footnotesize\ttfamily float Game\+::ldirZ = 1.\+5f}
+
+\mbox{\Hypertarget{class_game_ab59fa6e482623110a011d5319e40bc04}\label{class_game_ab59fa6e482623110a011d5319e40bc04}} 
+\index{Game@{Game}!light\_ambient@{light\_ambient}}
+\index{light\_ambient@{light\_ambient}!Game@{Game}}
+\subsubsection{\texorpdfstring{light\_ambient}{light\_ambient}}
+{\footnotesize\ttfamily glm\+::vec3 Game\+::light\+\_\+ambient = glm\+::vec3(0.\+7f, 0.\+7f, 0.\+7f)}
+
+\mbox{\Hypertarget{class_game_ad6c83fd9cb6b646a09a5c07a0d2f4127}\label{class_game_ad6c83fd9cb6b646a09a5c07a0d2f4127}} 
+\index{Game@{Game}!light\_diffuse@{light\_diffuse}}
+\index{light\_diffuse@{light\_diffuse}!Game@{Game}}
+\subsubsection{\texorpdfstring{light\_diffuse}{light\_diffuse}}
+{\footnotesize\ttfamily glm\+::vec3 Game\+::light\+\_\+diffuse = glm\+::vec3(0.\+85f, 0.\+85f, 0.\+8f)}
+
+\mbox{\Hypertarget{class_game_a600d2f3f0a0407010eb46640d2157290}\label{class_game_a600d2f3f0a0407010eb46640d2157290}} 
+\index{Game@{Game}!light\_spec@{light\_spec}}
+\index{light\_spec@{light\_spec}!Game@{Game}}
+\subsubsection{\texorpdfstring{light\_spec}{light\_spec}}
+{\footnotesize\ttfamily glm\+::vec3 Game\+::light\+\_\+spec = glm\+::vec3(1.\+0f,1.\+0f,1.\+0f)}
+
+\mbox{\Hypertarget{class_game_a2ba304fc1c700d96594813ea8be1fab4}\label{class_game_a2ba304fc1c700d96594813ea8be1fab4}} 
+\index{Game@{Game}!mouse\_mode@{mouse\_mode}}
+\index{mouse\_mode@{mouse\_mode}!Game@{Game}}
+\subsubsection{\texorpdfstring{mouse\_mode}{mouse\_mode}}
+{\footnotesize\ttfamily bool Game\+::mouse\+\_\+mode = false}
+
+\mbox{\Hypertarget{class_game_ac025aa21d226a5beb9ba19bc418af894}\label{class_game_ac025aa21d226a5beb9ba19bc418af894}} 
 \index{Game@{Game}!objects@{objects}}
 \index{objects@{objects}!Game@{Game}}
 \subsubsection{\texorpdfstring{objects}{objects}}
@@ -304,6 +427,36 @@ Open\+GL Textures used to create bloom effect.
 
 Framebuffer objects used to create bloom effect. 
 
+\mbox{\Hypertarget{class_game_a9d8260c3af3cadc4175b9d6fdbd60fd9}\label{class_game_a9d8260c3af3cadc4175b9d6fdbd60fd9}} 
+\index{Game@{Game}!pObject2\_ptr@{pObject2\_ptr}}
+\index{pObject2\_ptr@{pObject2\_ptr}!Game@{Game}}
+\subsubsection{\texorpdfstring{pObject2\_ptr}{pObject2\_ptr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$ Game\+::p\+Object2\+\_\+ptr = nullptr}
+
+\mbox{\Hypertarget{class_game_a67c299035a53da108a53752997d1a79b}\label{class_game_a67c299035a53da108a53752997d1a79b}} 
+\index{Game@{Game}!pObject\_ptr@{pObject\_ptr}}
+\index{pObject\_ptr@{pObject\_ptr}!Game@{Game}}
+\subsubsection{\texorpdfstring{pObject\_ptr}{pObject\_ptr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$ Game\+::p\+Object\+\_\+ptr = nullptr}
+
+\mbox{\Hypertarget{class_game_a7ceb6c09bd7968b1cbfd949de3c53d73}\label{class_game_a7ceb6c09bd7968b1cbfd949de3c53d73}} 
+\index{Game@{Game}!pScaleX@{pScaleX}}
+\index{pScaleX@{pScaleX}!Game@{Game}}
+\subsubsection{\texorpdfstring{pScaleX}{pScaleX}}
+{\footnotesize\ttfamily float Game\+::p\+ScaleX = 1.\+0f}
+
+\mbox{\Hypertarget{class_game_abb3c306f0ca519ca040562c6b85f49a1}\label{class_game_abb3c306f0ca519ca040562c6b85f49a1}} 
+\index{Game@{Game}!pScaleY@{pScaleY}}
+\index{pScaleY@{pScaleY}!Game@{Game}}
+\subsubsection{\texorpdfstring{pScaleY}{pScaleY}}
+{\footnotesize\ttfamily float Game\+::p\+ScaleY = 1.\+0f}
+
+\mbox{\Hypertarget{class_game_a049182cd8a977e566235e10855418a82}\label{class_game_a049182cd8a977e566235e10855418a82}} 
+\index{Game@{Game}!pScaleZ@{pScaleZ}}
+\index{pScaleZ@{pScaleZ}!Game@{Game}}
+\subsubsection{\texorpdfstring{pScaleZ}{pScaleZ}}
+{\footnotesize\ttfamily float Game\+::p\+ScaleZ = 1.\+0f}
+
 \mbox{\Hypertarget{class_game_a521e6ba079b5beb2d552137f9363e36e}\label{class_game_a521e6ba079b5beb2d552137f9363e36e}} 
 \index{Game@{Game}!rbo@{rbo}}
 \index{rbo@{rbo}!Game@{Game}}
@@ -313,6 +466,12 @@ Framebuffer objects used to create bloom effect.
 
 
 Render Buffer Object. 
+
+\mbox{\Hypertarget{class_game_aeb28e11f6ddb7c1226a42e59c1d7817b}\label{class_game_aeb28e11f6ddb7c1226a42e59c1d7817b}} 
+\index{Game@{Game}!relfective\_objs@{relfective\_objs}}
+\index{relfective\_objs@{relfective\_objs}!Game@{Game}}
+\subsubsection{\texorpdfstring{relfective\_objs}{relfective\_objs}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$\ast$$>$ Game\+::relfective\+\_\+objs}
 
 \mbox{\Hypertarget{class_game_ab52e2343e6335e426a6395c44f4dab71}\label{class_game_ab52e2343e6335e426a6395c44f4dab71}} 
 \index{Game@{Game}!screen\_height@{screen\_height}}
@@ -358,7 +517,7 @@ Vertex Buffer Object adress. It is used to hold our geometry in high-\/speed G\+
 \index{Game@{Game}!SHADOW\_HEIGHT@{SHADOW\_HEIGHT}}
 \index{SHADOW\_HEIGHT@{SHADOW\_HEIGHT}!Game@{Game}}
 \subsubsection{\texorpdfstring{SHADOW\_HEIGHT}{SHADOW\_HEIGHT}}
-{\footnotesize\ttfamily const int Game\+::\+S\+H\+A\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT = 8192\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily const int Game\+::\+S\+H\+A\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT = 4096\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -368,17 +527,27 @@ Height of used shadowmap -\/ will be changeable in future.
 \index{Game@{Game}!SHADOW\_WIDTH@{SHADOW\_WIDTH}}
 \index{SHADOW\_WIDTH@{SHADOW\_WIDTH}!Game@{Game}}
 \subsubsection{\texorpdfstring{SHADOW\_WIDTH}{SHADOW\_WIDTH}}
-{\footnotesize\ttfamily const int Game\+::\+S\+H\+A\+D\+O\+W\+\_\+\+W\+I\+D\+TH = 8192\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily const int Game\+::\+S\+H\+A\+D\+O\+W\+\_\+\+W\+I\+D\+TH = 4096\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 Width of used shadowmap -\/ will be changeable in future. 
 
+\mbox{\Hypertarget{class_game_a91b5545f94ad9a83bac6d9be6ef15737}\label{class_game_a91b5545f94ad9a83bac6d9be6ef15737}} 
+\index{Game@{Game}!shininess\_control@{shininess\_control}}
+\index{shininess\_control@{shininess\_control}!Game@{Game}}
+\subsubsection{\texorpdfstring{shininess\_control}{shininess\_control}}
+{\footnotesize\ttfamily float Game\+::shininess\+\_\+control = 0.\+8f}
+
+
+
+TO R\+E\+M\+O\+VE T\+H\+IS V\+A\+L\+UE IS O\+N\+LY F\+OR T\+E\+S\+T\+I\+NG P\+U\+R\+P\+O\+S\+ES. 
+
 \mbox{\Hypertarget{class_game_a46b9b13579445bc071f6cba24953b531}\label{class_game_a46b9b13579445bc071f6cba24953b531}} 
 \index{Game@{Game}!sky@{sky}}
 \index{sky@{sky}!Game@{Game}}
 \subsubsection{\texorpdfstring{sky}{sky}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_skybox}{Skybox}}$\ast$ Game\+::sky\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_skybox}{Skybox}}$\ast$ Game\+::sky}
 
 
 
@@ -404,7 +573,19 @@ Width of used shadowmap -\/ will be changeable in future.
 
 Vector to hold all transparent objects. Used to render them after all opaque objects. 
 
-This one is beeing sorted in reverse order by the distance from object to currently used camera. \mbox{\Hypertarget{class_game_ad9bc7cf39168a1ceaf77d6177116aa94}\label{class_game_ad9bc7cf39168a1ceaf77d6177116aa94}} 
+This one is beeing sorted in reverse order by the distance from object to currently used camera. \mbox{\Hypertarget{class_game_a61286f3abaf4d831fd5a5e681058e37a}\label{class_game_a61286f3abaf4d831fd5a5e681058e37a}} 
+\index{Game@{Game}!waterRefl@{waterRefl}}
+\index{waterRefl@{waterRefl}!Game@{Game}}
+\subsubsection{\texorpdfstring{waterRefl}{waterRefl}}
+{\footnotesize\ttfamily float Game\+::water\+Refl = 0.\+75f}
+
+\mbox{\Hypertarget{class_game_a1d2ebf9d3a73b5e032de84a9d9aa6d53}\label{class_game_a1d2ebf9d3a73b5e032de84a9d9aa6d53}} 
+\index{Game@{Game}!waterTransparency@{waterTransparency}}
+\index{waterTransparency@{waterTransparency}!Game@{Game}}
+\subsubsection{\texorpdfstring{waterTransparency}{waterTransparency}}
+{\footnotesize\ttfamily float Game\+::water\+Transparency = 0.\+5f}
+
+\mbox{\Hypertarget{class_game_ad9bc7cf39168a1ceaf77d6177116aa94}\label{class_game_ad9bc7cf39168a1ceaf77d6177116aa94}} 
 \index{Game@{Game}!window@{window}}
 \index{window@{window}!Game@{Game}}
 \subsubsection{\texorpdfstring{window}{window}}

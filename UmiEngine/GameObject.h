@@ -5,7 +5,7 @@
 #include "Transform.h"
 #include <gl/glew.h>
 
-enum ShaderType {STANDARD, STANDARD_ALPHA, STANDARD_SHADELESS, STANDARD_ENV, WATER};
+enum ShaderType {STANDARD, STANDARD_ALPHA, STANDARD_SHADELESS, WATER};
 
 //! GameObject class
 class GameObject

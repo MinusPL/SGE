@@ -1,4 +1,5 @@
 #include "Camera.h"
+#include "Game.h"
 
 
 Camera::Camera(int mode)
@@ -21,7 +22,13 @@ Camera::~Camera()
 
 void Camera::Update(GLfloat dt)
 {
-	float speed = 5.0f * dt;
+	float spmn = 1.0f;
+	if (Game::instance->mouse_mode)
+	{
+		return;
+	}
+	if (Input::GetKey(Key::KEY_LEFT_SHIFT)) spmn = 10.0f;
+	float speed = 5.0f * spmn * dt;
 	if (Input::GetKey(Key::KEY_W))
 	{
 		this->transform.Position(this->transform.Position() + (this->transform.Forward() * speed));

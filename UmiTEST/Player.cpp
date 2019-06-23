@@ -6,7 +6,7 @@
 #include <Game.h>
 
 
-Player::Player() : VisualObject((GLchar*)"assets/models/player/kotori.fbx", STANDARD_SHADELESS)
+Player::Player() : VisualObject((GLchar*)"assets/models/pokeball/pokeball.fbx", STANDARD)
 {
 
 }
@@ -19,7 +19,7 @@ Player::~Player()
 void Player::Update(GLfloat dt)
 {
 	float speed = 4.0f;
-	float rot_speed = 35.0f;
+	float rot_speed = 65.0f;
 
 	if (Input::GetKey(Key::KEY_LEFT_SHIFT))
 	{

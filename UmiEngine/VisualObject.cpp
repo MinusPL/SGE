@@ -46,6 +46,8 @@ void VisualObject::DrawReflection()
 	LightManager::ApplyToShader(ResourceManager::GetShader("water"));
 	ResourceManager::GetShader("water")->SetMatrix4("lightSpaceMatrix", LightManager::GetDirLightSpaceMatrix());
 	ResourceManager::GetShader("water")->SetInteger("receiveShadows", receiveShadows);
+	ResourceManager::GetShader("water")->SetFloat("transparency", Game::instance->waterTransparency);
+	ResourceManager::GetShader("water")->SetFloat("reflectivnes", Game::instance->waterRefl);
 	
 
 	this->model.DrawReflection(ResourceManager::GetShader("water"));
@@ -68,11 +70,6 @@ VisualObject::VisualObject(GLchar* model_file, ShaderType shaderType) : GameObje
 		case STANDARD_SHADELESS:
 		{
 			this->shader = ResourceManager::GetShader("standard_shadeless");
-			break;
-		}
-		case STANDARD_ENV:
-		{
-			this->shader = ResourceManager::GetShader("standard_env");
 			break;
 		}
 		case WATER:

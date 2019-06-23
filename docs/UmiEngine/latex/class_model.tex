@@ -17,7 +17,11 @@
 void \mbox{\hyperlink{class_model_a8444e404fcc9cc66827c2f628b92ece3}{Draw}} (\mbox{\hyperlink{class_shader}{Shader}} $\ast$shader)
 \begin{DoxyCompactList}\small\item\em Draw model normally. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_model_ac2e396a05a6b7af011c213dcbd2dae21}{Draw\+Shadow}} ()
-\begin{DoxyCompactList}\small\item\em Draw model to shadowmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draw model to shadowmap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_ae55524ff90fd956b7cb3817a9bab139a}{Draw\+Reflection}} (\mbox{\hyperlink{class_shader}{Shader}} $\ast$shader)
+\item 
+void \mbox{\hyperlink{class_model_acc6d38d268db3e4b88bbd32cd28c8f58}{print\+\_\+normals}} ()
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -63,6 +67,16 @@ Check and bind diffuse map from material
 
 Check and bind specular map from material
 
+Check and bind specular map from material \mbox{\Hypertarget{class_model_ae55524ff90fd956b7cb3817a9bab139a}\label{class_model_ae55524ff90fd956b7cb3817a9bab139a}} 
+\index{Model@{Model}!DrawReflection@{DrawReflection}}
+\index{DrawReflection@{DrawReflection}!Model@{Model}}
+\subsubsection{\texorpdfstring{DrawReflection()}{DrawReflection()}}
+{\footnotesize\ttfamily void Model\+::\+Draw\+Reflection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption})}
+
+Check and bind diffuse map from material
+
+Check and bind specular map from material
+
 Check and bind specular map from material \mbox{\Hypertarget{class_model_ac2e396a05a6b7af011c213dcbd2dae21}\label{class_model_ac2e396a05a6b7af011c213dcbd2dae21}} 
 \index{Model@{Model}!DrawShadow@{DrawShadow}}
 \index{DrawShadow@{DrawShadow}!Model@{Model}}
@@ -73,7 +87,13 @@ Check and bind specular map from material \mbox{\Hypertarget{class_model_ac2e396
 
 Draw model to shadowmap. 
 
-Draws model to shadowmap using simplified shadow shader. 
+Draws model to shadowmap using simplified shadow shader. \mbox{\Hypertarget{class_model_acc6d38d268db3e4b88bbd32cd28c8f58}\label{class_model_acc6d38d268db3e4b88bbd32cd28c8f58}} 
+\index{Model@{Model}!print\_normals@{print\_normals}}
+\index{print\_normals@{print\_normals}!Model@{Model}}
+\subsubsection{\texorpdfstring{print\_normals()}{print\_normals()}}
+{\footnotesize\ttfamily void Model\+::print\+\_\+normals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

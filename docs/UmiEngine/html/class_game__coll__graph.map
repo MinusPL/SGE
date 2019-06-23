@@ -1,5 +1,9 @@
 <map id="Game" name="Game">
-<area shape="rect" id="node1" title="Main Game class." alt="" coords="10,184,67,211"/>
-<area shape="rect" id="node2" href="$class_skybox.html" title="Skybox object." alt="" coords="5,95,72,121"/>
-<area shape="rect" id="node3" href="$class_texture.html" title="Texture class." alt="" coords="6,5,71,32"/>
+<area shape="rect" id="node1" title="Main Game class." alt="" coords="161,199,219,225"/>
+<area shape="rect" id="node2" href="$class_game_object.html" title="GameObject class." alt="" coords="17,95,112,121"/>
+<area shape="rect" id="node3" href="$class_transform.html" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node4" href="$class_skybox.html" title="Skybox object." alt="" coords="157,95,223,121"/>
+<area shape="rect" id="node5" href="$class_texture.html" title="Texture class." alt="" coords="173,5,239,32"/>
+<area shape="rect" id="node6" href="$class_directional_light.html" title="Directional Light class." alt="" coords="248,95,359,121"/>
+<area shape="rect" id="node7" href="$class_light.html" title="Base Light class." alt="" coords="278,5,329,32"/>
 </map>

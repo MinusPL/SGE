@@ -1,11 +1,12 @@
 <map id="UmiEngine/Input.h" name="UmiEngine/Input.h">
-<area shape="rect" id="node1" title=" " alt="" coords="593,5,721,32"/>
-<area shape="rect" id="node2" href="$_camera_8h.html" title=" " alt="" coords="432,80,577,107"/>
-<area shape="rect" id="node5" href="$_game_8cpp.html" title=" " alt="" coords="623,229,773,256"/>
-<area shape="rect" id="node9" href="$_input_8cpp.html" title=" " alt="" coords="695,80,837,107"/>
-<area shape="rect" id="node3" href="$_camera_8cpp.html" title=" " alt="" coords="255,155,413,181"/>
-<area shape="rect" id="node4" href="$_game_8h.html" title=" " alt="" coords="437,155,572,181"/>
-<area shape="rect" id="node6" href="$_primitive_visual_8cpp.html" title=" " alt="" coords="5,229,204,256"/>
-<area shape="rect" id="node7" href="$_skybox_8cpp.html" title=" " alt="" coords="228,229,387,256"/>
-<area shape="rect" id="node8" href="$_visual_object_8cpp.html" title=" " alt="" coords="411,229,599,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="862,5,990,32"/>
+<area shape="rect" id="node2" href="$_camera_8h.html" title=" " alt="" coords="516,80,661,107"/>
+<area shape="rect" id="node5" href="$_game_8cpp.html" title=" " alt="" coords="979,229,1129,256"/>
+<area shape="rect" id="node10" href="$_input_8cpp.html" title=" " alt="" coords="964,80,1107,107"/>
+<area shape="rect" id="node3" href="$_camera_8cpp.html" title=" " alt="" coords="5,229,164,256"/>
+<area shape="rect" id="node4" href="$_game_8h.html" title=" " alt="" coords="521,155,656,181"/>
+<area shape="rect" id="node6" href="$_model_8cpp.html" title=" " alt="" coords="806,229,955,256"/>
+<area shape="rect" id="node7" href="$_primitive_visual_8cpp.html" title=" " alt="" coords="188,229,387,256"/>
+<area shape="rect" id="node8" href="$_skybox_8cpp.html" title=" " alt="" coords="411,229,569,256"/>
+<area shape="rect" id="node9" href="$_visual_object_8cpp.html" title=" " alt="" coords="593,229,781,256"/>
 </map>

@@ -7,6 +7,8 @@
 #include <ctime>
 #include <iostream>
 
+
+
 Game* Game::instance = nullptr;
 
 Game::Game()
@@ -51,6 +53,21 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	ilutRenderer(ILUT_OPENGL);
 	glewExperimental = GL_TRUE;
 	glewInit();
+
+	// Setup Dear ImGui context
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+
+	// Setup Dear ImGui style
+	ImGui::StyleColorsDark();
+	//ImGui::StyleColorsClassic();
+
+	// Setup Platform/Renderer bindings
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	ImGui_ImplOpenGL3_Init(glsl_version);
 
 	glViewport(0, 0, screen_width, screen_height);
 	glEnable(GL_CULL_FACE);
@@ -171,17 +188,16 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 
 	Input::GetInstance();
 	glfwGetCursorPos(window, &Input::mousePos.x, &Input::mousePos.y);
-	ResourceManager::LoadShader("standard.vs", "standard.fs", nullptr, "standard");
-	ResourceManager::LoadShader("standard.vs", "standard_alpha.fs", nullptr, "standard_alpha");
-	ResourceManager::LoadShader("standard.vs", "standard_shadeless.fs", nullptr, "standard_shadeless");
-	ResourceManager::LoadShader("skybox.vs", "skybox.fs", nullptr, "skybox");
-	ResourceManager::LoadShader("env.vs", "env.fs", nullptr, "standard_env");
-	ResourceManager::LoadShader("water.vs", "water.fs", nullptr, "water");
+	ResourceManager::LoadShader("shaders/standard.vs", "shaders/standard.fs", nullptr, "standard");
+	ResourceManager::LoadShader("shaders/standard.vs", "shaders/standard_alpha.fs", nullptr, "standard_alpha");
+	ResourceManager::LoadShader("shaders/standard.vs", "shaders/standard_shadeless.fs", nullptr, "standard_shadeless");
+	ResourceManager::LoadShader("shaders/skybox.vs", "shaders/skybox.fs", nullptr, "skybox");
+	ResourceManager::LoadShader("shaders/water.vs", "shaders/water.fs", nullptr, "water");
 
-	ResourceManager::LoadShader("shadows.vs", "shadows.fs", nullptr, "shadow");
+	ResourceManager::LoadShader("shaders/shadows.vs", "shaders/shadows.fs", nullptr, "shadow");
 
-	ResourceManager::LoadShader("blur.vs", "blur.fs", nullptr, "blur");
-	ResourceManager::LoadShader("bloom.vs", "bloom.fs", nullptr, "bloom");
+	ResourceManager::LoadShader("shaders/blur.vs", "shaders/blur.fs", nullptr, "blur");
+	ResourceManager::LoadShader("shaders/bloom.vs", "shaders/bloom.fs", nullptr, "bloom");
 	ResourceManager::GetShader("blur")->Use();
 	ResourceManager::GetShader("blur")->SetInteger("image", 0);
 
@@ -190,7 +206,7 @@ void Game::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::GetShader("bloom")->SetInteger("bloomBlur", 1);
 
 
-	ResourceManager::LoadShader("post_process.vs", "post_process.fs", nullptr, "post_process");
+	ResourceManager::LoadShader("shaders/post_process.vs", "shaders/post_process.fs", nullptr, "post_process");
 	ResourceManager::GetShader("post_process")->Use();
 	ResourceManager::GetShader("post_process")->SetInteger("screenTexture", 0);
 
@@ -209,6 +225,43 @@ void Game::ProcessInput(GLfloat dt)
 
 void Game::Render()
 {
+	//UI
+// Start the Dear ImGui frame
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
+
+	ImGui::Begin("Kontroleer");
+
+	{
+		ImGui::Text("Obsluga oswietlenia");
+		ImGui::ColorEdit3("Diffuse", (float*)&light_diffuse);
+		ImGui::ColorEdit3("Ambient", (float*)&light_ambient);
+		ImGui::ColorEdit3("Specular", (float*)&light_spec);
+		ImGui::SliderFloat("X Direction", &ldirX, -10.0f, 10.0f);
+		ImGui::SliderFloat("Y Direction", &ldirY, -10.0f, 10.0f);
+		ImGui::SliderFloat("Z Direction", &ldirZ, -10.0f, 10.0f);
+		ImGui::Text("Skala \"gracza\"");
+		ImGui::SliderFloat("Skala w osi X", &pScaleX, 0.01f, 10.0f);
+		ImGui::SliderFloat("Skala w osi Y", &pScaleY, 0.01f, 10.0f);
+		ImGui::SliderFloat("Skala w osi Z", &pScaleZ, 0.01f, 10.0f);
+		ImGui::Text("Ustawienia orbitowania");
+		ImGui::SliderFloat("Predkosc orbitowania", &cubeOritSpeed, 0.01f, 10.0f);
+		ImGui::SliderFloat("Promien orbity", &cubeOrbitRadius, 0.01f, 10.0f);
+		ImGui::Checkbox("Obrot w lewo", &cubeOrbitDirection);
+		ImGui::Text("Ustawienia wody");
+		ImGui::SliderFloat("Przezroczystosc wody", &waterTransparency, 0.0f, 1.0f);
+		ImGui::Text("Wartosc poziomu odbic wody\nPrzy 1.0 woda jest idealnym lustrem.");
+		ImGui::SliderFloat("Poziom odbic wody", &waterRefl, 0.0f, 1.0f);
+		ImGui::Text("Wylaczenie ponizszych opcji poprawia wydajnosc.\n(BRAK POPRAWNEJ OPTYMALIZACJI RENDERERA)");
+		ImGui::Checkbox("Bloom", &bloomEnabled);
+	}
+
+	ImGui::End();
+
+	ImGui::Render();
+	
+	
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -263,48 +316,78 @@ void Game::Render()
 
 	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
 
-	//BLUR
-	bool horizontal = true, first_iteration = true;
-	unsigned int amount = 50;
-	ResourceManager::GetShader("blur")->Use();
-	for (unsigned int i = 0; i < amount; i++)
+	if (this->bloomEnabled)
 	{
-		glBindFramebuffer(GL_FRAMEBUFFER, this->pingpongFBO[horizontal]);
-		ResourceManager::GetShader("blur")->SetInteger("horizontal", horizontal);
+		//BLUR
+		bool horizontal = true, first_iteration = true;
+		unsigned int amount = 50;
+		ResourceManager::GetShader("blur")->Use();
+		for (unsigned int i = 0; i < amount; i++)
+		{
+			glBindFramebuffer(GL_FRAMEBUFFER, this->pingpongFBO[horizontal]);
+			ResourceManager::GetShader("blur")->SetInteger("horizontal", horizontal);
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, first_iteration ? this->colorBuffers[1] : this->pingpongColorbuffers[!horizontal]);
+			glBindVertexArray(this->screenVAO);
+			glDrawArrays(GL_TRIANGLES, 0, 6);
+			horizontal = !horizontal;
+			if (first_iteration)
+				first_iteration = false;
+		}
+		//END_BLUR
+
+		//Finalize bloom
+		ResourceManager::GetShader("bloom")->Use();
+		glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, first_iteration ? this->colorBuffers[1] : this->pingpongColorbuffers[!horizontal]);
+		glBindTexture(GL_TEXTURE_2D, this->colorBuffers[0]);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, this->pingpongColorbuffers[!horizontal]);
+		ResourceManager::GetShader("bloom")->SetInteger("bloom", true);
+		ResourceManager::GetShader("bloom")->SetFloat("exposure", 1.0f);
 		glBindVertexArray(this->screenVAO);
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-		horizontal = !horizontal;
-		if (first_iteration)
-			first_iteration = false;
+
+
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glDisable(GL_DEPTH_TEST);
+		ResourceManager::GetShader("post_process")->Use();
+		glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
+		glActiveTexture(GL_TEXTURE0);
+		glBindVertexArray(this->screenVAO);
+		glBindTexture(GL_TEXTURE_2D, this->fbo);	// use the color attachment texture as the texture of the quad plane
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 	}
-	//END_BLUR
+	else
+	{
+		ResourceManager::GetShader("bloom")->Use();
+		glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, this->colorBuffers[0]);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, this->colorBuffers[1]);
+		ResourceManager::GetShader("bloom")->SetInteger("bloom", false);
+		ResourceManager::GetShader("bloom")->SetFloat("exposure", 1.0f);
+		glBindVertexArray(this->screenVAO);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 
-	//Finalize bloom
-	ResourceManager::GetShader("bloom")->Use();
-	glBindFramebuffer(GL_FRAMEBUFFER, this->fbo);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, this->colorBuffers[0]);
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, this->pingpongColorbuffers[!horizontal]);
-	ResourceManager::GetShader("bloom")->SetInteger("bloom", true);
-	ResourceManager::GetShader("bloom")->SetFloat("exposure", 1.0f);
-	glBindVertexArray(this->screenVAO);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glDisable(GL_DEPTH_TEST);
+		ResourceManager::GetShader("post_process")->Use();
+		glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
+		glActiveTexture(GL_TEXTURE0);
+		glBindVertexArray(this->screenVAO);
+		glBindTexture(GL_TEXTURE_2D, this->fbo);	// use the color attachment texture as the texture of the quad plane
+		glDrawArrays(GL_TRIANGLES, 0, 6);
+	}
 
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	glDisable(GL_DEPTH_TEST);
-	ResourceManager::GetShader("post_process")->Use();
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-
-	glActiveTexture(GL_TEXTURE0);
-	glBindVertexArray(this->screenVAO);
-	glBindTexture(GL_TEXTURE_2D, this->fbo);	// use the color attachment texture as the texture of the quad plane
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 	glfwSwapBuffers(this->window);
 }

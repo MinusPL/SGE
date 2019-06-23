@@ -2,6 +2,7 @@ var class_texture =
 [
     [ "Texture", "class_texture.html#a6c275e3f186675ff6ed73ccf970e552f", null ],
     [ "~Texture", "class_texture.html#a09c4bcb7462f64c1d20fa69dba3cee8a", null ],
+    [ "BindCubemap", "class_texture.html#a34a98124de12bc104a81663322b2d1d9", null ],
     [ "BindTexture", "class_texture.html#a23465d14b76deef9cf22c14a97040f52", null ],
     [ "GetHeight", "class_texture.html#a9313d6712c3af10b467db3b7c3d5a230", null ],
     [ "GetImageFormat", "class_texture.html#afac89e6e43962939aa13a289e2386fd9", null ],

@@ -34,6 +34,7 @@
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="Water.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -42,5 +43,11 @@
     <Filter Include="Header files">
       <UniqueIdentifier>{d300282c-861d-497b-a0a8-757e2c0b4ca1}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UmiTEST.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\icon_tFt_icon.ico" />
   </ItemGroup>
 </Project>

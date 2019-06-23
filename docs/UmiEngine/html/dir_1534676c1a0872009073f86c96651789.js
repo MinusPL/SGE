@@ -17,6 +17,10 @@ var dir_1534676c1a0872009073f86c96651789 =
     [ "GameObject.cpp", "_game_object_8cpp.html", null ],
     [ "GameObject.h", "_game_object_8h.html", "_game_object_8h" ],
     [ "glad.c", "glad_8c.html", "glad_8c" ],
+    [ "imgui_impl_glfw.cpp", "imgui__impl__glfw_8cpp.html", "imgui__impl__glfw_8cpp" ],
+    [ "imgui_impl_glfw.h", "imgui__impl__glfw_8h.html", "imgui__impl__glfw_8h" ],
+    [ "imgui_impl_opengl3.cpp", "imgui__impl__opengl3_8cpp.html", "imgui__impl__opengl3_8cpp" ],
+    [ "imgui_impl_opengl3.h", "imgui__impl__opengl3_8h.html", "imgui__impl__opengl3_8h" ],
     [ "Input.cpp", "_input_8cpp.html", null ],
     [ "Input.h", "_input_8h.html", "_input_8h" ],
     [ "Light.h", "_light_8h.html", [

@@ -106,9 +106,13 @@ Collaboration diagram for Game:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game__coll__graph.png" border="0" usemap="#_game_coll__map" alt="Collaboration graph"/></div>
 <map name="_game_coll__map" id="_game_coll__map">
-<area shape="rect"  title="Main Game class." alt="" coords="10,184,67,211"/>
-<area shape="rect"  href="class_skybox.html" title="Skybox object." alt="" coords="5,95,72,121"/>
-<area shape="rect"  href="class_texture.html" title="Texture class." alt="" coords="6,5,71,32"/>
+<area shape="rect"  title="Main Game class." alt="" coords="161,199,219,225"/>
+<area shape="rect"  href="class_game_object.html" title="GameObject class." alt="" coords="17,95,112,121"/>
+<area shape="rect"  href="class_transform.html" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect"  href="class_skybox.html" title="Skybox object." alt="" coords="157,95,223,121"/>
+<area shape="rect"  href="class_texture.html" title="Texture class." alt="" coords="173,5,239,32"/>
+<area shape="rect"  href="class_directional_light.html" title="Directional Light class." alt="" coords="248,95,359,121"/>
+<area shape="rect"  href="class_light.html" title="Base Light class." alt="" coords="278,5,329,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -141,6 +145,46 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:aaa8f957ef3a7b9a386f950ff1f6f89ef"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aaa8f957ef3a7b9a386f950ff1f6f89ef">glsl_version</a> = &quot;#version 330 core&quot;</td></tr>
+<tr class="separator:aaa8f957ef3a7b9a386f950ff1f6f89ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c83fd9cb6b646a09a5c07a0d2f4127"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad6c83fd9cb6b646a09a5c07a0d2f4127">light_diffuse</a> = glm::vec3(0.85f, 0.85f, 0.8f)</td></tr>
+<tr class="separator:ad6c83fd9cb6b646a09a5c07a0d2f4127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab59fa6e482623110a011d5319e40bc04"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab59fa6e482623110a011d5319e40bc04">light_ambient</a> = glm::vec3(0.7f, 0.7f, 0.7f)</td></tr>
+<tr class="separator:ab59fa6e482623110a011d5319e40bc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a600d2f3f0a0407010eb46640d2157290"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a600d2f3f0a0407010eb46640d2157290">light_spec</a> = glm::vec3(1.0f,1.0f,1.0f)</td></tr>
+<tr class="separator:a600d2f3f0a0407010eb46640d2157290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b522d1c1f329aca47be60f3db2d9056"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a1b522d1c1f329aca47be60f3db2d9056">ldirX</a> = -0.5f</td></tr>
+<tr class="separator:a1b522d1c1f329aca47be60f3db2d9056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1dba5d397b75fe389f0a2569c6d2a09"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab1dba5d397b75fe389f0a2569c6d2a09">ldirY</a> = -1.0f</td></tr>
+<tr class="separator:ab1dba5d397b75fe389f0a2569c6d2a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c84b35a1a322b8193c8d1443ace58c1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9c84b35a1a322b8193c8d1443ace58c1">ldirZ</a> = 1.5f</td></tr>
+<tr class="separator:a9c84b35a1a322b8193c8d1443ace58c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceb6c09bd7968b1cbfd949de3c53d73"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7ceb6c09bd7968b1cbfd949de3c53d73">pScaleX</a> = 1.0f</td></tr>
+<tr class="separator:a7ceb6c09bd7968b1cbfd949de3c53d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3c306f0ca519ca040562c6b85f49a1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#abb3c306f0ca519ca040562c6b85f49a1">pScaleY</a> = 1.0f</td></tr>
+<tr class="separator:abb3c306f0ca519ca040562c6b85f49a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a049182cd8a977e566235e10855418a82"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a049182cd8a977e566235e10855418a82">pScaleZ</a> = 1.0f</td></tr>
+<tr class="separator:a049182cd8a977e566235e10855418a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b87cb2d287ad76c001515f10de5a257"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a2b87cb2d287ad76c001515f10de5a257">cubeOrbitRadius</a> = 5.0f</td></tr>
+<tr class="separator:a2b87cb2d287ad76c001515f10de5a257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28799b678dfa0b4813d101931a59b1d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab28799b678dfa0b4813d101931a59b1d">cubeOritSpeed</a> = 1.0f</td></tr>
+<tr class="separator:ab28799b678dfa0b4813d101931a59b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f78e2edc6fead54dac8acd2f0126d87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a5f78e2edc6fead54dac8acd2f0126d87">cubeOrbitDirection</a> = false</td></tr>
+<tr class="separator:a5f78e2edc6fead54dac8acd2f0126d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2ebf9d3a73b5e032de84a9d9aa6d53"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a1d2ebf9d3a73b5e032de84a9d9aa6d53">waterTransparency</a> = 0.5f</td></tr>
+<tr class="separator:a1d2ebf9d3a73b5e032de84a9d9aa6d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61286f3abaf4d831fd5a5e681058e37a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a61286f3abaf4d831fd5a5e681058e37a">waterRefl</a> = 0.75f</td></tr>
+<tr class="separator:a61286f3abaf4d831fd5a5e681058e37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c299035a53da108a53752997d1a79b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a67c299035a53da108a53752997d1a79b">pObject_ptr</a> = nullptr</td></tr>
+<tr class="separator:a67c299035a53da108a53752997d1a79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8260c3af3cadc4175b9d6fdbd60fd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9d8260c3af3cadc4175b9d6fdbd60fd9">pObject2_ptr</a> = nullptr</td></tr>
+<tr class="separator:a9d8260c3af3cadc4175b9d6fdbd60fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf59c36fc2002f081db238c0c59d281c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_directional_light.html">DirectionalLight</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#abf59c36fc2002f081db238c0c59d281c">dirLight_ptr</a> = nullptr</td></tr>
+<tr class="separator:abf59c36fc2002f081db238c0c59d281c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba304fc1c700d96594813ea8be1fab4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a2ba304fc1c700d96594813ea8be1fab4">mouse_mode</a> = false</td></tr>
+<tr class="separator:a2ba304fc1c700d96594813ea8be1fab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb0f727637f73a434faf0418cff1cc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aebb0f727637f73a434faf0418cff1cc8">bloomEnabled</a> = true</td></tr>
+<tr class="separator:aebb0f727637f73a434faf0418cff1cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4eb1b9c217dcb0f860ec9b0320f2274"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="class_camera.html">Camera</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#af4eb1b9c217dcb0f860ec9b0320f2274">camera</a></td></tr>
 <tr class="memdesc:af4eb1b9c217dcb0f860ec9b0320f2274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all cameras and allows to call them by their names.  <a href="#af4eb1b9c217dcb0f860ec9b0320f2274">More...</a><br /></td></tr>
 <tr class="separator:af4eb1b9c217dcb0f860ec9b0320f2274"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,6 +197,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:affc1bb149ae6c474261ba1bfe133af07"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#affc1bb149ae6c474261ba1bfe133af07">opaque_objs</a></td></tr>
 <tr class="memdesc:affc1bb149ae6c474261ba1bfe133af07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector to hold all opaque objects that are rendered firstly.  <a href="#affc1bb149ae6c474261ba1bfe133af07">More...</a><br /></td></tr>
 <tr class="separator:affc1bb149ae6c474261ba1bfe133af07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb28e11f6ddb7c1226a42e59c1d7817b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aeb28e11f6ddb7c1226a42e59c1d7817b">relfective_objs</a></td></tr>
+<tr class="separator:aeb28e11f6ddb7c1226a42e59c1d7817b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b5545f94ad9a83bac6d9be6ef15737"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a91b5545f94ad9a83bac6d9be6ef15737">shininess_control</a> = 0.8f</td></tr>
+<tr class="memdesc:a91b5545f94ad9a83bac6d9be6ef15737"><td class="mdescLeft">&#160;</td><td class="mdescRight">TO REMOVE THIS VALUE IS ONLY FOR TESTING PURPOSES.  <a href="#a91b5545f94ad9a83bac6d9be6ef15737">More...</a><br /></td></tr>
+<tr class="separator:a91b5545f94ad9a83bac6d9be6ef15737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46b9b13579445bc071f6cba24953b531"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_skybox.html">Skybox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a46b9b13579445bc071f6cba24953b531">sky</a></td></tr>
+<tr class="memdesc:a46b9b13579445bc071f6cba24953b531"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_skybox.html" title="Skybox object.">Skybox</a> used ingame.  <a href="#a46b9b13579445bc071f6cba24953b531">More...</a><br /></td></tr>
+<tr class="separator:a46b9b13579445bc071f6cba24953b531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -165,9 +217,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ad9bc7cf39168a1ceaf77d6177116aa94"><td class="memItemLeft" align="right" valign="top">GLFWwindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad9bc7cf39168a1ceaf77d6177116aa94">window</a></td></tr>
 <tr class="memdesc:ad9bc7cf39168a1ceaf77d6177116aa94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main game window.  <a href="#ad9bc7cf39168a1ceaf77d6177116aa94">More...</a><br /></td></tr>
 <tr class="separator:ad9bc7cf39168a1ceaf77d6177116aa94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46b9b13579445bc071f6cba24953b531"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_skybox.html">Skybox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a46b9b13579445bc071f6cba24953b531">sky</a></td></tr>
-<tr class="memdesc:a46b9b13579445bc071f6cba24953b531"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_skybox.html" title="Skybox object.">Skybox</a> used ingame.  <a href="#a46b9b13579445bc071f6cba24953b531">More...</a><br /></td></tr>
-<tr class="separator:a46b9b13579445bc071f6cba24953b531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92aabad09ef89df6964b62b89c2f7edb"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a92aabad09ef89df6964b62b89c2f7edb">screenVAO</a></td></tr>
 <tr class="memdesc:a92aabad09ef89df6964b62b89c2f7edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex Array Object adress used to hold created screen geometry.  <a href="#a92aabad09ef89df6964b62b89c2f7edb">More...</a><br /></td></tr>
 <tr class="separator:a92aabad09ef89df6964b62b89c2f7edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,10 +250,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:abbb66ef5bda6124f03272970cd18707f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#abbb66ef5bda6124f03272970cd18707f">pingpongColorbuffers</a> [2]</td></tr>
 <tr class="memdesc:abbb66ef5bda6124f03272970cd18707f"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenGL Textures used to create bloom effect.  <a href="#abbb66ef5bda6124f03272970cd18707f">More...</a><br /></td></tr>
 <tr class="separator:abbb66ef5bda6124f03272970cd18707f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf4d8e38c95fc6e1351e6dd85a19429f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#abf4d8e38c95fc6e1351e6dd85a19429f">SHADOW_WIDTH</a> = 8192</td></tr>
+<tr class="memitem:abf4d8e38c95fc6e1351e6dd85a19429f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#abf4d8e38c95fc6e1351e6dd85a19429f">SHADOW_WIDTH</a> = 4096</td></tr>
 <tr class="memdesc:abf4d8e38c95fc6e1351e6dd85a19429f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of used shadowmap - will be changeable in future.  <a href="#abf4d8e38c95fc6e1351e6dd85a19429f">More...</a><br /></td></tr>
 <tr class="separator:abf4d8e38c95fc6e1351e6dd85a19429f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ff4bf491706f3c85c1de2ed7983a51b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6ff4bf491706f3c85c1de2ed7983a51b">SHADOW_HEIGHT</a> = 8192</td></tr>
+<tr class="memitem:a6ff4bf491706f3c85c1de2ed7983a51b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6ff4bf491706f3c85c1de2ed7983a51b">SHADOW_HEIGHT</a> = 4096</td></tr>
 <tr class="memdesc:a6ff4bf491706f3c85c1de2ed7983a51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of used shadowmap - will be changeable in future.  <a href="#a6ff4bf491706f3c85c1de2ed7983a51b">More...</a><br /></td></tr>
 <tr class="separator:a6ff4bf491706f3c85c1de2ed7983a51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05df6adfb712932bac2afea1fb01dc3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ac05df6adfb712932bac2afea1fb01dc3">screen_width</a> = 1920</td></tr>
@@ -417,6 +466,20 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aebb0f727637f73a434faf0418cff1cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb0f727637f73a434faf0418cff1cc8">&#9670;&nbsp;</a></span>bloomEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::bloomEnabled = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af4eb1b9c217dcb0f860ec9b0320f2274"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4eb1b9c217dcb0f860ec9b0320f2274">&#9670;&nbsp;</a></span>camera</h2>
 
@@ -454,6 +517,48 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Two OpenGL textures used to hold separated HDR image - one with normal image, and secound with only bright parts. </p>
+
+</div>
+</div>
+<a id="a5f78e2edc6fead54dac8acd2f0126d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f78e2edc6fead54dac8acd2f0126d87">&#9670;&nbsp;</a></span>cubeOrbitDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::cubeOrbitDirection = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b87cb2d287ad76c001515f10de5a257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b87cb2d287ad76c001515f10de5a257">&#9670;&nbsp;</a></span>cubeOrbitRadius</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::cubeOrbitRadius = 5.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab28799b678dfa0b4813d101931a59b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab28799b678dfa0b4813d101931a59b1d">&#9670;&nbsp;</a></span>cubeOritSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::cubeOritSpeed = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -505,6 +610,20 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="abf59c36fc2002f081db238c0c59d281c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf59c36fc2002f081db238c0c59d281c">&#9670;&nbsp;</a></span>dirLight_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_directional_light.html">DirectionalLight</a>* Game::dirLight_ptr = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a64cdbfe0d81d60426bb6523459d7b52c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64cdbfe0d81d60426bb6523459d7b52c">&#9670;&nbsp;</a></span>fbo</h2>
 
@@ -526,6 +645,20 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Framebuffer Object. </p>
+
+</div>
+</div>
+<a id="aaa8f957ef3a7b9a386f950ff1f6f89ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8f957ef3a7b9a386f950ff1f6f89ef">&#9670;&nbsp;</a></span>glsl_version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* Game::glsl_version = &quot;#version 330 core&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -575,6 +708,104 @@ Protected Attributes</h2></td></tr>
 
 <p>Instance of game. </p>
 <p>This is game instance. It is used to prevent creating second isntance of engine in one process. It is created when initializing game. </p>
+
+</div>
+</div>
+<a id="a1b522d1c1f329aca47be60f3db2d9056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b522d1c1f329aca47be60f3db2d9056">&#9670;&nbsp;</a></span>ldirX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::ldirX = -0.5f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1dba5d397b75fe389f0a2569c6d2a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1dba5d397b75fe389f0a2569c6d2a09">&#9670;&nbsp;</a></span>ldirY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::ldirY = -1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c84b35a1a322b8193c8d1443ace58c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c84b35a1a322b8193c8d1443ace58c1">&#9670;&nbsp;</a></span>ldirZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::ldirZ = 1.5f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab59fa6e482623110a011d5319e40bc04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab59fa6e482623110a011d5319e40bc04">&#9670;&nbsp;</a></span>light_ambient</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Game::light_ambient = glm::vec3(0.7f, 0.7f, 0.7f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6c83fd9cb6b646a09a5c07a0d2f4127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c83fd9cb6b646a09a5c07a0d2f4127">&#9670;&nbsp;</a></span>light_diffuse</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Game::light_diffuse = glm::vec3(0.85f, 0.85f, 0.8f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a600d2f3f0a0407010eb46640d2157290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600d2f3f0a0407010eb46640d2157290">&#9670;&nbsp;</a></span>light_spec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Game::light_spec = glm::vec3(1.0f,1.0f,1.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ba304fc1c700d96594813ea8be1fab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba304fc1c700d96594813ea8be1fab4">&#9670;&nbsp;</a></span>mouse_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::mouse_mode = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -658,6 +889,76 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9d8260c3af3cadc4175b9d6fdbd60fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d8260c3af3cadc4175b9d6fdbd60fd9">&#9670;&nbsp;</a></span>pObject2_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_object.html">GameObject</a>* Game::pObject2_ptr = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67c299035a53da108a53752997d1a79b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c299035a53da108a53752997d1a79b">&#9670;&nbsp;</a></span>pObject_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_object.html">GameObject</a>* Game::pObject_ptr = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ceb6c09bd7968b1cbfd949de3c53d73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ceb6c09bd7968b1cbfd949de3c53d73">&#9670;&nbsp;</a></span>pScaleX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::pScaleX = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb3c306f0ca519ca040562c6b85f49a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3c306f0ca519ca040562c6b85f49a1">&#9670;&nbsp;</a></span>pScaleY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::pScaleY = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a049182cd8a977e566235e10855418a82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a049182cd8a977e566235e10855418a82">&#9670;&nbsp;</a></span>pScaleZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::pScaleZ = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a521e6ba079b5beb2d552137f9363e36e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a521e6ba079b5beb2d552137f9363e36e">&#9670;&nbsp;</a></span>rbo</h2>
 
@@ -679,6 +980,20 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Render Buffer Object. </p>
+
+</div>
+</div>
+<a id="aeb28e11f6ddb7c1226a42e59c1d7817b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb28e11f6ddb7c1226a42e59c1d7817b">&#9670;&nbsp;</a></span>relfective_objs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_game_object.html">GameObject</a>*&gt; Game::relfective_objs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -788,7 +1103,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int Game::SHADOW_HEIGHT = 8192</td>
+          <td class="memname">const int Game::SHADOW_HEIGHT = 4096</td>
         </tr>
       </table>
   </td>
@@ -812,7 +1127,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int Game::SHADOW_WIDTH = 8192</td>
+          <td class="memname">const int Game::SHADOW_WIDTH = 4096</td>
         </tr>
       </table>
   </td>
@@ -826,24 +1141,32 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a91b5545f94ad9a83bac6d9be6ef15737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b5545f94ad9a83bac6d9be6ef15737">&#9670;&nbsp;</a></span>shininess_control</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::shininess_control = 0.8f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TO REMOVE THIS VALUE IS ONLY FOR TESTING PURPOSES. </p>
+
+</div>
+</div>
 <a id="a46b9b13579445bc071f6cba24953b531"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46b9b13579445bc071f6cba24953b531">&#9670;&nbsp;</a></span>sky</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_skybox.html">Skybox</a>* Game::sky</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_skybox.html" title="Skybox object.">Skybox</a> used ingame. </p>
@@ -888,6 +1211,34 @@ Protected Attributes</h2></td></tr>
 
 <p>Vector to hold all transparent objects. Used to render them after all opaque objects. </p>
 <p>This one is beeing sorted in reverse order by the distance from object to currently used camera. </p>
+
+</div>
+</div>
+<a id="a61286f3abaf4d831fd5a5e681058e37a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61286f3abaf4d831fd5a5e681058e37a">&#9670;&nbsp;</a></span>waterRefl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::waterRefl = 0.75f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d2ebf9d3a73b5e032de84a9d9aa6d53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d2ebf9d3a73b5e032de84a9d9aa6d53">&#9670;&nbsp;</a></span>waterTransparency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::waterTransparency = 0.5f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
