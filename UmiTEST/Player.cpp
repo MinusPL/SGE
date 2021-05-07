@@ -6,7 +6,7 @@
 #include <Game.h>
 
 
-Player::Player() : VisualObject((GLchar*)"assets/models/pokeball/pokeball.fbx", STANDARD)
+Player::Player() : VisualObject((GLchar*)"assets/models/player/kotori.fbx", STANDARD)
 {
 
 }

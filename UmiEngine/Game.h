@@ -138,7 +138,7 @@ public:
 	std::vector<GameObject*>relfective_objs;
 
 	//! TO REMOVE THIS VALUE IS ONLY FOR TESTING PURPOSES
-	float shininess_control = 0.8f;
+	float shininess_control = 0.2f;
 
 	//! Skybox used ingame.
 	Skybox* sky;

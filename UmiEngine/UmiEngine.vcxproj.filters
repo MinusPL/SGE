@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="glad.c" />
     <ClCompile Include="Camera.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
@@ -127,9 +126,6 @@
     <ClInclude Include="ImGui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Header files">
       <UniqueIdentifier>{0819da2d-4b92-438c-9090-9a3f10736a78}</UniqueIdentifier>
     </Filter>
@@ -142,5 +138,8 @@
     <Filter Include="Header files\Managers">
       <UniqueIdentifier>{2352a5d4-e411-4a11-9fe0-8ae6b15c0e5e}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

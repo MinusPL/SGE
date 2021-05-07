@@ -87,21 +87,24 @@ void main()
 		normal = normalize(normal * 2.0 - 1.0);
 		normal = normalize(TBN * normal);
 	}
-	else{
+	else
+	{
 		normal = normalize(norm);
 	}
 	vec3 viewDir = normalize(viewPos - fragPos);
 
 	vec3 result = CalcDirLight(dirLight, normal, viewDir);
-	for(int i = 0; i < pointLightsCount; i++){
+	for(int i = 0; i < pointLightsCount; i++)
+	{
 		result += CalcPointLight(pointLights[i], normal, viewDir);
 	}
 
     float brightness = dot(result, vec3(0.2126, 0.7152, 0.0722));
     if(brightness > 1.0)
-        BrightColor = vec4(result, 1.0);
+		BrightColor = vec4(result, 1.0);
     else
         BrightColor = vec4(0.0, 0.0, 0.0, 1.0);
+
     color = vec4(result, 1.0);
 }
 
@@ -186,6 +189,6 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 viewDir){
 	ambient *= attentuation;
 	diffuse *= attentuation;
 	specular *= attentuation;
-	
+
 	return (ambient + (diffuse + specular));
 }

@@ -37,9 +37,6 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Header files">
       <UniqueIdentifier>{d300282c-861d-497b-a0a8-757e2c0b4ca1}</UniqueIdentifier>
     </Filter>
@@ -49,5 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\icon_tFt_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

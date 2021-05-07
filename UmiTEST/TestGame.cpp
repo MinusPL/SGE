@@ -42,21 +42,22 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	ResourceManager::LoadTexture("assets/textures/test_crate.png", "storage_crate");
 	ResourceManager::LoadTexture("assets/textures/storage_crate_spec.png", "storage_crate_spec");
 	ResourceManager::LoadTexture("assets/textures/player_crate.png", "player_crate");
+	ResourceManager::LoadTexture("assets/texture/umi_box.png", "umi_box");
 
 	std::vector<GLchar*> filenames;
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
-	filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/right.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/left.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/top.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/bottom.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/front.jpg");
+	//filenames.push_back((GLchar*)"assets/textures/skybox/ocean/back.jpg");
 
-	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/right.png");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/left.png");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/top.png");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/bottom.png");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/front.png");
-	//filenames.push_back((GLchar*)"assets/textures/skybox/clouds/back.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/right.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/left.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/top.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/bottom.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/front.png");
+	filenames.push_back((GLchar*)"assets/textures/skybox/clouds/back.png");
 
 	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/right.jpg");
 	//filenames.push_back((GLchar*)"assets/textures/skybox/debug/left.jpg");
@@ -137,10 +138,14 @@ void TestGame::Init(GLuint screen_width, GLuint screen_height)
 	Grass* tGrass = nullptr;
 	for (int i = 0; i < 100; i++)
 	{
-		int x = rand() % 101 - 50;
-		int y = rand() % 101 - 50;
+		int x = (int)round(((double)(rand() % 10001 - 5000))/100.0);
+		int y = (int)round(((double)((rand() % 10001) - 5000))/100.0);
+		
+		float rot = (float)round((double)(rand() % 36001 - 18000) / 100.0);
+
 		tGrass = new Grass();
 		tGrass->transform.Position(glm::vec3(x, 0.0f, y));
+		tGrass->transform.Rotation(glm::vec3(0.0f, rot, 0.0f));
 		transparent_objs.push_back(tGrass);
 		this->objects.push_back(tGrass);
 	}

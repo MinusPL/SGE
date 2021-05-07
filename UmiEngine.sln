@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UmiEngine", "UmiEngine\UmiEngine.vcxproj", "{573665CD-12DA-4A64-BA14-23E2D50FBE15}"
 EndProject
@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UmiTEST", "UmiTEST\UmiTEST.
 	ProjectSection(ProjectDependencies) = postProject
 		{573665CD-12DA-4A64-BA14-23E2D50FBE15} = {573665CD-12DA-4A64-BA14-23E2D50FBE15}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UmiEngine_d3d11", "UmiEngine_d3d11\UmiEngine_d3d11.vcxproj", "{18FE9619-0519-4C2D-9EDE-307D912D89BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,14 @@ Global
 		{061525D2-F2B6-4BB9-A5E2-B44CD1B3A5C6}.Release|x64.Build.0 = Release|x64
 		{061525D2-F2B6-4BB9-A5E2-B44CD1B3A5C6}.Release|x86.ActiveCfg = Release|Win32
 		{061525D2-F2B6-4BB9-A5E2-B44CD1B3A5C6}.Release|x86.Build.0 = Release|Win32
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Debug|x64.ActiveCfg = Debug|x64
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Debug|x64.Build.0 = Debug|x64
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Debug|x86.ActiveCfg = Debug|Win32
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Debug|x86.Build.0 = Debug|Win32
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Release|x64.ActiveCfg = Release|x64
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Release|x64.Build.0 = Release|x64
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Release|x86.ActiveCfg = Release|Win32
+		{18FE9619-0519-4C2D-9EDE-307D912D89BA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
